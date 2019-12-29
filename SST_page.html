@@ -80,29 +80,53 @@
 
 										<h2><B style="color:rgb(0,0,0)">Background</B></h2>
 										<p>
-							        Ocean covers more than 70% of the earth surface and sea surface temperature (SST)
-							        is crucial for understanding global mean surface temperature (GMST).
-											Existing instrumental SST products,
+							        Ocean covers more than two-thirds of the earth surface and sea surface temperature (SST)
+							        is crucial for monitoring climate state, understanding climate variability, and predicting climate changes.
+											Existing SST products based on in-situ instrumental observations,
 							        e.g., HadSST3 and ERSST5, are all based on the
 							        International Comprehensive Ocean and Atmosphere Dataset (<a href="https://icoads.noaa.gov">ICOADS</a>).
-							        Before the deployment of buoys in the 1980s, SST in ICOADS mainly
-							        come from ships using variety of approaches, including bucket
-							        and engine room intake methods.  These methods are not in-situ and
-							        are subject to biases.  For example, bucket measurements can be coldly
-							        biased by more than -0.5°C because of evaporative and turbulent heat losses
-							        (Folland & Parker, 1995).
+							        However, before the wide deployment of buoys and drifters in the 1980s, ICOADS SSTs mainly
+							        come from sailors using variety of methods while voyaging across the ocean.  These methods mainly include bucket
+							        and engine room intake approaches and are, strictly speaking, not taking in-situ measurements because water temperatures were measured
+											in buckets on ship decks or in ship's engine rooms.
+										</p>
+
+										<p style="font-size:14px">
+										<center>
+											<video width="70%" controls>
+												<source src="Ocean_Weather_Ship_Record_B.mp4" type=video/mp4>
+											</video>
+											<br>
+											 How to measure SSTs with a bucket? <a href="https://www.youtube.com/watch?v=OmL95EXu1-U"><b>Ocean Weather Ship Record B (1947)</b></a> from <i>Youtube</i>
+										</center>
+										</p>
+
+										<p>
+											Ship-based SST measurements are full of biases and errors.  For example, bucket measurements can be coldly
+							        biased from wind evaporations or warmly biased from solar heating.  On average, bucket SSTs are coldly biased by
+											several tenth of degree Celsius (Folland & Parker, 1995) but the biases can be as large as &plusmn 1°C
+											Under extreme winter and summer conditions (e.g., Kennedy et al, 2019).
+											Taking into account that the estimated global warming in the 20th century is less than 1°C,
+											correcting for these biases are, therefore, crucial for every tenth of a °C.
 								    </p>
 
 										<p>
-											Correcting for these biases are crucial because the overall
-											global warming is less than 1°C during the 20th century, whereas existing
-											global SST corrections can be as large as 0.4°C (Kennedy et al., 2012).
-											In addition, contributions from individual methods to the SST archive change with time, leading to
-											time-varying biases.  Besides the overall increasing global temperature,
+
+											Accurate corrections of bucket SST biases, however, are difficult because the amount of SSTs from
+											distinct methods change with time, leading to	time-varying biases.
+											Existing SST corrections often explicitly account for biases
+											associated with distinct measurement methods, assuming that
+										  a US bucket SST will have the same bias as a Japanese bucket SST.
+											These correction schemes also usually assume spatially and temporally smooth biases
+											because of limited metadata for detailed corrections.
+											<!-- Besides the overall increasing global temperature,
 											existing SST corrections also greatly change the inter-decadal variability of SST
-											(Luke et al., 2018).  Existing SST corrections only explicitly account for biases
-											associated with different measurement methods and often assume that SST biases
-											are smooth in space and time because of limited metadata for detailed corrections.
+											(Luke et al., 2018).  -->
+											However, buckets are made of different materials, come in different sizes, and
+											can be used by different nations following different protocols.
+											All these factors will affect temperature readings,
+											and it may be important to correct for ocean temperatures for individual nations or other more refined groupings.
+
 										</p>
 
 									</section>
@@ -112,28 +136,53 @@
 									<section>
 										<h2><B style="color:rgb(0,0,0)">Our Work</B></h2>
 
+										<p>
+										We aim to achieve more refined SST corrections for individual nations (or other groupings) by first detecting groupwise SST biases
+										using statistical approaches and find origins of these biases using physical modeling and evidence in historical documents.
+										</p>
+
+										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
+
 										<li>
 								      <p>
-							          Ships coming from different nations and sailing for different purposes could
+							          <!--Ships coming from different nations and sailing for different purposes could
 							          use different measurement methods or follow distinct protocols and have different bias structures.
-							          If so, SST biases will be regional and can vary abruptly in time.
-							          In a methodological paper (<a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-18-0562.1/">Chan & Huybers, 2019</a>), we develop a Linear-mixed-effect model to
-							          inter-compare proximal bucket SSTs coming from different nation-deck groups.
-							          We detect significant offsets among major collecting nations and suggest
+							          If so, SST biases will be regional and can vary abruptly in time. -->
+							          In a methodological paper (<a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-18-0562.1/">Chan & Huybers, 2019</a>),
+												we develop a linear-mixed-effect (LME) model to
+							          inter-compare bucket SSTs that came from different nation-deck groups but were taken at nearby spatial and temporal locations.
+							          We apply this method to more than 17 millions of SSTs and, for the first time, detect significant offsets among major collecting nations and suggest
 							          potentials for more detailed corrections to improve instrumental SST reconstructions.
 								      </p>
 										</li>
 
+										<div class="12u">
+											<div class="image_container">
+													<img src="images/scheme_LME.png" style="max-width: 500px;" alt="" />
+											</div>
+										</div>
+
+										<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left; font-size:17px">
+										<center>
+											<B style="color:rgb(150,150,150)">Scheme for pairing in the LME intercomparison method</B>
+										</center>
+										</p>
+
+										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
+
+
 										<li>
 								      <p>
-							          Correcting for group-wise SST offsets leads to more-homogeneous
-							          early 20th century SST warming (<a href="https://www.nature.com/articles/s41586-019-1349-2">Chan et al., 2019</a>).
-												See ICOADSb in the figure below.
+							          Correcting for group-wise bucket SST offsets leads to more-homogeneous
+							          early 20th century SST warming (<a href="https://www.nature.com/articles/s41586-019-1349-2">Chan et al., 2019</a>),
+												indicating the dominating role of anthropogenic activities, compared with natural variabilities, even in the early 20th century.
 							          Correcting for offsets in German measurements decreases warming rates
 							          in the North Atlantic, whereas correcting for Japanese offsets leads to
 							          increased and more uniform warming in the North Pacific.
 							          Japanese offsets in the 1930s primarily result from records
-							          having been truncated to whole degrees Celsius when digitized in the 1960s.
+							          been truncated to whole degrees Celsius when digitized in the 1960s.
+												See evidence in the reference manual for the Japanese Kobe Collection
+												<a href="https://icoads.noaa.gov/reclaim/pdf/dck118.pdf">deck 118</a>.
 									    </p>
 										</li>
 
@@ -168,12 +217,55 @@
 												Among which ICOADSb is the estimate with group-wise corrections. </i>
 										</p>
 
+										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
+
+										<li>
+											<p>
+												In our recent submission to Journal of Climate, we show that
+												though groupwise offsets before the 1930s should mainly reflect
+												physical differences in bucket design or measurement protocols,
+												larger offsets found after 1930 and are mainly due to
+												misclassifying engine room intake measurements as bucket observations.
+												Evidence comes from analysising the amplitude of diurnal cycles and
+											  simulations of an <a href="https://github.com/duochanatharvard/SST_Bucket_Model"> extended physical bucket model</a>.
+											</p>
+										</li>
+
+										<div class="12u">
+											<div class="image_container">
+													<img src="images/SST_reconstruction_4.png" style="max-width: 700px;" alt="" />
+											</div>
+										</div>
+										<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+											<i> <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">Fig. 3.</B>
+												Slopes between groupwise offsets and amplitudes of diurnal cycles across individual groups (
+												markers in <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">a</B>
+												and <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>).
+												Whereas positive slopes with large uncertainties
+												are found before the 1930s,
+												significant negative slopes are found afterwards (panel <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">c</B>).
+												The change in the offset-amplitude relationship is in 1930, which is also the start of engine room intake measurements.
+												Also note that the line of york fit regression across all bucket groups (magenta) passes through the
+												independently determined diurnal amplitude and SST offsets for ERI measurements (double circles) after the 1930s
+												(panel <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>).  These results suggest that misclassification
+												of ERI measurements is the simpliest explaination of groupwise offsets after the 1930s.  Please refer to our paper for more details.
+												 </i>
+										</p>
+
+										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
+
 									</section>
 
 									<hr/>
 
 									<section>
 										<h2><B style="color:rgb(0,0,0)">References</B></h2>
+
+										<li><p>
+											<B style="color:rgb(30,30,30)">Chan D.</B>, & Huybers P.
+											Systematic differences in bucket sea surface temperatures caused by misclassifications of engine room intake measurements.
+											Submitted to <i><B>Journal of Climate</B></i>.
+										</p></li>
 
 										<li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
 											<B style="color:rgb(30,30,30)">Chan D.</B>, Kent E., Berry D. & Huybers P. (2019).
@@ -194,6 +286,12 @@
 											<a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-18-0562.1/">link</a>,
 											<a href="Chan_and_Huybers_2019_JC.pdf">pdf</a>
 										</p></li>
+
+										<li><p>
+										Dai, C., <B style="color:rgb(30,30,30)">Chan D.*</B>, Huybers, P., & Pillai, N. (2019).
+										Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates. <i><B>arXiv preprint</B></i>
+										 <a href="https://arxiv.org/abs/1910.04843">arXiv:1910.04843.</a>
+										 </p></li>
 
 							      <li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
 						          Davis, L. L., Thompson, D. W., Kennedy, J. J. & Kent, E. C (2018).
