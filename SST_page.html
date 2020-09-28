@@ -126,7 +126,7 @@
 										</p>
 
 										<p>
-											Our research question, therefore, is that can we correct for ocean temperatures for individual nations or other more refined groupings.
+											Our research question, therefore, is that can we correct for ocean temperatures for individual nations and data-collecting groups?
 										</p>
 
 									</section>
@@ -137,8 +137,11 @@
 										<h2><B style="color:rgb(0,0,0)">Our Work on correcting SST biases</B></h2>
 
 										<p>
-										We aim to achieve more refined SST corrections for individual nations (or other groupings) by first detecting groupwise SST biases
-										using statistical approaches and find origins of these biases using physical modeling and evidence in historical documents.
+										<!--We aim to achieve more refined SST corrections at regional scales by correcting SSTs for individual nations and data-collecting groups.-->
+									  To achieve groupwise corrections, we first develop a statistical method to estimate biases associated with individual nation and data-collecting groups.
+										We then use physical and historical evidence to understand the origin of these statistically constrained biases.
+										Correcting groupwise SST biases resolves model-data discrepancies including heterogenous early-twentieth-century warming
+										and anomalously warm SSTs during World War II.   Corrections also permit better hindcasting of Atlantic hurricanes.
 										</p>
 
 										<p>
@@ -161,11 +164,11 @@
 							          <!--Ships coming from different nations and sailing for different purposes could
 							          use different measurement methods or follow distinct protocols and have different bias structures.
 							          If so, SST biases will be regional and can vary abruptly in time. -->
-							          In a methodological paper (<a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-18-0562.1/">Chan & Huybers, 2019</a>),
-												we develop a linear-mixed-effect (LME) model to
-							          inter-compare bucket SSTs that came from different nation-deck groups but were taken at nearby spatial and temporal locations.
-							          We apply this method to more than 17 millions of SSTs and, for the first time, detect significant offsets among major collecting nations and suggest
-							          potentials for more detailed corrections to improve instrumental SST reconstructions.
+							          In a method paper (<a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-18-0562.1/">Chan & Huybers, 2019</a>),
+												we develop a linear-mixed-effect (LME) model estimates systematic SST offsets among nation and data collecting groups.
+												The LME method relies on inter-comparing nearby measurements from different groups.
+							          After applying the method to bucket SSTs, we find significant (P<0.05) differences
+												among major collecting nations.
 								      </p>
 										</li>
 
@@ -186,15 +189,15 @@
 
 										<li>
 								      <p>
-							          Correcting for group-wise bucket SST offsets leads to more-homogeneous
+							          Correcting for groupwise offsets for bucket SST leads to more-homogeneous
 							          early 20th century SST warming (<a href="https://www.nature.com/articles/s41586-019-1349-2">Chan et al., 2019</a>),
-												indicating the dominating role of anthropogenic activities, compared with natural variabilities, even in the early 20th century.
-							          Correcting for offsets in German measurements decreases warming rates
-							          in the North Atlantic, whereas correcting for Japanese offsets leads to
-							          increased and more uniform warming in the North Pacific.
-							          Japanese offsets in the 1930s primarily result from records
-							          been truncated to whole degrees Celsius when digitized in the 1960s.
-												See evidence in the reference manual for the Japanese Kobe Collection
+												indicating the dominating role of anthropogenic activities, compared with natural variability, in the early 20th century.
+							          Correcting relatively warm German SSTs decreases warming
+							          in the North Atlantic, whereas correcting a drop in Japanese SSTs in the 1930s
+												increases warming in the North Pacific.
+							          The drop in Japanese temperatures arose from truncating temperatures to whole degrees Celsius,
+												when these data were digitized by the U.S. Air Force in the 1960s.
+												See evidence in the reference manual for the Japanese Kobe collection
 												<a href="https://icoads.noaa.gov/reclaim/pdf/dck118.pdf">deck 118</a>.
 									    </p>
 										</li>
@@ -235,10 +238,9 @@
 										<li>
 											<p>
 												In <a href="https://journals.ametsoc.org/jcli/article/doi/10.1175/JCLI-D-19-0972.1/348685/Systematic-differences-in-bucket-sea-surface?searchresult=1">Chan and Huybers (2020)</a>, we show that
-												whereas groupwise offsets before the 1930s should mainly reflect
-												physical differences in bucket design or measurement protocols,
-												larger groupwise offsets found after the 1930s are mainly due to
-												misclassifying engine room intake measurements as bucket observations.
+											  offsets between bucket groups after the 1930s mainly reflect misclassifications of ERI measurements, as from buckets.
+												Groupwise offsets before the 1930s have a smaller range and should arise from
+												physical differences in bucket design or measurement protocols.
 												Evidence comes from analysising the amplitude of diurnal cycles and
 											  simulations from an <a href="https://github.com/duochanatharvard/SST_Bucket_Model"> extended physical bucket model</a>.
 											</p>
@@ -246,23 +248,26 @@
 
 										<div class="12u">
 											<div class="image_container">
-													<img src="images/SST_reconstruction_4.png" style="max-width: 700px;" alt="" />
+													<img src="images/HDSR_Fig6.png" style="max-width: 700px;" alt="" />
 											</div>
 										</div>
 										<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
 											<i> <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">Fig. 3.</B>
-												Slopes between groupwise offsets and amplitudes of diurnal cycles across individual groups (
-												markers in <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">a</B>
-												and <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>).
-												Whereas positive slopes with large uncertainties
-												are found before the 1930s,
+												Slopes between groupwise offsets and amplitudes of diurnal cycles.
+												<B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">a</B>
+											  & <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>,
+												Groupwise offsets against diurnal amplitudes of individual bucket groups (filled markers) for
+												<B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">a</B> 1910--1929
+												and for <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B> 1970--1989.
+												Slopes (magenta lines) are estimated using bucket groups and a York regression technique.
+												Whereas very uncertain or positive slopes are found before the 1930s,
 												significant negative slopes are found afterwards (panel <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">c</B>).
-												The change in the offset-amplitude relationship is in 1930, which is also the start of engine room intake measurements.
-												Also note that the line of york fit regression across all bucket groups (magenta) passes through the
-												independently determined diurnal amplitude and SST offsets for ERI measurements (double circles) after the 1930s
-												(panel <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>).  These results suggest that misclassification
-												of ERI measurements is the simpliest explaination of groupwise offsets after the 1930s.  Please refer to our paper for more details.
-												 </i>
+												The offset-amplitude slope changes in 1930, the advent time of engine room intake measurements in ICOADS.
+												Also note that in panel <B style="LINE-HEIGHT:30px; color:rgb(150,150,150)">b</B>,
+												the York regression slope passes through the independently determined diurnal amplitude and groupwise offset of ERI SSTs (double circles).
+												These results suggest a prevelant misclassification of ERI SSTs, as coming from buckets, in data after the 1930s.
+												Please refer to <a href="https://journals.ametsoc.org/jcli/article/doi/10.1175/JCLI-D-19-0972.1/348685/Systematic-differences-in-bucket-sea-surface?searchresult=1">our paper</a> for more details.
+												</i>
 										</p>
 
 										<a name="position"></a>
@@ -271,9 +276,9 @@
 										<h2><B style="color:rgb(0,0,0)">Our Work on correcting position errors</B></h2>
 
 										<p>
-											In addition to correcting for SST biases, an equally important question is where are SST measured.
-											The video below explains a Bayesian model that my colleagues and I built for inferring position errors of early ship tracks
-											and exploring their implications for SST reconstructions.
+											In addition to correcting SST biases, another equally important question is that where were SSTs measured.
+											The video below explains a Bayesian model that my colleagues and I built for inferring position errors of early ship tracks.
+											We also explored the implication of position errors for SST reconstructions.
 										</p>
 
 										<p style="font-size:14px">
@@ -293,16 +298,24 @@
 									<section>
 										<h2><B style="color:rgb(0,0,0)">References</B></h2>
 
-										<li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
-											<B style="color:rgb(30,30,30)">Chan D.</B>, & Huybers P.
-											Finding and fixing sea surface temperature biases during the second world war.
-											<i><B>Submitted</B></i>.
+										<li><p>
+											<B style="color:rgb(30,30,30)">Chan D.</B>
+											Combining statistical, physical, and historical evidence to improve historical sea surface temperature records.
+											In review at <i><B>Harvard Data Science Review</B></i>.
 										</p></li>
 
-										<li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
+										<li><p>
+											<B style="color:rgb(30,30,30)">Chan D.</B>, & Huybers P.
+											Correcting sea surface temperature observations removes World War II warm anomaly.
+											In review at <i><B>Journal of Climate</B></i>.
+											EarthArXiv: <a href="https://eartharxiv.org/ju26e/">link</a>,
+										</p></li>
+
+										<li><p>
 											<B style="color:rgb(30,30,30)">Chan D.</B>, Vecchi G., Yang W., & Huybers P.
 											Correcting 19th and 20th century sea surface temperatures improves simulations of Atlantic hurricane activity.
-											<i><B>Submitted</B></i>.
+											In review at <i><B>PNAS</B></i>.
+											EarthArXiv: <a href="https://eartharxiv.org/huz73/">link</a>,
 										</p></li>
 
 										<li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
