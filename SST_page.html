@@ -143,32 +143,36 @@
 										</p>
 
 										<p>
-											These ship-based SSTs are full of biases and errors.
-											For example, bucket measurements can be biased cold from wind evaporations or biased warm from solar heating.
-											When averaged over seasons and the globe, bucket SSTs are estimated to be coldly biased by several tenths of degrees Celsius (Folland & Parker, 1995).
-											The bias of individual bucket SSTs can be as large as ± 1°C under extreme winter and summer conditions (e.g., Kennedy et al., 2011).
-											On the other hand, ERI SSTs are estimated to be biased warm from 0.1 to 0.3°C due to the heat released from ship engines (Kennedy et al., 2011).
-											Taking into account that the estimated global warming in the 20th century is less than 1°C,
-											correcting for these biases appears to be crucial.
+											These ship-based SSTs are full of biases and errors that are in the range of the historical global warming signal of approximately 1°C.
+											For example, bucket measurements are, on average, biased cold by several tenths of degrees Celsius because of wind evaporation (Folland & Parker, 1995), whereas
+											<!--The bias of individual bucket SSTs can be as large as ± 1°C under extreme winter and summer conditions (e.g., Kennedy et al., 2011).-->
+											ERI SSTs are estimated to be biased warm from 0.1 to 0.3°C due to the heat released from ship engines (Kennedy et al., 2011).
+											<!--<b>Taking into account that the estimated global warming in the 20th century is less than 1°C,
+											correcting for these biases appears to be crucial.</b>-->
+											<b>More complicated is that</b>, the bias associated with a specific method will depend on also instrument designs (e.g., types of buckets), measurement protocols, and postprocessing practices.
+											For example, a less-insulated canvas bucket can be additionally cooler than a wooden bucket by
+											more than 0.5°C even measured under the same condition (Folland & Parker, 1995).
+											On-deck time before measurement will also influence the magnitude of bucket bias.
 								    </p>
 
+										<!--
 										<p>
 											Yet accurate accounting for biases in ship-based SSTs is not easy because biases depend
-											not only on measurement methods but also instrument designs (e.g., types of buckets), measurement protocols, and postprocessing practices.
-											For example, water temperature in a less-insulated canvas bucket can be additionally cooler than that in a wooden bucket by
-											more than 0.5°C even measured under the same condition (Folland & Parker, 1995).  In addition, buckets that stay on ship decks longer before measurements are taken
+											not only on
+											In addition, buckets that stay on ship decks longer before measurements are taken
 											will generally yield colder SSTs due to increased aerial exposure.  As a result, biases of different subsets of SSTs coming from the same method
 											can be distinct from one another.
-											<!--Misclassified method metadata, for example, misclassying ERI measurements to be bucket SSTs,
-											will also lead to incorrect-->
-										</p>
+										 Misclassified method metadata, for example, misclassying ERI measurements to be bucket SSTs,
+											will also lead to incorrect
+										</p>-->
 
 										<p>
 											However, limited metadata to constrain detailed measurement characteristics have necessitated
-											simplified corrections in existing SST products.  Existing corrections are often performed to the level of measurement methods,
-											assuming that	SSTs coming from the same method are biased in the same way.
-											These corrections often use fixed patterns and slow-varying amplitudes to represent SST biases,
-											which inevitably leads to insufficient corrections, especially at regional scales.
+											simplified corrections in existing SST products.  Existing corrections, at best, distinguish bias associated with individual measurement methods
+											<!-- (This was in 2016, when this project started.  We note that HadSST4, a dataset published in 2019 attempt to make more refined SST corrections
+											for data after 1945). -->
+											and use fixed patterns and slow-varying amplitudes to represent bias.
+											This simplification inevitably leads to insufficient corrections.
 										</p>
 
 
@@ -177,11 +181,11 @@
 									<hr/>
 
 									<section>
-										<h2><B style="color:rgb(0,0,0)">Our work on correcting SST biases</B></h2>
+										<h2><B style="color:rgb(0,0,0)">I. Our work on correcting SST biases</B></h2>
 
 										<p>
-											Our goal is to achieve refined regional SST corrections.  Regional biases can arise from
-											distinct biases associated with different subsets of SSTs and varying sampling coverage of these subsets.
+											Our goal is to achieve refined SST corrections, epsecially regional bias can arise from
+											distinct bias associated with different subsets of SSTs and varying sampling coverage of these subsets.
 											On account that ships from the same nation and data-collecting group would have used similar instruments,
 											followed similar protocols, and experienced similar postprocessing practices,
 											we correct SSTs for individual groups assigned by nation and ICOADS deck numbers, where the "deck" is
@@ -203,7 +207,8 @@
 
 										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
 
-										<li>
+										<h3><B style="color:rgb(0,0,0)">1. Develop a method for quantifying offsets between hundreds of subsets of SSTs </B></h3>
+
 								      <p>
 							          <!--Ships coming from different nations and sailing for different purposes could
 							          use different measurement methods or follow distinct protocols and have different bias structures.
@@ -214,7 +219,6 @@
 							          After applying the methodology to intercompare bucket SSTs, we find significant (P<0.05) differences
 												among major collecting nations.
 								      </p>
-										</li>
 
 										<div class="12u">
 											<div class="image_container">
@@ -230,8 +234,8 @@
 
 										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
 
+										<h3><B style="color:rgb(0,0,0)">2. Correcting groupwise offsets reveals increased human contribution to Early 20th-century Warming </B></h3>
 
-										<li>
 								      <p>
 							          Correcting for groupwise offsets for bucket SST leads to more-homogeneous early 20th century SST warming (<a href="https://www.nature.com/articles/s41586-019-1349-2">Chan et al., 2019</a>),
 												indicating the dominating role of anthropogenic activities, compared with natural variability,
@@ -242,7 +246,6 @@
 												See a U.S. Air Force documentation for what happened to Japanese Kobe collection
 												<a href="https://icoads.noaa.gov/reclaim/pdf/dck118.pdf">deck 118</a>.
 									    </p>
-										</li>
 
 										<div class="12u">
 											<a href="#" class="image_container">
@@ -267,17 +270,17 @@
 
 										<hr style="border-bottom: dotted 1px; color:rgb(230,230,230)" />
 
-										<li>
+										<h3><B style="color:rgb(0,0,0)">3. Using Physical evidence to understand the origin of statistically-determined groupwise offsets </B></h3>
+
 											<p>
-												In <a href="https://journals.ametsoc.org/jcli/article/doi/10.1175/JCLI-D-19-0972.1/348685/Systematic-differences-in-bucket-sea-surface?searchresult=1">Chan and Huybers (2020a)</a>,
-												we use physical evidence (i.e., the amplitude of diurnal cycles) to understand the origin of LME groupwise offsets.
+												In addition to historical documents detailing problematic postprocessing practices, in <a href="https://journals.ametsoc.org/jcli/article/doi/10.1175/JCLI-D-19-0972.1/348685/Systematic-differences-in-bucket-sea-surface?searchresult=1">Chan and Huybers (2020a)</a>,
+												we also use physical evidence (i.e., the amplitude of diurnal cycles) to understand the origin of LME groupwise offsets.
 												We find that that	offsets between bucket groups after the 1930s mainly arise from misclassifying ERI measurements as bucket SSTs.
 												Groupwise offsets before the 1930s have a smaller range and should arise from
 												physical differences in bucket design or measurement protocols.  In addition to the amplitude of diurnal cycles,
 												we extend a thermodynamical bucket model (<a href="https://github.com/duochanatharvard/SST_Bucket_Model">here</a>) to understand
 												differences in bucket bias and diurnal amplitude under a wide parameter regime.
 											</p>
-										</li>
 
 										<div class="12u">
 											<div class="image_container">
@@ -304,6 +307,8 @@
 
 										<hr/>
 
+										<h3><B style="color:rgb(0,0,0)">4. Correcting groupwise offsets removes the World War II warm anomaly </B></h3>
+
 										<p>
 											In <a href="https://doi.org/10.31223/osf.io/ju26e">Chan and Huybers (2020b)</a>,
 											we apply the LME method to intercompare all available ship-based SSTs in ICOADS and quantify warm offsets in U.S. and U.K. Naval ships during WWII.
@@ -321,7 +326,7 @@
 										<a name="position"></a>
 
 										<hr/>
-										<h2><B style="color:rgb(0,0,0)">Our work on correcting position errors</B></h2>
+										<h2><B style="color:rgb(0,0,0)">II. Our work on correcting position errors</B></h2>
 
 										<p>
 											In addition to correcting SST biases, another equally important question is that where were SSTs measured
