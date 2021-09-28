@@ -894,7 +894,7 @@
 				input[type="reset"].special_b,
 				input[type="button"].special_b,
 				.button.special_b {
-					background-color: #dddddd;
+					background-color: #cccccc;
 					color: #777777 !important;
 					font-weight: 500;
 					width: 200px
