@@ -76,38 +76,32 @@
 									<section>
 										<h2><B style="color:rgb(0,0,0); font-size: 45px;">SST Reconstruction</B></h2>
 										<a href="SST_page.html" class="button special">	Relative offsets </a>
-										<a href="SST_page_2.html" class="button special_a">	Absolute biases </a>
-										<a href="SST_page_3.html" class="button special">	Location errors </a>
+										<a href="SST_page_2.html" class="button special">	Absolute biases </a>
+										<a href="SST_page_3.html" class="button special_a">	Location errors </a>
 									  <br></br>
 
+										<!--<h2><B style="color:rgb(0,0,0)">II. Our work on correcting position errors</B></h2> -->
+
 										<p>
-											<!--We aim to achieve more refined SST corrections at regional scales by correcting SSTs for individual nations and data-collecting groups.-->
-											To account for heterogeneous SST biases, a linear-mixed-effect (LME) method has been developed
-											to intercompare nearby measurements from different subsets of data and adjust individual subsets
-											to be consistent with one another.  However, the LME method is not designed to inform absolute biases
-											common to all groups, whose effect is non-negligible at global or century-long timescales.
-                    </p>
-										<p>
-											To account for common biases, we propose a statistical framework to correct absolute biases for individual subsets.
-											Compared with the LME method that aims at homogenizing relative offsets between groups, the framework introduced on this page
-											also involves referencing	SSTs to air temperatures from coastal and island stations.
-										</p>
-										<p>
-											Applying the methodology to more than 100 million ship-based SSTs from the
-											International Comprehensive Ocean-Atmosphere Dataset (ICOADS) reveals a simpler pattern of sea
-											surface warming throughout the 20th century, including a reduced warming rate in the early 20th
-											century and a less significant hiatus in the mid 20th century.  The spatial pattern of warming
-											also becomes more homogeneous, suggesting reduced importance of internal variability in driving
-											climate variations in the last century.  Improved quantification of data biases and errors also
-											brings observational SST estimates into consistency with some CMIP historical simulations,
-											increasing our confidence in future projections made by these climate models.
+											In addition to figuring out what temperatures have been measured, another equally important question is
+											<B style="color:rgb(0,0,0)"">where were SSTs measured </B>
+											(<a href="https://arxiv.org/abs/1910.04843">Dai et al., 2021</a>).
+											The video below explains a Bayesian model that my colleagues and I built for inferring position errors of early ship tracks.
+											We also explored the implication of position errors for SST reconstructions.
 										</p>
 
-										<p><B style="color:rgb(0,0,0); font-size: 25px;">More details to follow ...</B></p>
+										<p style="font-size:14px">
+										<center>
+											<video width="80%" controls>
+												<source src="JSM_2020_final_compressed.mp4" type=video/mp4>
+											</video>
+										</center>
+										</p>
 
 									</section>
 
 									<hr/>
+
 
 									<ol>
 
@@ -115,13 +109,25 @@
 										<h2><B style="color:rgb(0,0,0)">References</B></h2>
 
 										<li><p>
-										<B style="color:rgb(30,30,30)">Chan D.</B>, Huybers P., & Gebbie G.
-										Combining global and groupwise corrections towards a better estimate of historical sea surface temperatures.
-										<i><B>In prep.</B></i>
+											Dai, C., <B style="color:rgb(30,30,30)">Chan D.*</B>, Huybers, P., & Pillai, N. (2021).
+											Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates.
+											<i><B>Annuals of Applied Statistics</B></i> 15(1): 22-40.
+											<a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-15/issue-1/Late-19th-century-navigational-uncertainties-and-their-influence-on-sea/10.1214/20-AOAS1367.short">link</a>,
+											<a href="Dai_et_al_2021_AAS.pdf">pdf</a>
 										</p></li>
+
+										<!--
+								      <li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
+							          Davis, L. L., Thompson, D. W., Kennedy, J. J. & Kent, E. C (2018).
+												The importance of unresolved biases in 20th century sea-surface temperature observations.
+												<i>Bulletin of the American Meteorological Society</i>.
+								      </p></li>
+										-->
 
 										</ol>
 									</section>
+
+								</section>
 							</div>
 						</div>
 					</div>
