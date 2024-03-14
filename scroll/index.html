@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Drawing Square</title>
+    <style>
+        body, html {
+          height: 200%; /* Ensures there's enough room to scroll */
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+        }
+
+        .container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .edge {
+          position: absolute;
+          background-color: black;
+          visibility: hidden; /* Initially hidden */
+        }
+
+        .top, .bottom {
+          width: 100px;
+          height: 5px;
+        }
+
+        .left, .right {
+          width: 5px;
+          height: 100px;
+        }
+
+        .top { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .bottom { bottom: 50%; left: 50%; transform: translate(-50%, 50%); }
+        .left { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+        .right { right: 50%; top: 50%; transform: translate(50%, -50%); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="edge top"></div>
+  <div class="edge right"></div>
+  <div class="edge bottom"></div>
+  <div class="edge left"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const edges = document.querySelectorAll('.edge');
+  let lastKnownScrollPosition = 0;
+  let ticking = false;
+
+  function handleScroll(scrollPos) {
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const totalScrollable = docHeight - windowHeight;
+
+    edges.forEach((edge, index) => {
+      // Adjust these values based on your design needs
+      const triggerPoint = (index + 1) * (totalScrollable / edges.length);
+
+      if (scrollPos > triggerPoint && edge.style.visibility !== 'visible') {
+        edge.style.visibility = 'visible';
+        // You can add more complex animations here using CSS classes or JavaScript
+      }
+    });
+  }
+
+  window.addEventListener('scroll', function(e) {
+    lastKnownScrollPosition = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        handleScroll(lastKnownScrollPosition);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+});
+</script>
+
+</body>
+</html>

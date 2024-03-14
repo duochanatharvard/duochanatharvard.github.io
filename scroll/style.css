@@ -1,0 +1,138 @@
+body, html {
+  height: 200%; /* Ensures there's enough room to scroll */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust to your preferred size */
+  height: 80%; /* Adjust to your preferred size */
+}
+
+.edge {
+  position: fixed;
+  opacity: 0; /* Ensures edges are not visible initially */
+  background-color: black;
+  transition: opacity 1s ease-out;
+}
+
+/* Adjust width and height as necessary */
+.top, .bottom {
+  width: 80%;
+  height: 10px;
+}
+
+.left, .right {
+  width: 10px;
+  height: 80%;
+}
+
+/* Position the top edge */
+.top {
+  top: 10%; /* Distance from the top of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center based on the element's width */
+}
+
+/* Position the bottom edge */
+.bottom {
+  bottom: 10%; /* Distance from the bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center based on the element's width */
+}
+
+/* Position the left edge */
+.left {
+  top: 50%; /* Center vertically */
+  left: 10%; /* Center and adjust for the width of the top/bottom edges */
+  transform: translateY(-50%); /* Center based on the element's height */
+}
+
+/* Position the right edge */
+.right {
+  top: 50%; /* Center vertically */
+  left: 90%; /* Center and adjust for the width of the top/bottom edges */
+  transform: translateY(-50%); /* Center based on the element's height */
+}
+
+/* Base styling for new left edges, assuming .edge is your base class */
+.new-left-edge {
+  position: absolute; /* Change from fixed to absolute so they move with the container */
+  width: 10px; /* Match the original left edge width */
+  height: 80%; /* Adjust if needed */
+  background-color: black; /* Match the original left edge color */
+  top: 10%; /* Align to the left side of the container */
+  opacity: 0; /* Start as hidden */
+  left: 10%; /* Start from the original left edge */
+  transition: left 1s ease-out, opacity 1s ease-out; /* Smooth transition for 'top', delay visibility change */
+}
+
+/* Visible state */
+.new-left-edge.visible {
+  opacity: 1; /* Fully visible */
+}
+
+/* Target positions after becoming visible */
+.new-left-edge-1.visible { left: 10%; }
+.new-left-edge-2.visible { left: 20%; }
+.new-left-edge-3.visible { left: 30%; }
+.new-left-edge-4.visible { left: 40%; }
+.new-left-edge-5.visible { left: 50%; }
+.new-left-edge-6.visible { left: 60%; }
+.new-left-edge-7.visible { left: 70%; }
+.new-left-edge-8.visible { left: 80%; }
+
+/* Base styling for new left edges, assuming .edge is your base class */
+.new-top-edge {
+  position: absolute; /* Change from fixed to absolute so they move with the container */
+  height: 10px; /* Match the original left edge width */
+  width: 80%; /* Adjust if needed */
+  background-color: black; /* Match the original left edge color */
+  left: 10%; /* Align to the left side of the container */
+  opacity: 0; /* Start as hidden */
+  top: 10%; /* Start from the original left edge */
+  transition: top 1s ease-out, opacity 1s ease-out; /* Smooth transition for 'top', delay visibility change */
+}
+
+/* Visible state */
+.new-top-edge.visible {
+  opacity: 1; /* Fully visible */
+}
+
+/* Target positions after becoming visible */
+.new-top-edge-1.visible { top: 10%; background-color: red; }
+.new-top-edge-2.visible { top: 20%; background-color: orange;}
+.new-top-edge-3.visible { top: 30%; background-color: yellow; }
+.new-top-edge-4.visible { top: 40%; background-color: green; }
+.new-top-edge-5.visible { top: 50%; background-color: blue; }
+.new-top-edge-6.visible { top: 60%; background-color: indigo; }
+.new-top-edge-7.visible { top: 70%; background-color: violet; }
+.new-top-edge-8.visible { top: 80%; background-color: red; }
+
+#textBox {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 20%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Smooth transition for opacity */
+  z-index: 2; /* Ensure it's above other content if needed */
+  font-size: 46px; /* Example font size */
+  color: red; /* Example font color */
+  border: none; /* Removes the border */
+}
+
+@media (max-width: 300px) {
+  #textBox {
+    font-size: 14px; /* Smaller font size for narrow windows */
+  }
+}
