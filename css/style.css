@@ -670,11 +670,14 @@
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
+		margin: 0 auto; /* Optional: Centers the container */
+    width: 100%; /* Optional: Sets the width. Adjust or remove as necessary */
 	}
 
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
+		border-collapse: collapse;
 	}
 
 		table tbody tr {
@@ -689,6 +692,8 @@
 
 		table td {
 			padding: 0.75em 0.75em;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
 		}
 
 		table th {
@@ -697,6 +702,8 @@
 			font-weight: 500;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
 		}
 
 		table thead {

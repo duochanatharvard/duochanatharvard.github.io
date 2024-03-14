@@ -62,3 +62,9 @@
 	#banner {
 		padding: 5em 2em 4em 2em;
 	}
+
+/* Table */
+table {
+    font-family: 'Georgia', serif;
+    font-size: 14.5px;
+}
