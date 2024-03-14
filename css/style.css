@@ -1057,6 +1057,7 @@
 						vertical-align: middle;
 					}
 
+@media (min-width: 980px) {
 		/* Dropdown Styles */
 		.dropdown-content {
 		  display: none;
@@ -1114,6 +1115,8 @@
 			#header .container nav {
 				right: 0;
 			}
+
+	}
 
 /* Banner */
 
