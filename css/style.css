@@ -33,12 +33,14 @@
 		}
 
 	strong, b {
-		color: #666f77;
-		font-weight: 500;
+		color: #444444;
+		font-weight: 400;
 	}
 
 	em, i {
 		font-style: italic;
+		color: #000000;
+		font-weight: 300;
 	}
 
 	p {
@@ -78,7 +80,7 @@
 	}
 
 	h2, h3, h4, h5, h6 {
-		color: #666f77;
+		color: #444444;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -955,7 +957,7 @@
 		}
 
 			.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #ffffff;
+				color: #444444;
 			}
 
 			.wrapper.style2 header p {
@@ -1161,7 +1163,7 @@
 			}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: #ffffff;
+			color: #444444;
 		}
 
 		#banner .button.alt {
@@ -1256,4 +1258,12 @@
 		.special.box > .8u {
 		    flex: 0 0 66.6667%; /* Adjusts the width of the div to take up two-thirds of the container */
 		    max-width: 66.6667%; /* Ensures the div does not exceed two-thirds of the container's width */
+		}
+
+		p strong, p b {
+		    color: #444444; /* Red color for bold text */
+		}
+
+		table td b {
+				color: #444444; /* Red color for bold text */
 		}
