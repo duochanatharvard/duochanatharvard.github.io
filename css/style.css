@@ -42,11 +42,11 @@
 	}
 
 	p {
-		margin: 0 0 2em 0;
-		LINE-HEIGHT:32px;
+		margin: 0 0 1em 0;
+		LINE-HEIGHT:30px;
 		color:rgb(100,100,100);
 		font:Sans-serif;
-		font-size:21px;
+		font-size:19px;
 		text-align: left;
 	}
 
@@ -56,6 +56,15 @@
 		color:rgb(100,100,100);
 		font:Sans-serif;
 		font-size:19px;
+		text-align: left;
+	}
+
+	p.reference {
+		margin: 0 0 2em 0;
+		LINE-HEIGHT:30px;
+		color:rgb(100,100,100);
+		font:Sans-serif;
+		font-size:15px;
 		text-align: left;
 	}
 
@@ -1228,4 +1237,23 @@
 
 		#footer .icons a {
 			color: #bbb;
+		}
+
+		.special.box {
+		    display: flex; /* This enables flexbox layout */
+		    flex-wrap: wrap; /* This allows items to wrap onto the next line if the container is too small */
+		}
+
+		.special.box > div {
+		    box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+		}
+
+		.special.box > .4u {
+		    flex: 0 0 33.3333%; /* Adjusts the width of the div to take up one-third of the container */
+		    max-width: 33.3333%; /* Ensures the div does not exceed one-third of the container's width */
+		}
+
+		.special.box > .8u {
+		    flex: 0 0 66.6667%; /* Adjusts the width of the div to take up two-thirds of the container */
+		    max-width: 66.6667%; /* Ensures the div does not exceed two-thirds of the container's width */
 		}

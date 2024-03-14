@@ -21,111 +21,117 @@
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
 	</head>
-	<body id="top">
 
+	<body id="top">
 		<!-- Header -->
-			<div id="header"></div>
+		<header id="header" class="skel-layers-fixed" style="background-color: rgb(50, 50, 50)">
+		  <h1 style="color: rgb(255, 255, 255)"><a href="index.html" style="font-size:25px"> &nbsp Duo CHAN</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="research_01_DCENT.html">Research Interests</a>
+						<div class="dropdown-content">
+							<ul>
+								<li><a href="research_01_DCENT.html"> &nbsp &nbsp &nbsp DCENT</a></li>
+								<li><a href="research_02_SST_01.html"> &nbsp &nbsp &nbsp Sea-Surface Temperature</a></li>
+								<li><a href="research_03_Sigmal.html"> &nbsp &nbsp &nbsp Land & Soil</a></li>
+								<li><a href="research_04_Jet.html"> &nbsp &nbsp &nbsp Jet</a></li>
+								<li><a href="research_05_Koppen.html"> &nbsp &nbsp &nbsp Climate Regimes</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="publication.html">Publications</a></li>
+					<li><a href="teaching_01_teaching_00.html">Teaching</a></li>
+					<li><a href="teaching_02_outreach.html">Outreach</a></li>
+					<li><a href="CV_Duo_Chan.pdf"><B style="color:rgb(255,255,255)">CV</B></a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<!-- Banner -->
 			<section id="banner"   style="padding: 5em 0 3.5em 0;">
 				<div class="inner">
-					<h2><B style="color:rgb(255, 255, 255);">Research Interests</B></h2>
-					<!--<h3><a href="https://eps.harvard.edu/">Department of Earth & Planetary Sciences</a></h3>
-					<h3><a href="https://www.harvard.edu/">Harvard University</a></h3> -->
-					<ul class="actions">
-						<!-- <li><a href="#content" class="button big special">Sign Up</a></li>
-						<li><a href="#elements" class="button big alt">Learn More</a></li> -->
-					</ul>
+					<h2><B style="color:rgb(255, 255, 255);">SST Reconstruction</B></h2>
 				</div>
 			</section>
 
+		<!-- Main Text -->
+		<section id="three" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+						<section class="special box" style="LINE-HEIGHT:25px; color:rgb(120,120,120); text-align: left">
+							<section>
+								<p style="text-align: right;">
+									<a href="research_02_SST_01.html">1</a> &nbsp
+									<a href="research_02_SST_02.html">2</a>
+								</p>
 
-				<section id="three" class="wrapper style1">
-					<div class="container">
-						<div class="row">
+								<p>
+									In addition to figuring out what temperatures have been measured,
+									another equally important question is
+									<B style="color:rgb(0,0,0)">where were SSTs measured </B>
+									(<a href="https://arxiv.org/abs/1910.04843">Dai et al., 2021</a>).
+									The video below explains a Bayesian model that my colleagues and
+									I built for inferring position errors of early ship tracks.
+									We also explored the implication of position errors for SST reconstructions.
+								</p>
 
-							<!-- Left column -->
-							<div class="3u">
-								<section class="image_index" style="text-align: center;">
-									<a href="SST_page.html" class="button special_a">	SST Reconstruction </a>
-									<br> </br>
-									<a href="Sigma_page.html" class="button special">Land Temp. Variability</a>
-									<br> </br>
-									<a href="Jet_page.html" class="button special">Jet Dynamics</a>
-									<br> </br>
-									<a href="Koppen_page.html" class="button special">Köppen Climate Regime</a>
-									<br> </br>
-								</section>
-							</div>
+								<p style="font-size:14px">
+									<center>
+										<video width="80%" controls>
+											<source src="videos/JSM_2020_final_compressed.mp4" type=video/mp4>
+										</video>
+									</center>
+								</p>
 
-			<!-- Right column -->
-							<div class="9u">
-								<section class="special box" style="LINE-HEIGHT:25px; color:rgb(120,120,120); text-align: left">
-									<section>
-										<h2><B style="color:rgb(0,0,0); font-size: 45px;">SST Reconstruction</B></h2>
-										<a href="SST_page.html" class="button special">	Relative offsets </a>
-										<a href="SST_page_2.html" class="button special">	Absolute biases </a>
-										<a href="SST_page_3.html" class="button special_a">	Location errors </a>
-									  <br></br>
+								<p style="text-align: center;">
+									<a href="research_02_SST_01.html">1</a> &nbsp
+									<a href="research_02_SST_02.html">2</a>
+								</p>
 
-										<!--<h2><B style="color:rgb(0,0,0)">II. Our work on correcting position errors</B></h2> -->
+								<hr/>
 
-										<p>
-											In addition to figuring out what temperatures have been measured, another equally important question is
-											<B style="color:rgb(0,0,0)"">where were SSTs measured </B>
-											(<a href="https://arxiv.org/abs/1910.04843">Dai et al., 2021</a>).
-											The video below explains a Bayesian model that my colleagues and I built for inferring position errors of early ship tracks.
-											We also explored the implication of position errors for SST reconstructions.
-										</p>
+								<ol>
 
-										<p style="font-size:14px">
-										<center>
-											<video width="80%" controls>
-												<source src="JSM_2020_final_compressed.mp4" type=video/mp4>
-											</video>
-										</center>
-										</p>
+									<li>
+										Dai, C., <B style="color:rgb(30,30,30)">Chan D.*</B>, Huybers, P., & Pillai, N. (2021).
+										Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates.
+										<i><B>Annuals of Applied Statistics</B></i> 15(1): 22-40.
+										<a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-15/issue-1/Late-19th-century-navigational-uncertainties-and-their-influence-on-sea/10.1214/20-AOAS1367.short">link</a>,
+										<a href="Dai_et_al_2021_AAS.pdf">pdf</a>
+									</li>
 
-									</section>
-
-									<hr/>
-
-
-									<ol>
-
-									<section>
-										<h2><B style="color:rgb(0,0,0)">References</B></h2>
-
-										<li><p>
-											Dai, C., <B style="color:rgb(30,30,30)">Chan D.*</B>, Huybers, P., & Pillai, N. (2021).
-											Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates.
-											<i><B>Annuals of Applied Statistics</B></i> 15(1): 22-40.
-											<a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-15/issue-1/Late-19th-century-navigational-uncertainties-and-their-influence-on-sea/10.1214/20-AOAS1367.short">link</a>,
-											<a href="Dai_et_al_2021_AAS.pdf">pdf</a>
-										</p></li>
-
-										<!--
-								      <li><p style="LINE-HEIGHT:25px; color:rgb(120,120,120)">
-							          Davis, L. L., Thompson, D. W., Kennedy, J. J. & Kent, E. C (2018).
-												The importance of unresolved biases in 20th century sea-surface temperature observations.
-												<i>Bulletin of the American Meteorological Society</i>.
-								      </p></li>
-										-->
-
-										</ol>
-									</section>
-
-								</section>
-							</div>
-						</div>
+								</ol>
+							</section>
+						</section>
 					</div>
-				</section>
+				</div>
+			</div>
+		</section>
 
 
-				<!-- Footer -->
-				<div id="footer"></div>
+		<!-- Footer -->
+		<footer id="footer"   style="padding: 0.125em 0 1.5em 0; background-color: rgb(50, 50, 50)">
+		  <div class="container">
+		    <ul class="copyright">
+		      <li style="color:rgb(150,150,150)">
+		          &copy; Duo CHAN, <span id="current-year"></span>
+		      </li>
+		      <li style="color:rgb(150,150,150)">
+		        <a href="mailto: Duo.Chan@soton.ac.uk" style="text-decoration: none">
+		          Duo.Chan@soton.ac.uk
+		        </a>
+		      </li>
+		    </ul>
+		  </div>
+		</footer>
 
-				<!-- JavaScript -->
-				<script src="js/set_page.js"></script>
+		<script>
+		    document.addEventListener('DOMContentLoaded', function() {
+		        document.getElementById('current-year').textContent = new Date().getFullYear();
+		    });
+		</script>
 	</body>
 </html>
