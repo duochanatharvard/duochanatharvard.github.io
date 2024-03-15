@@ -1275,3 +1275,27 @@
 		table td b {
 				color: #444444; /* Red color for bold text */
 		}
+
+	.container-side {
+  display: flex; /* This enables Flexbox for the container */
+  align-items: center; /* This vertically centers the items in the container */
+  justify-content: center; /* This horizontally centers the items in the container */
+  flex-wrap: wrap; /* This allows items to wrap onto the next line as needed */
+  gap: 20px; /* This adds some space between the figure and the text */
+}
+
+.figure-side img {
+  max-width: 200%; /* This makes the image responsive */
+  height: auto; /* This maintains the image aspect ratio */
+	padding: 0 1em
+}
+
+.text-side {
+  flex: 1; /* This allows the text div to fill the available space */
+  max-width: 600px; /* Optional: limits the width of the text div */
+	padding: 0 1em
+}
+
+video {
+	max-width: min(100%, 750px);
+}
