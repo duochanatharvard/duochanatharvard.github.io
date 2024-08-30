@@ -41,6 +41,7 @@
 							</ul>
 						</div>
 					</li>
+					<!-- <li><a href="daily.html">Daily</a></li> -->
 					<li><a href="publication.html">Publications</a></li>
 					<li><a href="teaching_01_teaching_00.html">Teaching</a></li>
 					<li><a href="teaching_02_outreach.html">Outreach</a></li>
@@ -65,15 +66,306 @@
 
 								<p class="intro">
 									<B>Dynamically Consistent Ensemble of Temperature (DCENT)</B> is
-									an ensemble of historical earth surface temperature estimates with
+									an ensemble of historical Earth surface temperature estimates since 1850.  DCENT has
 									sophisticated bias adjustments and comprehensive uncertainty quantification.
-									It provides a cleaner picture for quantifying historical climate change
-									at both global and regional scales, as well as understanding
+									It provides a clearer picture for quantifying historical climate change
+									at both global and regional scales, as well as for understanding
 									climate variability and the dynamics behind it.
 								</p>
 
-								<p><B>This page is under development...</B></p>
+								<p style="text-indent: 3ch;"><B>Annual Global Mean Surface Temperature</B> (full coverage and non-infilled):</p>
+								<p style="text-indent: 6ch;">[1] Ensemble mean and 1 s.d. error in <a href="https://www.dropbox.com/scl/fi/wcwwslemqigcohmyjj2sb/DCENT_GMST_statistics.txt?rlkey=wtfqtznicbix5b555xq5ehhky&dl=0">txt</a> format.</p>
+								<p style="text-indent: 6ch;">[2] 200-member Ensemble in <a href="https://www.dropbox.com/scl/fi/i6sltxu249vlwljz3maog/DCENT_GMST_ensemble.nc?rlkey=irzaw3h2pjvpc32rvvlyzrayg&dl=0">NetCDF</a> format.</p>
 
+								<p style="text-indent: 3ch;"><B>Gridded Temperature Product</B> (non-infilled at monthly 5°x5° resolution): </p>
+								<p style="text-indent: 6ch;">[1] Ensemble mean in <a href="https://dataverse.harvard.edu/api/access/datafile/10393656">NetCDF</a> format.</p>
+								<p style="text-indent: 6ch;">[2] 200-member Ensemble in <a href="https://doi.org/10.7910/DVN/NU4UGW">NetCDF</a> format.</p>
+								<p style="text-indent: 6ch;">[3] 1982--2014 Climatology in <a href="https://dataverse.harvard.edu/api/access/datafile/10393657">NetCDF</a> format.</p>
+
+
+
+								<p style="text-indent: 3ch;"><B> How to cite the dataset? </B></p>
+								<p style="text-indent: 3ch;">Chan D., Gebbie G., Huybers P., & Kent E. (2024).
+									A Dynamically Consistent ENsemble of Temperature at the Earth surface since 1850 from the DCENT dataset.
+								  <i> Scientific Data</i>,
+									<a href="https://doi.org/10.1038/s41597-024-03742-x">link</a>,
+									<a href="papers/Chan_et_al_2024_SD.pdf">pdf</a>.
+								</p>
+
+								<hr/>
+
+							  <p><B> A story of the development of DCENT </B></p>
+
+								<p>
+									The most updated global mean surface temperature (<B>GMST</B>)
+									estimates suggest an increasing GMST since the 1850s, with
+									4-stage decadal variability on top of the overall warming.
+									As of 2023, the period from 2019 to 2023 is the warmest 5-year interval in
+								  instrumental history, with temperatures estimated to be 1.15
+									to 1.25°C warmer than the 1850ー1900 baseline.
+									Compared with the Paris Agreement's target of limiting warming
+									to within 1.5°C, the remaining margin is only a quarter of
+									a degree Celsius.
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_1.png" style="max-width: min(100%, 600px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 1. Existing GMST estimates. </B> Anomalies are relative to the 1850-1900 mean. </i>
+									</center>
+								</p>
+
+								<p>
+									However, these global mean temperatures consist of two components:
+									land and ocean, which have historically been measured by different instruments,
+									stored in different archives, and analyzed by different groups.
+								</p>
+
+								<p>
+									Although land and ocean temperatures have closely followed one another since 1946,
+									they do not seem to be consistent before the 1940s.  For example, during
+									the early 20th century, the ocean warmed faster than the land.  Yet, the land is
+									expected to warm faster, as simulated by complex climate models,
+									because it is more water-limited and hence loses less heat through evaporation.
+									Such model-data discrepancies could potentially undermine
+									the credibility of climate models and their predictions.
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_2.png" style="max-width: min(100%, 750px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 2. Land and ocean mean temperatures from existing estimates.</B> </i>
+									</center>
+								</p>
+
+								<p>
+									Models can always be imperfect, but instrumental records,
+									especially the early ones, are no more trustworthy.  The
+									land temperatures, often represented as the air temperature 2 meters above
+									the surface, are collected by weather stations and can contain
+									breakpoints associated with changing instrumentation and moving stations.
+									The sea temperature, usually measured as the water temperature
+									in the upper 20-30 cm of the water column, can be biased due to
+									non-expert measurement approaches, such as using buckets (see
+									<a href="research_02_SST_01.html"> here </a> for more details).
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_3.png" style="max-width: min(100%, 750px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 3. Schemetic of data development for most existing datasets.</B> </i>
+									</center>
+								</p>
+
+								<p>
+									Existing datasets have, of course, accounted for these data issues to some extent,
+									but with some limitations.
+									For example, Menne et al. (2009, 2018) developed pairwise homogenization
+									algorithms to detect and remove breakpoints in station temperatures, although
+									the null hypothesis of the key statistical test used to detect breakpoints
+									is derived from white noise series.
+									Kennedy et al. (2019) corrected sea-surface surface temperature  (<B>SST</B>) records by measurement
+									methods, although they assumed that data from the same year and method
+									are biased in the same way.  It is also worth noticing that land and ocean
+									temperatures were processed in parallel and independently.
+								</p>
+
+								<hr/>
+
+								<p><B>
+									Therefore, our goal is to systematically improve the bias correction process
+									for the land and sea temperature archives and also for the
+									inter-calibration between the two data archives.
+									</B>
+									Specifically, we made three improvements detailed below:
+								</p>
+
+								<p>
+				          <B>[1]</B>
+									We improved the land station homogenization by accounting for
+									auto-correlation in the detection algorithm, since monthly
+									temperatures at individual stations are correlated over time
+									(<a href="https://journals.ametsoc.org/view/journals/clim/37/7/JCLI-D-23-0338.1.xml">Chan et al., 2024a</a>).
+									The improved method detects more actual breaks and fewer
+									false identifications, leading to a colder baseline temperature
+									and a larger warming trend on land.  A quick story is in the video below.
+						    </p>
+
+								<p style="font-size:14px">
+									<center>
+										<video controls>
+											<source src="videos/SATH_Duo_compressed.mp4" type=video/mp4>
+										</video>
+									</center>
+								</p>
+
+								<p>
+				          <B>[2]</B>
+									Different groups of ships could have deployed different instruments,
+									or used the same instrument differently.  To assess how SSTs
+									collected by various nations or ship groups might systematically differ,
+								  we developed a group-wise intercomparison framework
+									(<a href="https://journals.ametsoc.org/jcli/article/32/9/2569/344180">Chan and Huybers, 2019</a>).
+									This method allows us to detect systematic offsets of up to 1°C among groups that
+									were thought to contain bucket measurements, which has significant
+									implications for the regional SST evolution.
+									A related story is available in the video below.  More details can be found on
+									<a href="research_02_SST_01.html">this</a> page.
+						    </p>
+
+								<p style="font-size:14px">
+									<center>
+										<video controls>
+											<source src="videos/Harvard_Horizons_Final_compressed.mp4" type=video/mp4>
+										</video>
+									</center>
+								</p>
+
+								<p>
+									<B>[3]</B>
+									<a href="https://doi.org/10.1038/322430a0"> Jones et al. (1986)</a> proposed using coastal station temperatures to evaluate
+									SST biases, but their contribution was forgotten until Cowtan et al. (2018)
+									used linearly scaled land temperatures to infer SST evolution and evaluate SST biases.
+									However, because land and ocean temperatures have different coupling schemes,
+									heat capacity, water availability, and albedo, linear scaling may not be the
+									best approach for such an inference.  In
+									<a href="https://doi.org/10.1175/JCLI-D-22-0569.1"> Chan et al. (2023)</a>,
+								  we used a coupled energy balance model, which can capture different
+									regimes of air-sea coupling, to perform a better inference and
+									more appropriate comparisons.
+									We found that land and ocean temperatures	are not consistent
+									along global coasts before 1940 at both global and regional scales.
+									Further evidence from the diurnal cycles of SSTs and physical modeling of bucket biases
+									suggests that this discrepancy mainly reflects under-corrected SST biases
+									associated with changing instrumentations in the late 19th century.
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_4.png" style="max-width: min(100%, 750px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 4. Land temperature-inferred versus observational SSTs along global coasts.</B> </i>
+									</center>
+								</p>
+
+								<hr/>
+
+								<p>
+									Implementing these improvements allows for the development of
+									an ensemble of temperature estimates that contains dynamically
+									consistent land and ocean temperatures and comprehensive quantification of
+									uncertainty.  We call this dataset
+									the Dynamic Consistent Ensemble of Temperatures (<B>DCENT</B>; <a href="">Chan et al., 2024b</a>).
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_5.png" style="max-width: min(100%, 750px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 5. Schemetic of DCENT development.</B> </i>
+									</center>
+								</p>
+
+							 	<hr/>
+
+								<p>
+									<B>DCENT suggests a steadier and faster warming since 1850
+										compared with existing estimates </B> 	<a href=""> (Chan et al., 2024c).</a>
+									Our revised estimate shows a three-stage decadal variability
+									that aligns better with expected warming based on external radiative forcing.
+									These estimates also become more consistent with paleo proxies
+									from tree rings and coral reefs.
+									Equally important, we estimate temperatures over 2019 to 2023 to be 1.36°C
+									warmer than the late 19th century baseline, which is approximately 10% faster than existing estimates.
+									This implies an earlier exceedance of the 1.5°C
+									target before 2030, regardless of emission scenarios.
+								</p>
+
+								<div class="12u">
+									<div class="image_container">
+											<img src="images/DCENT_6.png" style="max-width: min(100%, 600px);" alt="" />
+									</div>
+								</div>
+								<p style="LINE-HEIGHT:30px; color:rgb(150,150,150);  text-transform: none; text-align: left">
+									<center>
+									<i>	<B style=="LINE-HEIGHT:30px; color:rgb(150,150,150)">
+										Fig. 6. Revised GMST estimates.</B> Anomalies are relative to the 1850-1900 mean. </i>
+									</center>
+								</p>
+
+							<hr/>
+
+							<ol>
+
+								<li>
+									<u><B>Chan D.</B></u>, Gebbie G., & Huybers P. (2024a).
+									An improved ensemble of land-surface air temperatures since 1880 using revised pair-wise homogenization algorithms accounting for autocorrelation.
+									<i> Journal of Climate </i>, 37(7), 2325-45.
+									<a href="https://journals.ametsoc.org/view/journals/clim/37/7/JCLI-D-23-0338.1.xml">link</a>,
+									<a href="papers/Chan_et_al_2024_JC_compressed.pdf">pdf</a>,
+									<a href="https://doi.org/10.7910/DVN/AA0OM0">code & data</a>
+								</li>
+
+								<li>
+									<u><B>Chan D.</B></u>, Gebbie G., Huybers P., & Kent E. (2024b).
+									A Dynamically Consistent ENsemble of Temperature at the Earth surface since 1850 from the DCENT dataset.
+									<i> Scientific Data </i>.
+									<a href="https://doi.org/10.1038/s41597-024-03742-x">link</a>,
+									<a href="papers/Chan_et_al_2024_SD.pdf">pdf</a>,
+									<a href="https://doi.org/10.7910/DVN/NU4UGW">data</a>
+									<a href="https://github.com/duochanatharvard/DCENT">code</a>
+								</li>
+
+								<li>
+									<u><B>Chan D.</B></u>, Gebbie G., & Huybers P. (2024c).
+									Larger and Steadier Warming since 1850 from Harmonized Land and Ocean Temperature Records.
+									<i> Earth arXiv </i>.
+									<a href="https://doi.org/10.31223/X5FM6X">link</a>,
+								</li>
+
+								<li>
+									<u><B >Chan D.</B></u>, Gebbie G., & Huybers P. (2023).
+									Global and Regional Discrepancies between Early 20th Century Coastal Air and Sea-Surface Temperature Detected by a Coupled Energy-Balance Analysis.
+									<i>Journal of Climate</i>, 34(9), 2205-20.
+									<a href="https://journals.ametsoc.org/view/journals/clim/aop/JCLI-D-22-0569.1/JCLI-D-22-0569.1.xml">link</a>,
+									<a href="papers/Chan_et_al_2023_JC.pdf">pdf</a>,
+									<a href="https://doi.org/10.7910/DVN/Y4D8PA">code & data</a>
+								</li>
+
+
+								<li>
+									<u><B>Chan D.</B></u> & Huybers P. (2019).
+									Systematic differences in bucket sea surface temperature measurements amongst nations
+									 identified using a linear-mixed-effect method. <i> Journal of Climate</i>, 32(5), 2569-2589.
+									<a href="https://journals.ametsoc.org/jcli/article/32/9/2569/344180">link</a>,
+									<a href="papers/Chan_and_Huybers_2019_JC.pdf">pdf</a>,
+									<a href="https://github.com/duochanatharvard/SST-LME-compact">code</a>
+								</li>
+
+							</ol>
 						</section>
 					</div>
 				</div>
