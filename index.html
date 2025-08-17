@@ -1,237 +1,1337 @@
-<!DOCTYPE HTML>
-<!--
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Duo Chan</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="Homepage of Duo Chan." />
-		<meta name="keywords" content="Duo Chan, Climate, Atmosphere, Ocean, Temperature, Jet" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-		<meta name="google-site-verification" content="EkDZLS0pLuhh-vYpNjB6DdhJKDtE5Z0dRwm3khFqaIQ" />
-	</head>
+<!doctype html>
+<html lang="en">
 
-	<body id="top">
-		<!-- Header -->
-		<header id="header" class="skel-layers-fixed" style="background-color: rgb(50, 50, 50)">
-			<h1 style="color: rgb(255, 255, 255)"><a href="index.html" style="font-size:25px"> &nbsp Duo CHAN</a></h1>
-			<nav id="nav">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li class="dropdown">
-						<a href="research_01_DCENT.html">Research Interests</a>
-						<div class="dropdown-content">
-							<ul>
-								<li><a href="research_01_DCENT.html"> &nbsp &nbsp &nbsp DCENT</a></li>
-								<li><a href="research_02_SST_01.html"> &nbsp &nbsp &nbsp Sea-Surface Temperature</a></li>
-								<li><a href="research_03_Sigmal.html"> &nbsp &nbsp &nbsp Land & Soil</a></li>
-								<li><a href="research_04_Jet.html"> &nbsp &nbsp &nbsp Jet</a></li>
-								<li><a href="research_05_Koppen.html"> &nbsp &nbsp &nbsp Climate Regimes</a></li>
-							</ul>
-						</div>
-					</li>
-					<!-- <li><a href="daily.html">Daily</a></li> -->
-					<li><a href="publication.html">Publications</a></li>
-					<li><a href="teaching_01_teaching_00.html">Teaching</a></li>
-					<li><a href="teaching_02_outreach.html">Outreach</a></li>
-					<li><a href="CV_Duo_Chan.pdf"><B style="color:rgb(255,255,255)">CV</B></a></li>
-				</ul>
-			</nav>
-		</header>
+<!--**********************************************************************************************************************--->
 
-		<!-- Banner -->
-		<section id="banner"   style="padding: 5em 0 3.5em 0;">
-				<div class="inner">
-					<h2><B style="color:rgb(255, 255, 255);">Climate and Data Science</B></h2>
-					<!--<h2>Variability & Influences</h2>-->
-					<!--<h3><a href="https://eps.harvard.edu/">Department of Earth & Planetary Sciences</a></h3>
-					<h3><a href="https://www.harvard.edu/">Harvard University</a></h3> -->
-					<ul class="actions">
-						<!-- <li><a href="#content" class="button big special">Sign Up</a></li>
-						<li><a href="#elements" class="button big alt">Learn More</a></li> -->
-					</ul>
-				</div>
-			</section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Duo CHAN</title>
+  <style>
+    :root{--b900:#375695;--b700:#5474b8;--b600:#97b1ea;--b400:#bfd1f8;--b100:#e8efff;--navw:220px;--content-max:1200px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#fff;color:var(--b700);line-height:1.6;display:flex;justify-content:center}
+    h1,h2{color:var(--b900);margin:0 0 .5rem}
+    h3{color:var(--b900);margin:0 0 .5rem}
 
-		<!-- Main Text -->
-		<section id="three" class="wrapper style1">
-			<div class="container">
-				<div class="row">
+    .layout{display:grid;grid-template-columns:var(--navw) 1fr;min-height:100vh;width:100%;max-width:var(--content-max);background:#fff}
+    nav.sidenav{position:sticky;top:0;height:100vh;width:var(--navw);border-right:3px solid var(--b100);background:#fff;overflow:auto;z-index:1000;transition:transform .25s ease}
+    main{transition:transform .25s ease}
 
-					<!-- Personal Information -->
-					<div class="4u">
-						<section>
-							<a href="#" class="image fit"><img src="images/photo.jpg" alt="" /></a>
-							<p class="intro">
-								I am a climate scientist and a <a href="https://www.southampton.ac.uk/people/656tdd/doctor-duo-chan">lecturer </a> (equivalent to Assistant Professor)
-								in the <a href="https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-ocean-and-earth-science">
-									School of Ocean and Earth Science</a> at the <a href="https://www.southampton.ac.uk">
-										University of Southampton</a>.  Before relocating to the UK, I served as a
-								Postdoctoral Scholar at <a href="https://www.whoi.edu"> WHOI</a>, subsequent to earning my Ph.D. from
-								<a href="https://www.harvard.edu/">Harvard University</a>.
-							</p>
+    a {color: #6483c6; font-weight: bold;}
+    a:hover {color: #171d5c;}
 
-							<p class="intro">
-								My research focuses on developing statistical and physical tools to
-								quantify and elucidate the mechanisms underlying climate change.
-								My interests are wide-ranging and include, but are not limited to: <br>
-								<B>(1)</B> Climate data and statistical climatology, <br>
-								<B>(2)</B> Machine learning applications in climate and environmental studies, <br>
-								<B>(3)</B> Climate variability and projections, <br>
-								<B>(4)</B> The physics and dynamics of climate change, <br>
-								<B>(5)</B> Strategies for climate adaptation and	policy formulation.
-						  </p>
-
-							<p class="intro">
-								I led the development of the Dynamically Consistent Ensemble of Temperature (<B>DCENT</B>).
-								I have published papers in Nature, Nature Food, Science Advances, Journal of Climate,
-								and other top-tier journals in Earth and Climate Sciences.
-								My work has been featured by NPR, Science, and other international media.
-						  </p>
-
-							<p><B>Email</B>: Duo.Chan@soton.ac.uk</p>
-
-							<ul class="icons" style="text-align: left">
-								<li><a href="https://scholar.google.com/citations?user=rhaCTyoAAAAJ&hl=en" class="ai ai-google-scholar ai-2x" style="text-decoration: none"><span class="label"></span></a></li>
-								<li><a href="https://www.researchgate.net/profile/Duo_Chan" class="ai ai-researchgate ai-2x" style="text-decoration: none"><span class="label"></span></a></li>
-								<li><a href="https://github.com/duochanatharvard" class="icon fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://www.linkedin.com/feed/" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<li><a href="https://twitter.com/chan_duo" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							</ul>
-						</section>
-					</div>
-
-					<!-- News and Papers -->
-					<div class="8u">
-
-						<section class="special box" style="text-align: left">
-
-							<p><h2><B style="color:rgb(0,0,0)">DCENT 2024 Data is Now Available!</B></h2></p>
-
-							<p>
-								<B>Dynamically Consistent Ensemble of Temperature (DCENT)</B> now covers 2024, with the 2024
-								warming level being <b>1.65°C</b> relative to the 1850--1900 baseline.
-								
-								More details can be found <a href="research_01_DCENT.html">here</a>.
-								</p><p>
-								<a href="https://doi.org/10.1038/s41597-024-03742-x">Paper</a>,
-								<a href="https://doi.org/10.7910/DVN/NU4UGW">Data access</a>.
-							</p>
-
-						</section>
-
-						<section class="special box" style="text-align: left">
-
-							<p><h2><B style="color:rgb(0,0,0)">Recruiting PhD Students!</B></h2></p>
-
-							<p>
-								I am currently recruiting two PhD students.
-								Successful candidates will be awarded a full
-								fellowship for at least three years.
-							</p>
-							<p>
-								<B>Application Requirements</B>:<br>
-								(1) A strong interest in climate change. <br>
-								(2) A solid background in mathematics and sciences.  A Master’s or Bachelor’s
-								degree in mathematics, physics, computer science, atmospheric or
-								oceanic sciences is preferred.<br>
-								(3) Proficiency in English communication and academic skills.<br>
-							</p>
-							<p>
-								<B>Please do not hesitate to contact me directly.</B>
-							</p>
-						</section>
-
-						<hr/>
-
-						<section>
-							<h2><B style="color:rgb(0,0,0)">HIGHLIGHTED PUBLICATIONS</B></h2>
-
-							<ul><li><p>
-									<u><B>Chan D.</B></u>, Gebbie G., Huybers P., & Kent E. (2024).
-									A Dynamically Consistent ENsemble of Temperature at the Earth surface since 1850 from the DCENT dataset.
-									<i><B> Scientific Data </B></i>.
-									<a href="https://doi.org/10.1038/s41597-024-03742-x">link</a>,
-									<a href="papers/Chan_et_al_2024_SD.pdf">pdf</a>,
-									<a href="https://doi.org/10.7910/DVN/NU4UGW">data</a>,
-									<a href="https://github.com/duochanatharvard/DCENT">code</a>
-							</p></li></ul>
-
-<!--
-							<ul><li><p>
-								<u><B>Chan D.</B></u>, Gebbie G., & Huybers P. (2024).
-								Larger and Steadier Warming since 1850 from Harmonized Land and Ocean Temperature Records.
-								<i><B>Science Advances</B> </i>.
-								<a href="">link</a>,
-								<a href="">pdf</a>,
-								<a href="">code</a>,
-								<a href="">data</a>
-							</p></li></ul> -->
-
-							<ul><li><p>
-								<B style="color:rgb(30,30,30)">Chan D.</B>, Vecchi G., Yang W., & Huybers P. (2021).
-							  Improved simulation of 19th- and 20th-century North Atlantic hurricane frequency after correcting historical sea surface temperatures.
-								<i><B>Science Advances</B></i>, 7(26), eabg6931.
-								<a href="https://advances.sciencemag.org/content/7/26/eabg6931">link</a>,
-								<a href="Chan_et_al_2021_SciAdv.pdf">pdf</a>,
-								<a href="https://github.com/duochanatharvard/TC-SST">code</a>,
-								<a href="https://doi.org/10.7910/DVN/ZMVAFB">data</a>
-							</p></li></ul>
-
-							<ul><li><p>
-									<B>Chan D.</B>, Kent E., Berry D. & Huybers P. (2019).
-									Correcting datasets leads to more homogeneous early 20th century sea surface warming.
-									<i><B> Nature </B></i>, 571, 393-397.
-									<a href="https://www.nature.com/articles/s41586-019-1349-2">link</a>,
-									<!-- <a href="">pdf</a>, -->
-									<a href="https://github.com/duochanatharvard/Homogeneous_early_20th_century_warming">code</a>,
-									<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DXJIGA">data</a>,
-									<a href="https://news.harvard.edu/gazette/story/2019/07/researchers-find-a-simpler-pattern-of-ocean-warming/">Harvard Gazette</a>,
-									<a href="https://www.npr.org/2019/08/19/750778010/how-much-hotter-are-the-oceans-the-answer-begins-with-a-bucket">NPR news</a>
-							</p></li></ul>
-							<div style="text-align:center">
-								<a href="publication.html" class="button special" >Full Publications</a>
-							</div>
-						</section>
-
-					</div>
-				</div>
-			</div>
-		</section>
+    body {font-family: 'Calibri', sans-serif; font-weight: 300; }
+    b, strong {font-family: 'Calibri', sans-serif; font-weight: 600;  color: #5573b3;}
+    .link-light {font-family: Calibri, sans-serif;  font-weight: 300; color: #99999b;}
+    .link-light1 {font-family: Calibri, sans-serif;  font-weight: 300; color: #5573b3;}
+    .link-light2 {font-family: Calibri, sans-serif;  font-weight: 600; color: #d23f3f;}
 
 
-		<!-- Footer -->
-		<footer id="footer"   style="padding: 0.125em 0 1.5em 0; background-color: rgb(50, 50, 50)">
-		  <div class="container">
-		    <ul class="copyright">
-		      <li style="color:rgb(150,150,150)">
-		          &copy; Duo CHAN, <span id="current-year"></span>
-		      </li>
-		      <li style="color:rgb(150,150,150)">
-		        <a href="mailto: Duo.Chan@soton.ac.uk" style="text-decoration: none">
-		          Duo.Chan@soton.ac.uk
-		        </a>
-		      </li>
-		    </ul>
-		  </div>
-		</footer>
+    /* .panel{min-height:100vh;padding:6rem 1rem;border-bottom:1px solid var(--b100);display:block} */
+    .panel{min-height:auto;padding:2rem 0.2rem; border-bottom:3px solid var(--b100);display:block}
+    #home.panel{display:flex;align-items:flex-start;justify-content:center;min-height:auto;padding-top:2rem;padding-bottom:2rem}
+    .container{width:100%;max-width:calc(var(--content-max) - var(--navw));padding:0 1rem;margin-inline:0}
 
-		<script>
-		    document.addEventListener('DOMContentLoaded', function() {
-		        document.getElementById('current-year').textContent = new Date().getFullYear();
-		    });
-		</script>
-	</body>
+    .sidenav .title{font-size:1.25rem;font-weight:600;color:var(--b900);padding:1rem 1rem .25rem}
+    .sidenav ul{list-style:none;margin:0;padding:0 .5rem 1rem;display:grid;gap:8px}
+    .sidenav ul a{display:grid;grid-template-columns:24px 1fr;align-items:center;gap:10px;padding:.5rem;border-radius:10px;text-decoration:none;color:var(--b700);outline:none;font-weight:400}
+    .sidenav a:focus{box-shadow:0 0 0 2px var(--b400) inset}
+    .sidenav a:hover{background:var(--b100)}
+
+    .dot{width:14px;height:14px;border-radius:50%;border:2px solid #8db0ff;background:transparent;transition:transform .2s,background-color .2s,border-color .2s;justify-self:center}
+    .sidenav a:hover .dot{transform:scale(1.05);border-color:#697a9f}
+    .sidenav a[aria-current="true"]{background:rgba(26,86,219,.08)}
+    .sidenav a[aria-current="true"] .dot{background:var(--b600);border-color:var(--b600)}
+
+    .label{font-size:.95rem;line-height:1.4;word-break:break-word;white-space:normal}
+
+    .group .sub{list-style:none;margin:.25rem 0 0 0;padding:0 0 0 28px;display:grid;gap:6px}
+    .group .sub .dot{width:10px;height:10px}
+
+    .menu-toggle{display:none;position:fixed;top:10px;left:10px;background:#fff;color:var(--b700);border:3px solid var(--b100);padding:8px 10px;font-size:1.2rem;z-index:1100;border-radius:6px;cursor:pointer}
+
+    @media (max-width: 640px){
+      .layout{grid-template-columns:1fr}
+      nav.sidenav{position:fixed;left:0;top:0;transform:translateX(-100%);padding-top:3rem}
+      body.nav-open nav.sidenav{transform:translateX(0)}
+      main{margin-left:0;transform:none;padding-top:3rem}
+      body.nav-open main{transform:translateX(var(--navw))}
+      .menu-toggle{display:block}
+      .container{max-width:100%}
+    }
+
+    /* Bio photo: right-aligned, scales with column, capped size */
+    #bio .bio-photo {float: right; width: min(60%, 300px);  margin: 0 0 1rem 1rem; border-radius: 8px;}
+    #bio .bio-photo img { display: block;  width: min(100%, 300px);  height: auto; border-radius: 8px;}
+    @media (max-width:800px){#bio .bio-photo{float:none;display:block;width:min(100%,300px);margin:0 auto 1rem}}
+
+    .float-img{display:block;margin:0 auto 1rem}
+    .float-img.w45{max-width:45%}
+    .float-img.w50{max-width:50%}
+    .float-img.w65{max-width:65%}
+    .float-img.w80{max-width:80%}
+    .float-img img{display:block;width:100%;height:auto}
+    .float-img video{display:block;width:100%;height:auto}
+    @media(max-width:800px){.float-img{max-width:100%!important}}
+
+    .figure-caption{line-height:20px;color:rgb(160,160,160)!important;text-align:center;font-style:italic}
+    .figure-caption b{font-weight:550;color:rgb(150,150,150)!important}
+
+
+    /* Grid: max 4 per row; drops to 3/2/1 as space shrinks */
+    .members{
+      --gap:16px; --card-min:180px;  /* set your X here */
+      display:grid; gap:var(--gap);
+      grid-template-columns:repeat(4, minmax(var(--card-min), 1fr));
+      list-style:none; padding:0; margin:0;
+    }
+    @media (max-width:1100px){ .members{grid-template-columns:repeat(3, minmax(var(--card-min),1fr));} }
+    @media (max-width:800px){  .members{grid-template-columns:repeat(2, minmax(var(--card-min),1fr));} }
+    @media (max-width:520px){  .members{grid-template-columns:1fr;} }
+
+    /* Card */
+    .member-card{display:block}
+    .member-card img{
+      width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:8px;
+    }
+    .member-card .name{font-weight:500; margin-top:.5rem}
+    .member-card .role{font-size:.9rem}
+    .member-card .interests{font-size:.9rem}
+    .member-card .name a{text-decoration:none}
+
+    @media (max-width:520px){.member-card img{width:60%;margin:0}}
+    @media (max-width:520px){.members .member-card img{ display:none;}}
+
+    /* Grid: max 3 per row; drops to 2/1 as space shrinks */
+    .lectures{
+      --gap:16px; --card-min:180px;  /* set your X here */
+      display:grid; gap:var(--gap);
+      grid-template-columns:repeat(3, minmax(var(--card-min), 1fr));
+      list-style:none; padding:0; margin:0;
+    }
+    @media (max-width:1100px){ .lectures{grid-template-columns:repeat(2, minmax(var(--card-min),1fr));} }
+    @media (max-width:520px){  .lectures{grid-template-columns:1fr;} }
+
+    /* Card */
+    .lecture-card{display:block}
+    .lecture-card img{
+      width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:8px; border: 1px solid #afc2e5;
+    }
+    .lecture-card .name{font-weight:500; margin-top:.5rem}
+    .lecture-card .role{font-size:.9rem}
+    .lecture-card .interests{font-size:.9rem}
+    .lecture-card .name a{text-decoration:none}
+
+    @media (max-width:520px){.lecture-card img{width:70%;margin:0}}
+
+    hr { border: none; border-top: 1px solid rgb(218, 231, 245); margin: 1rem 0;}
+
+    /* Parent link active: dot on, no background */
+    .sidenav .group > a[aria-current="true"]{
+      background: transparent;
+    }
+    /* Keep hover behavior if you want */
+    .sidenav .group > a[aria-current="true"]:hover{
+      background: var(--b100);
+    }
+
+    /* summary styling */
+    #dcent-story summary{
+      cursor:pointer; padding:.6rem .8rem; border:1px solid var(--b100);
+      border-radius:8px; background:#d23f3f; user-select:none; display:inline-flex; gap:.5rem; align-items:center;
+      font-weight:600; color:#fff;            /* ← make text white */
+    }
+    #dcent-story summary:focus{ outline: none; box-shadow:0 0 0 2px var(--b400) inset }
+    #dcent-story summary::after{ content:"▾"; transition:transform .2s }
+    #dcent-story[open] summary::after{ transform:rotate(180deg) }
+
+    #dcent-story summary .when-open{ display:none }
+    #dcent-story[open] summary .when-open{ display:inline }
+    #dcent-story[open] summary .when-closed{ display:none }
+
+    /* optional: remove default marker */
+    #dcent-story summary::-webkit-details-marker{ display:none }
+
+    .toggle-section{border: 0; border-bottom: 3px solid var(--b100); }
+    .toggle-sectionl2{border: 0; border-bottom: 0px solid var(--b100); }
+    .toggle-actions{margin-top:8px}
+    .toggle-btn{appearance:none;border:1px solid var(--b700);color:#fff;background:#ec2150;border-radius:8px;padding:.5rem .8rem;font-weight:600;cursor:pointer}
+    .toggle-btn:focus{outline:none;box-shadow:0 0 0 2px var(--b100) inset}
+
+    /* honor [hidden] and keep layout clean */
+    .summary[hidden], .detail[hidden]{display:none}
+
+    #publications :where(.summary,.detail):not([hidden]) :where(ul,ol){display:grid;gap:8px}
+
+    table {border-collapse: collapse; width: 100%;}
+    tr:nth-child(even) {background-color: #d0e5f1;}
+    tr:nth-child(odd) {background-color: #f0f9fd;}
+
+  </style>
+</head>
+
+<!--**********************************************************************************************************************--->
+
+<body>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <div class="layout">
+    <nav class="sidenav" aria-label="Section navigation">
+      <div class="title">Duo CHAN <span style="font-weight: normal; font-size: 0.9rem;">(<a href="CV_Duo_Chan.pdf" style="font-weight: normal; font-size: 0.9rem;">CV</a>)</span> </div>
+      <ul>
+        <li><a href="#bio" data-section="bio"><span class="dot" aria-hidden="true"></span><span class="label">Bio</span></a></li>
+        <li><a href="#news" data-section="news"><span class="dot" aria-hidden="true"></span><span class="label">News</span></a></li>
+        <li><a href="#opportunities" data-section="opportunities"><span class="dot" aria-hidden="true"></span><span class="label">Group & Opportunities</span></a></li>
+        <li><a href="#publications" data-section="publications"><span class="dot" aria-hidden="true"></span><span class="label">Publications</span></a></li>
+        <li class="group">
+          <a href="#DCENT" data-section="research"><span class="dot" aria-hidden="true"></span><span class="label">Research</span></a>
+          <ul class="sub">
+            <li><a href="#DCENT" data-section="DCENT" data-parent="research"><span class="dot" aria-hidden="true"></span><span class="label">DCENT(-I)</span></a></li>
+            <li><a href="#AMOC" data-section="AMOC" data-parent="research"><span class="dot" aria-hidden="true"></span><span class="label">AMOC</span></a></li>
+            <li><a href="#past" data-section="past" data-parent="research"><span class="dot" aria-hidden="true"></span><span class="label">Past Work</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#teaching" data-section="teaching"><span class="dot" aria-hidden="true"></span><span class="label">Teaching</span></a></li>
+        <li><a href="#outreach" data-section="outreach"><span class="dot" aria-hidden="true"></span><span class="label">Outreach</span></a></li>
+      </ul>
+    </nav>
+
+    <!--**********************************************************************************************************************--->
+    <main>
+      <section id="bio" class="panel">
+        <div class="container">
+
+          <h2>Bio <span style="font-weight: normal; font-size: 0.9rem;">(<a href="CV_Duo_Chan.pdf" style="font-weight: normal; font-size: 0.9rem;">CV</a>)</span></h2>
+         
+          <a href="#" class="image fit bio-photo"><img src="images/photo.jpg" alt=""></a>
+          <p>
+            I am a <a href="https://www.southampton.ac.uk/people/656tdd/doctor-duo-chan" class="link-light1">lecturer in Climate Science</a>
+            <!-- and a <a href="https://www.ukri.org/what-we-do/developing-people-and-skills/future-leaders-fellowships/" class="link-light2">UKRI Future Leaders Fellow</a> -->
+            <!--and a <a href="https://www.southampton.ac.uk/chep/index.page" class="link-light2">Centre for Higher Education Practice Fellow</a>-->
+            in the <a href="https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-ocean-and-earth-science" class="link-light1"> School of Ocean and Earth Science</a> 
+            at the <a href="https://www.southampton.ac.uk" class="link-light1">University of Southampton</a>.  
+            Before moving to the UK, I was a Postdoctoral Scholar at <a href="https://www.whoi.edu" class="link-light1"> WHOI</a>, 
+            following the completion of my Ph.D. at <a href="https://www.harvard.edu/" class="link-light1">Harvard University</a>.
+          </p>
+
+          <p class="intro">
+            I develop statistical and physical tools to quantify climate change and understand the underlying mechanisms. <br>
+          </p>
+
+          <p>
+            <B>My research interests include:</B> <br>
+            <B style="font-weight: 550;">a.</B> Climate data and statistical climatology; <br>
+            <B style="font-weight: 550;">b.</B> Machine learning applications in climate and environmental studies; <br>
+            <B style="font-weight: 550;">c.</B> Climate variability, projections, and underlying physical dynamics; <br>
+            <B style="font-weight: 550;">d.</B> Strategies for climate adaptation and	policy formulation.
+          </p>
+
+          <p class="intro">
+            I led the development of the Dynamically Consistent Ensemble of Temperature 
+            (<a href="https://doi.org/10.1038/s41597-024-03742-x" style="font-weight: normal;">DCENT</a>) and 
+            have published papers in <i>Nature</i>, <i>Nature Climate Change</i>, <i>Nature Food</i>, <i>Science Advances</i>, 
+            <i>Journal of Climate</i>, and other top-tier journals in Earth and Climate Sciences.
+            My work has been featured by <i>New Scientist</i>, <i>NPR</i>, <i>Science</i>, and other international media.
+          </p>
+
+          <p>
+            <a href="mailto:Duo.Chan@soton.ac.uk">Duo.Chan@soton.ac.uk</a> | 
+            <a href="https://scholar.google.com/citations?user=rhaCTyoAAAAJ&hl=en">Google Scholar</a> | 
+            <a href="https://github.com/duochanatharvard">Github</a>
+          </p>
+
+        </div>
+      </section>
+
+      <!--**********************************************************************************************************************--->
+      <section id="news" class="panel">
+        <div class="container">
+          <h2>News</h2>
+          <!-- 
+          <ul>
+            <li><b> The infilled version of DCENT (DCENT-I) is available! </b></li>
+            <span data-ref="chan2025dcenti"></span>
+          </ul>
+          -->
+
+          <ul>
+            <li><b style="color:#d23f3f"> Our new paper on evaluating SST dataset is out in GRL! </b></li>
+            <span data-ref="chan2025grl"></span>
+          </ul>
+                        
+
+          <ul>
+            <li> <B style="color:#d23f3f">DCENT 2024 Data is <a href="https://doi.org/10.7910/DVN/NU4UGW" class="link-light2">Available</a>!</B> 
+              The 2024 warming level is <b style="font-weight: 550;">1.65°C</b> above the 1850--1900 baseline. </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!--**********************************************************************************************************************--->
+      <section id="opportunities" class="panel">
+        <div class="container">
+          <h2>Group & Opportunities</h2>
+
+            <p><b>Current Members</b>:</p>
+            <ul class="members" aria-label="Current group members">
+              <li class="member-card">
+                <img src="images/group_member/Unknown.jpeg" alt="Callum Pemberton-Louden">
+                <div class="name"><a href="https://example.com/alex" style="font-weight: 550;"><u>Callum Pemberton-Louden</u></a></div>
+                <div class="role">PhD Student</div>
+                <div class="interests">Pacific Temperature Gradient; SLP reconstruction</div>
+              </li>
+              <li class="member-card">
+                <img src="images/group_member/Unknown.jpeg" alt="Ewan Strathdee">
+                <div class="name"><a href="https://example.com/alex" style="font-weight: 550;"><u>Ewan Strathdee</u></a></div>
+                <div class="role">PhD Student</div>
+                <div class="interests">Climate impact on food & nutrition; Network science</div>
+              </li>
+              <li class="member-card">
+                <img src="images/group_member/Yifei_Fan.jpg" alt="Yifei Fan">
+                <div class="name"><a href="https://scholar.google.com/citations?user=YmnlfcwAAAAJ&hl=en" style="font-weight: 550;"><u>Yifei Fan</u></a></div>
+                <div class="role">PhD Student (co-supervised)</div>
+                <div class="interests">North Atlantic Warming Hole; AMOC</div>
+              </li>
+              <!--<li class="member-card">
+                <img src="images/group_member/Unknown.jpeg" alt="Khalil Greene">
+                <div class="name"><a href="https://example.com/alex">Khalil Greene</a></div>
+                <div class="role">PhD Student (co-supervised)</div>
+                <div class="interests">North Atlantic Sargassum</div>
+              </li>-->
+            </ul>
+
+            <hr> <!--------------------------------------------------------------------------------------------------->
+
+            <p> 
+              <B>Past Members</B>: N/A
+            </p>
+        
+            <hr> <!--------------------------------------------------------------------------------------------------->
+
+            <p>
+              <B>PhD Recruitment</B>: I am not actively seeking additional candidates. 
+              However, funding is available for 
+              <B style="font-weight: 600; color: #d23f3f"><u>one 3.5-year PhD position</u></B>.
+              If you meet the requirements below and are interested in co-developing a project with me, please get in touch.
+            </p>
+
+            <ul>
+              <li> Strong interest in climate change. </li>
+              <li> Solid background in mathematics and sciences. </li>
+              <li> A Master’s or Bachelor’s degree in math, physics, computer science, atmospheric, or oceanic sciences is preferred. </li>
+            </ul>
+        
+            <p>
+              <B>Postdoc Recruitment</B>: Funding is also available for 
+              <B style="font-weight: 600; color: #d23f3f"><u>two 3.5-year postdoctoral positions</u></B>: 
+              one on climate modeling and simple model development, and one on AI for climate. 
+              Advertisements will be released in September or October, 2025.  Please stay tuned!
+            </p>
+
+        </div>
+      </section>
+      
+      <!--**********************************************************************************************************************--->
+      <section id="publications" class="panel toggle-section">
+        <div class="container">
+
+          <h2>Publications</h2>
+          <p>† student or mentee;  * co-first author;  &nbsp <u>&nbsp &nbsp </u> corresponding</p>
+
+          <div class="summary">
+            <h3>Highlighted List</h3>
+            <ul>
+              <li><span data-ref="liao2025nct"></span></li>
+              <li><span data-ref="fan2025sciadv"></span></li>
+              <li><span data-ref="chan2024sdata"></span></li>
+              <li><span data-ref="sippel2024nature"></span></li>
+              <li><span data-ref="chan2021sciadv"></span></li>
+              <li><span data-ref="chan2019nature"></span></li>
+            </ul>
+          </div>
+
+          <!--------------------------------------------------------------------------------------------------->
+          <div class="detail" id="publications-detail" hidden> 
+            <h3>Full List</h3>
+            <ol reversed>
+              <h3 style="text-indent: -4ch;">2025</h3>
+              <!--<li><span data-ref="he2025ncc"></span></li> -->
+              <li><span data-ref="liao2025nct"></span></li>
+              <li><span data-ref="chan2025grl"></span></li>
+              <li><span data-ref="fan2025sciadv"></span></li>
+              <li><span data-ref="kent2025chapter"></span></li>
+              <li><span data-ref="wang2025jclim"></span></li>
+
+              <h3 style="text-indent: -4ch;">2024</h3>
+              <li><span data-ref="sippel2024nature"></span></li>
+              <li><span data-ref="chan2024sdata"></span></li>
+              <li><span data-ref="chan2024jclim"></span></li>
+              <li><span data-ref="fan2024jclim"></span></li>
+              <li><span data-ref="zhang2024atmos"></span></li>
+              <li><span data-ref="yin2024bams"></span></li>
+              <li><span data-ref="ridgen2024npj"></span></li>
+
+              <h3 style="text-indent: -4ch;">2023</h3>
+              <li><span data-ref="chan2023jclim"></span></li>
+              <li><span data-ref="bao2023gpc"></span></li>
+              <li><span data-ref="yin2023bams"></span></li>
+
+              <h3 style="text-indent: -4ch;">2022</h3>
+              <li><span data-ref="chan2022ef"></span></li>
+              <li><span data-ref="proctor2022nfood"></span></li>
+
+              <h3 style="text-indent: -4ch;">2021</h3>
+              <li><span data-ref="chan2021sciadv"></span></li>
+              <li><span data-ref="chan2021jclim"></span></li>
+              <li><span data-ref="chan2021hdsr"></span></li>
+              <li><span data-ref="dai2021aoas"></span></li>
+
+              <h3 style="text-indent: -4ch;">2020</h3>
+              <li><span data-ref="chan2020jclim"></span></li>
+              <li><span data-ref="chan2020grl"></span></li>
+              <li><span data-ref="chan2020cd"></span></li>
+
+              <h3 style="text-indent: -4ch;">2019</h3>
+              <li><span data-ref="chan2019nature"></span></li>
+              <li><span data-ref="chan2019jclim"></span></li>
+
+              <h3 style="text-indent: -4ch;">Before 2019</h3>
+              <li><span data-ref="chan2016aas"></span></li>
+              <li><span data-ref="hu2016jclim"></span></li>
+              <li><span data-ref="wu2016grl"></span></li>
+              <li><span data-ref="chan2015srep"></span></li>
+              <li><span data-ref="chan2015jclim"></span></li>
+            </ol>
+          </div>
+
+          <div class="toggle-actions">
+            <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="publications-detail"> </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!--**********************************************************************************************************************--->
+      <section id="DCENT" class="panel">
+        <div class="container">
+
+          <img src="images/DCENT_logo.png" alt="DCENT_logo" style="max-width: 500px; width: 60%;">
+
+          <p class="intro">
+            Dynamically Consistent Ensemble of Temperature (DCENT) is
+            a 200-member ensemble of 5°x5° monthly Earth surface temperature estimates since 1850.  
+            Its infilled version, DCENT-I, extends coverage to the global domain using 
+            Gaussian process regression with anisotropic kernels to enhance spatial pattern fidelity. 
+            Together, they support quantification of historical climate change at 
+            global and regional scales and analysis of associated variability and dynamics.
+          </p>
+
+          <p style="padding-left: 4ch; text-indent: -4ch;">
+            <B style="font-weight: 600;">DCENT Reference</B>: <span data-ref="chan2024sdata"></span>
+          </p>
+
+          <p style="padding-left: 4ch; text-indent: -4ch;">
+            <B style="font-weight: 600;">DCENT-I Reference</B>: <span data-ref="chan2025dcenti"></span>
+          </p>
+
+          <hr>
+
+          <h3>Data Access</h3>
+
+          <p style="text-indent: 0ch;">
+            The links below provide summary statistics for DCENT and DCENT-I at global (GL), 
+            Northern Hemisphere (NH), Southern Hemisphere (SH), land (Lnd), ocean (Ocn), 
+            and individual member (Mem) scales.
+          </p>  
+
+          <p>
+            <b style="font-weight: 600;">Annual Times Series</b>:
+            <a href="https://www.dropbox.com/scl/fi/c8ohkby3kbq98jyx7c7i1/DCENT_DCENT_I_GMST_annual_statistics.txt?rlkey=wt7436fexkijiqfltnvt43681&st=px7uqc2n&dl=0" class="link-light">GL</a> | 
+            <a href="https://www.dropbox.com/scl/fi/17btvvdcegnjzfpf04wr1/DCENT_DCENT_I_NHST_annual_statistics.txt?rlkey=y6m8lzslhrqkrg3q768jklh81&st=9qcx9864&dl=0" class="link-light">NH</a> | 
+            <a href="https://www.dropbox.com/scl/fi/sgajfbjp5zaa68pht4znb/DCENT_DCENT_I_SHST_annual_statistics.txt?rlkey=hlrdp23l9odbyfyq8zdl311xy&st=jh20be9o&dl=0" class="link-light">SH</a> |
+            <a href="https://www.dropbox.com/scl/fi/rgsq3hzmi6obiyd8vou2q/DCENT_DCENT_I_LST_annual_statistics.txt?rlkey=f2nz0tguto3kyj4jkz3w1kozq&st=mdqza2r8&dl=0" class="link-light">Lnd</a> |
+            <a href="https://www.dropbox.com/scl/fi/nxhtud84wxvvkfgrelwsq/DCENT_DCENT_I_OST_annual_statistics.txt?rlkey=w0q6eot2hjfcbfc84hda8nvw4&st=qi7agksf&dl=0" class="link-light">Ocn</a> |
+            <a href="https://www.dropbox.com/scl/fi/7swmbcuq1u7igieyttums/DCENT_DCENT-I_annual_statistics.nc?rlkey=z5poco9ofqxttv0jl0j5q866p&st=96fwa885&dl=0" class="link-light">Mem</a>
+          </p>
+
+          <p>
+            <b style="font-weight: 600;">Monthly Times Series</b>:
+            <a href="https://www.dropbox.com/scl/fi/fuirz2t34i421d2nsehkr/DCENT_DCENT_I_GMST_monthly_statistics.txt?rlkey=yvh9slt1buw6ptx56rkpuwzhc&st=fkbmn0c9&dl=0" class="link-light">GL</a> | 
+            <a href="https://www.dropbox.com/scl/fi/5aaoqjktclrpamvtnvp3k/DCENT_DCENT_I_NHST_monthly_statistics.txt?rlkey=1og5fjmkfme0gd3tbdi6enl9i&st=ato0o7xj&dl=0" class="link-light">NH</a> | 
+            <a href="https://www.dropbox.com/scl/fi/vvnj3ycpm2pz5vlkhv1k9/DCENT_DCENT_I_SHST_monthly_statistics.txt?rlkey=r8f6015wewukjjcrf0wu4lv9n&st=t0qxnzhb&dl=0" class="link-light">SH</a> |
+            <a href="https://www.dropbox.com/scl/fi/feag6oslm3c76qvnx1lvq/DCENT_DCENT_I_LST_monthly_statistics.txt?rlkey=zuhf3aks04z5velmja2t8xt3j&st=115matzq&dl=0" class="link-light">Lnd</a> |
+            <a href="https://www.dropbox.com/scl/fi/aum9bnz22o69ysoovqwy5/DCENT_DCENT_I_OST_monthly_statistics.txt?rlkey=tzqz53wmkr1np2uh6pfrr88re&st=hf0r0r1y&dl=0" class="link-light">Ocn</a> |
+            <a href="https://www.dropbox.com/scl/fi/wjvoilwxwplgkjds24p1l/DCENT_DCENT-I_monthly_statistics.nc?rlkey=y1vgumaht405k2pz9rbyj0v0s&st=4q5bazmq&dl=0" class="link-light">Mem</a>
+          </p>
+
+          <p>
+            <b style="font-weight: 600;">Gridded Products</b>:  
+
+            <p style="text-indent: 4ch;">
+              <b style="font-weight: 550;">DCENT-I</b> (5°x5°, monthly; infilled):
+              <a href="https://dataverse.harvard.edu/api/access/datafile/11910224" class="link-light">Ensemble mean</a> | 
+              <a href="https://doi.org/10.7910/DVN/ZY0WM8" class="link-light">Individual members</a> |
+              <a href="https://dataverse.harvard.edu/api/access/datafile/11910301" class="link-light">Climatology</a> | 
+              <a href="https://dataverse.harvard.edu/api/access/datafile/11910306" class="link-light">Dignostics</a>
+            </p>
+
+            <p style="text-indent: 4ch;">
+              <b style="font-weight: 550;">DCENT</b> (5°x5°, monthly; non-infilled):
+              <a href="https://dataverse.harvard.edu/api/access/datafile/10393656" class="link-light">Ensemble mean</a> | 
+              <a href="https://doi.org/10.7910/DVN/NU4UGW" class="link-light">Individual members</a> |
+              <a href="https://dataverse.harvard.edu/api/access/datafile/10393657" class="link-light">Climatology</a>
+            </p>
+
+            <p style="text-indent: 4ch;">
+              <b style="font-weight: 550;">DCSST-I</b> (1°x1°, monthly; infilled for AMIP run):
+              <a href="https://www.dropbox.com/scl/fi/10okh81d3xdmq255j1ama/DCSST-I_mean_1x1.nc?rlkey=7wq6mj7973hwyasxxwf5qt49z&st=6okq26b8&dl=0" class="link-light">Ensemble mean</a>
+            </p>
+          </p>
+
+          <p> More guidance can be found in this <a href="https://climatedataguide.ucar.edu/climate-data/dcent">NCAR climate data guide</a>.
+          
+          <hr>
+
+          <!----------------------------------------------------------------->
+          <section class="toggle-sectionl2" id="dcentstory">
+            <h3>DCENT Development</h3>
+            <div class="container">
+              
+              <div class="summary">
+                <p>A 5 minute quick story about how DCENT was developed.
+                  For more details, you can also watch videos that walk through our main findings.</p>
+              </div>
+
+              <div class="detail" id="dcentstory-detail" hidden>
+                <p><h3>Background and Unsolved Problems</h3></p>
+                <p>
+                  By 2023, "most state-of-the-art" global mean surface temperature 
+                  (<B style="font-weight: 550;">GMST</B>)
+                  estimates suggest an increasing GMST since 1850, with
+                  4-stage decadal variability on top of the overall warming (Fig. 1).
+                </p>
+
+                <div class="float-img w50"><img src="images/DCENT_1.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 1.</b> Existing GMST estimates. Anomalies are relative to the 1850-1900 mean.</p>
+
+                <p>
+                  However, all GMST estimates combine two different quantities:
+                  2 m air temperature over land and ice, and upper-15 cm water temperature over open oceans.
+                  These were measured with different instruments, stored in separate archives, and analyzed by different groups of scientists.
+                </p>
+
+                <div class="float-img w65"><img src="images/DCENT_2.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 2.</b> Land and ocean mean temperatures from existing estimates.</p>
+              
+                <p>
+                  Although land and ocean temperatures have tracked closely since 1946, they diverge before the 1940s (Fig. 2). 
+                  In the early 20th century, oceans warmed faster than land, despite expectations that land should warm more quickly 
+                  because it is water-limited and loses less heat through evaporation. 
+                  Such model–data discrepancies could undermine confidence in climate model projections.
+                </p>
+
+                <p>
+                  <b>Why?</b> Because raw land and ocean temperature measurements contain biases.
+                  For example, early sea surface temperatures (<B style="font-weight: 550;">SST</B>) were measured by lowering buckets into the ocean, 
+                  and measuring water temprature on ship decks (Fig. 3).
+                  During this process, evaporation cooled the samples, producing readings that were too low.
+                </p>
+                
+                <div class="float-img w50">
+                    <video autoplay muted loop playsinline>
+                      <source src="videos/Ocean_Weather_Ship_Record_B.mp4" type=video/mp4>
+                    </video>
+                </div>
+                <p class="figure-caption"><b>Fig. 3.</b> How to measure SSTs with a bucket? <a href="https://www.youtube.com/watch?v=OmL95EXu1-U"><b>Ocean Weather Ship Record B (1947)</b></a> from <i>Youtube</i><p>
+                
+                <p>
+                  Existing datasets address these issues to some extent but have important limitations. 
+                  Menne et al. 
+                  (<a href="https://doi.org/10.1175/2008JCLI2263.1" class="link-light">2009</a>, 
+                  <a href="https://doi.org/10.1175/JCLI-D-18-0094.1" class="link-light">2018</a>)
+                  developed an algorithm to detect abrupt changes in land temperature records from instrument changes or station moves, 
+                  but it assumes that temperature differences between nearby stations have no temporal memory in time (zero autocorrelation). 
+                  <a href = "https://doi.org/10.1029/2018JD029867" class="link-light">Kennedy et al. (2019)</a>
+                  corrected SST records by measurement method, 
+                  assuming that data from the same year and method share the same bias, especially before the 1940s. 
+                  Moreover, land and ocean temperature products were developed independently (Fig. 4).
+                </p>
+
+                <div class="float-img w65"><img src="images/DCENT_3.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 4.</b> Schemetic of data development for most existing datasets.</p>
+              
+                <!----------------------------------------------------------------->
+                <hr> 
+                <p><h3>Our Vision and Approach</h3></p>
+
+                <p>
+                  <b style="font-weight: 600; color:#cf6621">
+                    We aim to improve bias correction for both land and ocean archives, 
+                    and to better inter-calibrate the two. 
+                  </b> 
+                </p>
+                <p>We made three key improvements, detailed below: </p>
+
+                <p>
+                  <B>[1]</B>
+                  We improved land station homogenization by accounting for temperature's memory (autocorrelation) in the detection algorithm
+                  (<a href="https://journals.ametsoc.org/view/journals/clim/37/7/JCLI-D-23-0338.1.xml" class="link-light">Chan et al., 2024a</a>).
+                  The improved method detects more actual breaks and fewer false identifications, leading to a colder baseline temperature
+                  and a larger warming trend on land.  A quick story is in the video below.
+                </p>
+
+                <div class="float-img w65">
+                    <video controls>
+                      <source src="videos/SATH_Duo_compressed.mp4" type=video/mp4>
+                    </video>
+                </div>
+
+                <p>
+                  <B>[2]</B>
+                  Different ship groups may have used different instruments or handled the same instrument differently. 
+                  To evaluate systematic differences in SSTs collected by various nations or ship groups, 
+                  we developed a group-wise intercomparison framework 
+                  (<a href="https://journals.ametsoc.org/jcli/article/32/9/2569/344180" class="link-light">Chan and Huybers, 2019</a>).
+                  This approach detects offsets of up to 1 °C among groups thought to use bucket measurements, 
+                  with important implications for regional SST trends. 
+                  A related story is in the video below.
+                </p>
+
+                <div class="float-img w65">
+                    <video controls>
+                      <source src="videos/Harvard_Horizons_Final_compressed.mp4" type=video/mp4>
+                    </video>
+                </div>
+
+                <p>
+                  <B>[3]</B>
+                    <a href="https://doi.org/10.1038/322430a0" class="link-light"> Jones et al. (1986)</a>
+                    proposed using coastal station temperatures to evaluate SST biases. 
+                    This was, however, largely forgotten in later SST products until 
+                    <a href="https://doi.org/10.1002/qj.3235" class="link-light">Cowtan et al. (2018)</a>, 
+                    who used linearly scaled land temperatures to infer SST evolution. 
+                    Yet, because land and ocean differ in heat capacity, water availability, and albedo, linear scaling is not ideal.
+                </p>
+                <p>
+                    In <a href="https://doi.org/10.1175/JCLI-D-22-0569.1" class="link-light"> Chan et al. (2023)</a>, 
+                    we applied a coupled energy balance model that better represents air–sea interactions. 
+                    We found land and ocean temperatures inconsistent along global coasts before 1940 among all existing estimates (Fig. 5). 
+                    In <a href="https://doi.org/10.1029/2025GL116615" class="link-light"> Chan et al. (2025)</a>,
+                    we further show evidence from SST diurnal cycles to show that 
+                    this discrepancy mainly reflects under-corrected SST biases from changing instruments in the late 19th century.
+                </p>
+
+                <div class="float-img w65"><img src="images/DCENT_4.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 5.</b> Land temperature-inferred versus observational SSTs along global coasts.</p>
+              
+                <!----------------------------------------------------------------->
+                <hr/>
+
+                <p><h3>Our Key Achievements</h3></p>
+
+                <p>
+                  These improvements enable an ensemble of temperature estimates with 
+                  dynamically consistent land and ocean records and 
+                  comprehensive uncertainty quantification. 
+                  We call this dataset the Dynamic Consistent Ensemble of Temperatures (<b>DCENT</b>; 
+                  <a href="https://doi.org/10.1038/s41597-024-03742-x" class="link-light">Chan et al., 2024</a>).
+                  Its infilled version, <b>DCENT-I</b> 
+                  (<a href="" class="link-light">Chan et al., 2025</a>)
+                  extends coverage to the global domain 
+                  and supports broader climate applications.
+                </p>
+
+                <div class="float-img w65"><img src="images/DCENT_5.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 6.</b> Schemetic of DCENT development.</p>
+              
+                <p>
+                  <b style="font-weight: 600; color:#cf6621">
+                    DCENT suggests a steadier and faster warming since 1850
+                    compared with existing estimates
+                  </b> (Fig. 7).
+                  DCENT is also more consistent with 
+                  independent temperature proxies from coral reefs and
+                  expected warming based on external radiative forcing
+                  (<a href="https://doi.org/10.1029/2025GL116615" class="link-light">Chan et al., 2025</a>).
+                </p>
+
+                <div class="float-img w50"><img src="images/DCENT_6.png" alt=""></div>
+                <p class="figure-caption"><b>Fig. 7.</b> as Fig. 1, but with DCENT GMST indicated.</p>
+              
+                <p>
+                  In addition to improving global estimates in the late 19th and early 20th centuries, 
+                  our innovations also refine temperature estimates at regional scales and in other periods, 
+                  with important implications for hurricane studies.
+                </p>
+
+                <div class="float-img w65">
+                    <video controls>
+                      <source src="videos/AGU2020_Talk_final_coompressed.mp4" type=video/mp4>
+                    </video>
+                </div>
+
+                <div class="float-img w65">
+                    <video controls>
+                      <source src="videos/AMS_2021_compressed.mp4" type=video/mp4>
+                    </video>
+                </div>
+
+              </div>
+
+              <div class="toggle-actions">
+                <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="dcentstory-detail">
+                  READ MORE
+                </button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </section>
+
+      <!--**********************************************************************************************************************--->
+      <section id="AMOC" class="panel">
+        <div class="container">
+          <h2>AMOC and Cold Blob</h2>
+
+          <p>
+            The subpolar North Atlantic “cold blob” shapes European weather, storm tracks, and projections. 
+            Its cause affects how we interpret AMOC trends and future regional climate risk.
+          </p>
+
+          <div class="float-img w45"><img src="images/AMOC_CB.png" alt=""></div>
+          <p class="figure-caption"><b>Fig. 1.</b> Observed 1900-2023 sea-surface temperature trend.</p>
+         
+          <p>
+            In <a href="DOI: 10.1126/sciadv.ads1624" class="link-light">Fan et al. (2025, <i>Science Advances</i>)</a>,
+            Yifei diagnosed historical coupled-model simulations and showed that AMOC weakening cools the region via two pathways: 
+            less ocean heat import and a colder, drier lower atmosphere that reduces downward clear-sky longwave radiation. 
+            The AMOC trend accounts for about two-thirds of the observed cooling, 
+            with oceanic and radiative pathways contributing roughly equally.
+          </p>
+
+          <p>
+            After identifying the drivers of the observed cold blob, 
+            Yifei also examined how well models reproduce these mechanisms
+            (<a href="https://doi.org/10.1175/JCLI-D-23-0654.1" class="link-light">Fan et al., 2024, <i> Journal of Climate</i></a>).
+            Only 11 out of 32 models produced a cold blob.  Even among those, mechanisms split: 
+            four attribute cooling mainly to reduced ocean heat-transport convergence (OHTC), 
+            four to radiative processes, and three to mixed contributions. 
+            Base-state AMOC strength explains ~39% of intermodel spread in the OHTC role, 
+            implying that mechanism inferences from a single model are unreliable. 
+          </p> 
+
+
+        </div>
+      </section>
+
+      <!--**********************************************************************************************************************--->
+      <section class="panel toggle-section" id="past">
+        <div class="container">
+          <h2>Past Work</h2>
+
+          <div class="summary">
+            <p>Our past work spans data quality, variability, and dynamics across the climate system, including:</p>
+            <ul class="summary-list">
+              <li>Correcting ship-track errors in sea-surface temperature records with Bayesian methods.</li>
+              <li>Explaining differences in land temperature variance projections between CMIP5 and CMIP6.</li>
+              <li>Quantifying dynamical controls on the East Asian Jet using the zonal momentum budget.</li>
+              <li>Detecting anthropogenically driven shifts in global Köppen climate regimes since the 1950s.</li>
+            </ul>
+          </div>
+
+          <div class="detail" id="past-detail" hidden>
+
+            <hr>
+            
+            <h3>[1] Navigation and Location Error</h3>
+            <p>An important question beyond the temperatures themselves is where SSTs were measured.
+               We developed a Bayesian model to infer positional errors in early ship tracks and examined how such errors affect SST reconstructions
+              (<a href="https://doi.org/10.1214/20-AOAS1367" class="link-light">Dai et al., 2021</a>).</p>
+
+            <div class="float-img w65">
+              <video controls>
+                <source src="videos/JSM_2020_final_compressed.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <hr>
+
+            <h3>[2] Land Temperature Variability</h3>
+            <p>
+              We investigated changes in land temperature variance using CMIP5 and CMIP6 ensembles. 
+              In Europe and North America, CMIP5 projected a strong variance increase with warming
+              (<a href="https://journals.ametsoc.org/jcli/article/32/9/2569/344180" class="link-light">Chan et al., 2020</a>),
+              whereas CMIP6 showed only a modest, uncorrelated increase  
+              (<a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021EF002402" class="link-light">Chan et al., 2022</a>). 
+              Using a simple physical model, we demonstrated that differences in radiative forcing, rather than land–air coupling explain the contrast.
+            </p>
+
+            <div class="float-img w65">
+              <video controls>
+                <source src="videos/AGU2021-compressed.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <hr>
+
+            <h3>[3] Atmospheric Jet Dynamics</h3>
+            <p>
+              Using the zonal momentum budget, we quantified the contributions of different dynamical processes to the 
+              interannual variability of the East Asian Jet and revealed distinct upstream and downstream controlling mechanisms. 
+              (<a href="https://doi.org/10.1007/s00382-020-05127-3" class="link-light">Chan et al., 2020</a>). 
+              The mechanism is summarized in the figure below.
+            </p>
+
+            <div class="float-img w65"><img src="images/Jet.png" alt=""></div>
+
+            <hr>
+
+            <h3>[4] Köppen Climate Classification</h3>
+            <p>
+              We detected and attributed historical changes in the <a href="https://en.wikipedia.org/wiki/Köppen_climate_classification">Köppen climate regimes</a> 
+              (<a href="https://www.nature.com/articles/srep13487" class="link-light">Chan and Wu, 2015</a>), finding anthropogenically induced shifts across all five major regimes since the 1950s. 
+              About 5.7% of global land has changed climate regimes, a result highlighted as a key climate science advance in 2015 
+              (<a href="http://www.yaleclimateconnections.org/2016/01/2015s-key-climate-science-research-advances/" class="link-light">news</a>). 
+            </p>
+
+            <div class="float-img w65"><img src="images/Koppen_detection.png" alt=""></div>
+            <p class="figure-caption">
+              <i><b>Fig. 1.</b> Detection and attribution of changes in the five major Köppen climate regimes, 1950–1998. 
+              Shown are observed trends (black) and CMIP5 simulations with all forcings (yellow), GHG forcing (red), and natural forcing (blue). 
+              Error bars indicate internal variability; diamonds mark significant model–observation differences (p&lt;0.05).</i>
+            </p>
+          </div>
+
+          <div class="toggle-actions">
+            <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="past-detail">
+              READ MORE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--------------------------------------------------------------------------------------------------------------------------->
+      <section id="teaching" class="panel">
+        <div class="container">
+          <h2>Teaching</h2>
+
+          <div>
+            <li><b style="font-size:large">SOES <a href="https://www.southampton.ac.uk/courses/modules/soes3042">3042</a>/<a href="https://www.southampton.ac.uk/courses/modules/soes6025">6025</a></b>: 
+              <b style="font-weight: 550;">Computational Data Analysis for Ocean and Earth Scientists</b> 
+            </li>
+            <div class="container" style="padding-left: 3ch;">
+              <p>
+                <b> Part II: Statistics</b> 
+                <b style="font-weight: 550;"> (Lectures 5-9; click figure or text to download slides)</b> 
+              </p>
+
+              <ul class="lectures">
+                <!--<li class="lecture-card">
+                  <a href="modules/SOES3042/Preview.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Preview.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Preview.pdf" style="font-weight: 550;">Module Introduction</a></div>
+                </li> -->
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_05.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_05.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_05.pdf" style="font-weight: 550;">L5: Summary Statistics & Hypothesis Testing</a></div>
+                </li>
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_06.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_06.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_06.pdf" style="font-weight: 550;">L6: Covariance & Correlation</a></div>
+                </li>
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_07.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_07.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_07.pdf" style="font-weight: 550;">L7: Linear Regression</a></div>
+                </li>
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_08.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_08.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_08.pdf" style="font-weight: 550;">L8: Model Selection</a></div>
+                </li>
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_09.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_09.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_09.pdf" style="font-weight: 550;">L9: Principal Component Analysis </a></div>
+                </li>
+                <li class="lecture-card">
+                  <a href="modules/SOES3042/Lecture_10.pdf" target="_blank" rel="noopener">
+                    <img src="modules/SOES3042/Lecture_10.png" alt="Preview" loading="lazy" style="max-width:100%; aspect-ratio:16/9;">
+                  </a>
+                  <div class="name"><a href="modules/SOES3042/Lecture_10.pdf" style="font-weight: 550;">L10: Advanced Regression Techniques</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>  
+
+          <!-- 
+          <hr>
+          <div>
+            <p><b>SOESXXXX</b> 
+              The Oceans in a Changing Climate
+            <p>
+          </div>
+          -->
+
+        </div>
+      </section>
+
+      <!--------------------------------------------------------------------------------------------------------------------------->
+      <section id="outreach" class="panel">
+        <div class="container">
+          <h2>Outreach</h2>
+
+
+            <p><B>Media Coverage</B></p>
+
+            <table>
+              <tr>
+                <td style="width: 15%;">04 /06/ 2025</td>
+                <td style="width: 65%;"><B style="font-weight: 550;">The global temperature may be even higher than we thought</B> </td>
+                <td style="width: 20%;"><a href="https://www.newscientist.com/article/2482510-the-global-temperature-may-be-even-higher-than-we-thought" class="link-light"> New Scientist</a></td>
+              </tr>
+              <tr>
+                <td>10 /02/ 2025</td>
+                <td><B style="font-weight: 550;">Have we already breached the 1.5°C global warming target?</B> </td>
+                <td><a href="https://www.newscientist.com/article/2467521-have-we-already-breached-the-1-5c-global-warming-target" class="link-light"> New Scientist</a></td>
+              </tr>
+              <tr>
+                <td>10 /01/ 2025</td>
+                <td><B style="font-weight: 550;">2024 confirmed as first year to breach 1.5°C warming limit</B> </td>
+                <td><a href="https://www.newscientist.com/article/2463480-2024-confirmed-as-first-year-to-breach-1-5c-warming-limit." class="link-light"> New Scientist</a></td>
+              </tr>
+              <tr>
+                <td>05 /02/ 2024</td>
+                <td><B style="font-weight: 550;">Oceans May Have Already Seen 1.7°C of Warming</B> </td>
+                <td><a href="https://eos.org/articles/oceans-may-have-already-seen-1-7c-of-warming" class="link-light"> Eos</a></td>
+              </tr>
+              <tr>
+                <td>05 /02/ 2024</td>
+                <td><B style="font-weight: 550;">Expert reaction to sponge skeleton data and passing 1.5C</B> </td>
+                <td><a href="https://www.sciencemediacentre.org/expert-reaction-to-sponge-skeleton-data-and-passing-1-5c/" class="link-light"> Science Media Centre</a></td>
+              </tr>
+              <tr>
+                <td>31 /01/ 2024</td>
+                <td><B style="font-weight: 550;">Is the world 1.3°C or 1.5°C warmer? Historical ship logs hold answers</B> </td>
+                <td><a href="https://www.science.org/content/article/world-1-3°c-or-1-5°c-warmer-historical-ship-logs-hold-answers" class="link-light"> Science Insider</a></td>
+              </tr>
+              <tr>
+                <td>20 /10/ 2023</td>
+                <td><B style="font-weight: 550;">Crowdsourced Science Pulls Off a Daring WWII Data Rescue</B> </td>
+                <td><a href="https://eos.org/articles/crowdsourced-science-pulls-off-a-daring-wwii-data-rescue" class="link-light"> Eos</a></td>
+              </tr>
+              <tr>
+                <td>29 /06/ 2021</td>
+                <td><B style="font-weight: 550;">To understand the future of hurricanes, look to the past</B> </td>
+                <td><a href="https://www.eurekalert.org/news-releases/540821" class="link-light"> AAAS EurekAlert!</a></td>
+              </tr>
+              <tr>
+                <td>19 /08/ 2019</td>
+                <td><B style="font-weight: 550;">How Much Hotter Are The Oceans? The Answer Begins With A Bucket</B> </td>
+                <td><a href="https://www.npr.org/2019/08/19/750778010/how-much-hotter-are-the-oceans-the-answer-begins-with-a-bucket" class="link-light"> National Public Radio</a></td>
+              </tr>
+              <tr>
+                <td>17/ 07/ 2019</td>
+                <td><B style="font-weight: 550;">Corrections to ocean-temperature record resolve puzzling regional differences</B> </td>
+                <td><a href="https://www.nature.com/articles/d41586-019-02147-w" class="link-light"> Nature News & Views</a></td>
+              </tr>
+              <tr>
+                <td>07/ 01/ 2016</td>
+                <td><B style="font-weight: 550;">2015’s key climate science research advances</B> </td>
+                <td><a href="https://yaleclimateconnections.org/2016/01/2015s-key-climate-science-research-advances/" class="link-light"> Yale Climate Connections</a></td>
+              </tr>
+            </table>
+
+            <hr>
+            <p><B>Knowledge Exchange</B></p>
+            <p>
+              I am committed to sharing knowledge about climate change with
+              the wider community, particularly with future generations. My
+              involvement includes serving as a volunteer guide at the
+              Harvard Natural History Museum, where I contributed to the
+              climate change exhibit. Since 2020, I have also collaborated
+              with <a href="https://www.citizenschools.org" class="link-light">Citizen Schools</a>,
+              focusing on providing public school students
+              with meaningful opportunities to engage with and learn about
+              climate change. These collaborations have included:
+            </p>
+
+            <table>
+              <tr>
+                <td style="width: 15%;">04/ 2020</td>
+                <td style="width: 65%;"><B style="font-weight: 550;">Develop course materials for the Climate Science Catalyst program</B> </td>
+                <td style="width: 20%;">Citizen Schools</td>
+              </tr>
+              <tr>
+                <td>01/ 2020</td>
+                <td><B style="font-weight: 550;">Volunteer for a 7th-grade course: "Weather, Water, and Climate"</B> </td>
+                <td>Perry School, Boston</td>
+              </tr>
+            </table>
+
+            <br>
+
+            <div class="float-img w45">
+              <img src="images/Citizen_2.jpg" alt="">
+            </div>
+             
+        </div>
+      </section>
+
+      <footer style="text-align: center; padding: 10px; font-size: 0.9em; color: #666; margin-top: 20px;">
+        © 2025 Duo Chan. All rights reserved.
+      </footer>
+
+    </main>
+  </div>
+
+  <!--**********************************************************************************************************************--->
+  <script>
+
+    // Define references once, HTML allowed
+    const refs = {
+
+      chan2025dcenti: `<u><B style="font-weight: 550;">Chan D.</B></u>, Chan, S. C., Siddons, J. T., Cable, A., 
+            Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2025). 
+            DCENT-I: A Globally Infilled Extension of the Dynamically Consistent ENsemble of Temperature Dataset.
+            <b style="font-weight: 550;"><i> Geoscience Data Journal</i></b>.
+            <!-- <a href="https://doi.org/10.1038/s41597-024-03742-x">link</a>,
+            <a href="papers/Chan_et_al_2024_SD.pdf">pdf</a>. -->`,
+
+      chan2025grl: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2025).
+        Re-evaluating Historical Sea Surface Temperature Datasets: Insights from the Diurnal Cycle, Coral Proxy Data, and Radiative Forcing.
+        <b style="font-weight: 550;"><i>Geophysical Research Letter</i></b>,
+        <a href="https://doi.org/10.1029/2025GL116615" class="link-light">link</a>,
+        <a href="https://doi.org/10.7910/DVN/OHCGPN" class="link-light">code & data</a>`,
+
+      liao2025nct: `Liao, W., Wang, L., <u>Liu, X.</u>, <u><B style="font-weight: 550;">Chan D.</B></u>, & <u>Li, D.</u> (2025). 
+      Standardized heat islands and persistence drive modeled urban heat events. 
+      <b style="font-weight: 550;"><i>Nature Cities</i></b>, 1-8.
+      <a href="https://doi.org/10.1038/s44284-025-00290-2" class="link-light">link</a>,
+      <a href="papers/Liao_et_al_2025_NCities.pdf" class="link-light">pdf</a>`,
+
+      he2025ncc: `<u>He P.</u>, Xu Z.*, <u><B style="font-weight: 550;">Chan D.</B></u>, Liu P., & <u>Bai Y.</u> (2025).
+        Climate change aggravates the over-consumption of added sugar in the U.S. especially in disadvantaged groups.
+        <b style="font-weight: 550;"><i>Nature Climate Change</i></b> (in press).`,
+
+      fan2025sciadv: `<B style="font-weight: 550;">Fan Y.</B><b style="color: #d23f3f;">†</b>, <B style="font-weight: 550;">Chan D.</B>, Eugene E., <u>Zhang P.</u>, & Li L. (2025).
+        Subpolar North Atlantic cooling reinforced by colder, drier atmosphere with a weakening Atlantic Meridional Overturning Circulation.
+        <b style="font-weight: 550;"><i>Science Advances</i></b>, 11(23), eads1624.
+        <a href="https://www.science.org/doi/abs/10.1126/sciadv.ads1624" class="link-light">link</a>`,
+
+      kent2025chapter: `<u>Kent E.C.</u>, <B style="font-weight: 550;">Chan D.</B>, Crones R., Englyst P., et al. (2025).
+        Global surface temperatures. In <b style="font-weight: 550;"><i>Energy and Climate Change</i></b> (pp. 85–120). Academic Press.
+        <a href="https://doi.org/10.1016/B978-0-443-21927-6.00022-2" class="link-light">link</a>`,
+
+      wang2025jclim: `<u><B style="font-weight: 550;">Wang C.</B></u>†, Yang W., Vecchi G., Zhang B., Soden B. J., & <B style="font-weight: 550;">Chan D.</B> (2025).
+        Diagnosing the factors that contribute to the intermodel spread of climate feedback in CMIP6.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 38(3), 663–674.
+        <a href="https://doi.org/10.1175/JCLI-D-23-0528.1" class="link-light">link</a>`,
+
+      sippel2024nature: `<u>Sippel S.</u>, Kent E.C., Meinshausen N., <B style="font-weight: 550;">Chan D.</B>, et al. (2024).
+        Early-twentieth-century cold bias in ocean surface temperature observations.
+        <b style="font-weight: 600;"><i style="color: #d23f3f;">Nature</i></b>, 635, 618–624.
+        <a href="https://www.nature.com/articles/s41586-024-08230-1" class="link-light">link</a>,
+        <a href="papers/Sippel_et_al_2024.pdf" class="link-light">pdf</a>,
+        <a href="https://www.nature.com/articles/d41586-024-03551-7" class="link-light">News</a>.`,
+
+      chan2024sdata: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., Huybers P., & Kent E. (2024).
+        A Dynamically Consistent ENsemble of Temperature at the Earth surface since 1850 from the DCENT dataset.
+        <b style="font-weight: 550;"><i>Scientific Data</i></b>, 11(1), 953.
+        <a href="https://doi.org/10.1038/s41597-024-03742-x" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2024_SD.pdf" class="link-light">pdf</a>,
+        <a href="https://doi.org/10.7910/DVN/NU4UGW" class="link-light">data</a>,
+        <a href="https://github.com/duochanatharvard/DCENT" class="link-light">code</a>,
+        <a href="https://www.nature.com/articles/d41586-024-03551-7" class="link-light">News</a>.`,
+
+      fan2024jclim: `<B style="font-weight: 550;">Fan Y.</B><b style="color: #d23f3f;">†</b>, <B style="font-weight: 550;">Chan D.</B>, Zhang P., & <u>Li L</u>. (2024).
+        Disagreement on the North Atlantic Cold Blob Formation Mechanisms among Climate Models.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 37(16), 4061–4078.
+        <a href="https://doi.org/10.1175/JCLI-D-23-0654.1" class="link-light">link</a>.`,
+
+      chan2024jclim: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2024).
+        An improved ensemble of land-surface air temperatures since 1880 using revised pair-wise homogenization algorithms accounting for autocorrelation.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 37(7), 2325–45.
+        <a href="https://journals.ametsoc.org/view/journals/clim/37/7/JCLI-D-23-0338.1.xml" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2024_JC_compressed.pdf" class="link-light">pdf</a>,
+        <a href="https://doi.org/10.7910/DVN/AA0OM0" class="link-light">code & data</a>`,
+
+      zhang2024atmos: `<u>Zhang W.</u>, Yao Y., <B style="font-weight: 550;">Chan D.</B>, & Feng J. (2024).
+        Advances in Air–Sea Interactions, Climate Variability, and Predictability (Editorial).
+        <b style="font-weight: 550;"><i>Atmosphere</i></b>, 15(12), 1422.
+        <a href="https://doi.org/10.3390/atmos15121422" class="link-light">link</a>`,
+
+      yin2024bams: `<u>Yin X.</u>, Huang B., <B style="font-weight: 550;">Chan D.</B>, Graham G., Hu Z., & Zhang H. (2024).
+        Sea-surface temperatures [in "State of the Climate in 2023"].
+        <b style="font-weight: 550;"><i>BAMS</i></b>, 105(8), S163–S168.
+        <a href="https://ametsoc.net/sotc2023/SoCin2023_Ch2_Global%20Climate.pdf" class="link-light">link</a>`,
+
+      ridgen2024npj: `<u>Ridgen A.</u>, Golden C., <B style="font-weight: 550;">Chan D.</B>, & Huyber P. (2024).
+        Climate change linked to ongoing drought in Southern Madagascar.
+        <b style="font-weight: 550;"><i>npj Climate and Atmospheric Science</i></b>, 7(1), 1–9.
+        <a href="https://www.nature.com/articles/s41612-024-00583-8" class="link-light">link</a>`,
+
+      chan2023jclim: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2023).
+        Global and Regional Discrepancies between Early 20th Century Coastal Air and Sea-Surface Temperature Detected by a Coupled Energy-Balance Analysis.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 34(9), 2205–20.
+        <a href="https://journals.ametsoc.org/view/journals/clim/aop/JCLI-D-22-0569.1/JCLI-D-22-0569.1.xml" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2023_JC.pdf" class="link-light">pdf</a>,
+        <a href="https://doi.org/10.7910/DVN/Y4D8PA" class="link-light">code & data</a>`,
+
+      bao2023gpc: `Bao X., <u>Zhang S.</u>, Jiang G., <B style="font-weight: 550;">Chan D.</B>, Hu Y., Wu H., Li H., Wang X., & Ynag T. (2023).
+        Climate changes in the Cryogenian nonglacial epoch: A global synthesis with new findings from the Datangpo Formation in South China.
+        <b style="font-weight: 550;"><i>Global and Planetary Change</i></b>, 229, 104234.
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818123002072" class="link-light">link</a>`,
+
+      yin2023bams: `<u>Yin X.</u>, Huang B., Hu Z., <B style="font-weight: 550;">Chan D.</B>, & Zhang H. (2023).
+        Sea-surface temperatures [in "State of the Climate in 2022"].
+        <b style="font-weight: 550;"><i>BAMS</i></b>, 104(9), S153–S156.
+        <a href="https://journals.ametsoc.org/view/journals/bams/104/9/BAMS-D-23-0076.2.xml" class="link-light">link</a>`,
+
+      chan2022ef: `<u><B style="font-weight: 550;">Chan D.</B></u>, Rigden A., Proctor J., Chan P., & Huybers P. (2022).
+        Differences in Radiative Forcing, Not Sensitivity, Explain Differences in Summertime Land Temperature Variance Change Between CMIP5 and CMIP6.
+        <b style="font-weight: 550;"><i>Earth's Future</i></b>, 10(2), e2021EF002402.
+        <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021EF002402" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2022_Earths_Future.pdf" class="link-light">pdf</a>`,
+
+      proctor2022nfood: `<u>Proctor J.</u>, Rigden A., <B style="font-weight: 550;">Chan D.</B>, & Huybers P. (2022).
+        Soil moisture measurements improve prediction of crop yields and reduce projected climate change damages.
+        <b style="font-weight: 550;"><i>Nature Food</i></b>,
+        <a href="https://www.nature.com/articles/s43016-022-00592-x" class="link-light">link</a>`,
+
+      chan2021sciadv: `<u><B style="font-weight: 550;">Chan D.</B></u>, Vecchi G., Yang W., & Huybers P. (2021).
+        Improved simulation of 19th- and 20th-century North Atlantic hurricane frequency after correcting historical sea surface temperatures.
+        <b style="font-weight: 550;"><i>Science Advances</i></b>, 7(26), eabg6931.
+        <a href="https://advances.sciencemag.org/content/7/26/eabg6931" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2021_SciAdv.pdf" class="link-light">pdf</a>,
+        <a href="https://github.com/duochanatharvard/TC-SST" class="link-light">code</a>,
+        <a href="https://doi.org/10.7910/DVN/ZMVAFB" class="link-light">data</a>`,
+
+      chan2021jclim: `<u><B style="font-weight: 550;">Chan D.</B></u>, & Huybers P. (2021).
+        Correcting sea surface temperature observations removes World War II warm anomaly.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 34(11), 4585–4602.
+        <a href="https://journals.ametsoc.org/view/journals/clim/aop/JCLI-D-20-0907.1/JCLI-D-20-0907.1.xml" class="link-light">link</a>,
+        <a href="papers/Chan_and_Huybers_2021_JC.pdf" class="link-light">pdf</a>,
+        <a href="https://github.com/duochanatharvard/World-Waw-II-Warm-Anomaly" class="link-light">code</a>,
+        <a href="https://doi.org/10.7910/DVN/RJLBOQ" class="link-light">data</a>`,
+
+      chan2021hdsr: `<u><B style="font-weight: 550;">Chan D.</B></u> (2021).
+        Combining statistical, physical, and historical evidence to improve historical sea surface temperature records.
+        <b style="font-weight: 550;"><i>Harvard Data Science Review</i></b>, 3(1).
+        <a href="https://hdsr.mitpress.mit.edu/pub/2xxlfhva/release/2" class="link-light">link</a>,
+        <a href="papers/Chan_2021_HDSR.pdf" class="link-light">pdf</a>`,
+
+      dai2021aoas: `<u>Dai, C.</u>, <B style="font-weight: 550;">Chan D.*</B>, Huybers, P., & Pillai, N. (2021).
+        Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates.
+        <b style="font-weight: 550;"><i>Annuals of Applied Statistics</i></b>, 15(1), 22–40.
+        <a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-15/issue-1/Late-19th-century-navigational-uncertainties-and-their-influence-on-sea/10.1214/20-AOAS1367.short" class="link-light">link</a>,
+        <a href="papers/Dai_et_al_2021_AAS.pdf" class="link-light">pdf</a>`,
+
+      chan2020jclim: `<u><B style="font-weight: 550;">Chan D.</B></u>, & Huybers P. (2020).
+        Systematic differences in bucket sea surface temperatures caused by misclassifications of engine room intake measurements.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 33(18), 7735–7753.
+        <a href="https://journals.ametsoc.org/view/journals/clim/33/18/jcliD190972.xml" class="link-light">link</a>,
+        <a href="papers/Chan_and_Huybers_2020_JC.pdf" class="link-light">pdf</a>,
+        <a href="https://github.com/duochanatharvard/LME-Offsets-vs-Diurnal-Amplitudes" class="link-light">code</a>`,
+
+      chan2020grl: `<u><B style="font-weight: 550;">Chan D.</B></u>, Cobb A., Vargas L., Battisti D., & Huybers P. (2020).
+        Summertime temperature variability increases with local warming in mid-latitude regions.
+        <b style="font-weight: 550;"><i>Geophysical Research Letter</i></b>, e2020GL087624.
+        <a href="https://doi.org/10.1029/2020GL087624" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2020_GRL.pdf" class="link-light">pdf</a>,
+        <a href="https://github.com/duochanatharvard/Compounding_warming_and_variability_increase" class="link-light">code & data</a>`,
+
+      chan2020cd: `<B style="font-weight: 550;">Chan D.</B>, <u>Zhang Y.</u>, Wu Q., & Dai X. (2020).
+        Quantifying the dynamics of the interannual variabilities of the wintertime East Asian Jet Core.
+        <b style="font-weight: 550;"><i>Climate Dynamics</i></b>, 54(3), 2447–2463.
+        <a href="https://link.springer.com/article/10.1007/s00382-020-05127-3" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2020_CD.pdf" class="link-light">pdf</a>`,
+
+      chan2019nature: `<B style="font-weight: 550;">Chan D.</B>, Kent E., Berry D. & <u>Huybers P</u>. (2019).
+        Correcting datasets leads to more homogeneous early 20th century sea surface warming.
+        <b style="font-weight: 600;"><i style="color: #d23f3f;">Nature</i></b>, 571, 393–397.
+        <a href="https://www.nature.com/articles/s41586-019-1349-2" class="link-light">link</a>,
+        <a href="https://github.com/duochanatharvard/Homogeneous_early_20th_century_warming" class="link-light">code</a>,
+        <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DXJIGA" class="link-light">data</a>,
+        <a href="https://news.harvard.edu/gazette/story/2019/07/researchers-find-a-simpler-pattern-of-ocean-warming/" class="link-light">Harvard Gazette</a>,
+        <a href="https://www.npr.org/2019/08/19/750778010/how-much-hotter-are-the-oceans-the-answer-begins-with-a-bucket" class="link-light">NPR news</a>`,
+
+      chan2019jclim: `<u><B style="font-weight: 550;">Chan D.</B></u> & Huybers P. (2019).
+        Systematic differences in bucket sea surface temperature measurements amongst nations identified using a linear-mixed-effect method.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 32(5), 2569–2589.
+        <a href="https://journals.ametsoc.org/jcli/article/32/9/2569/344180" class="link-light">link</a>,
+        <a href="papers/Chan_and_Huybers_2019_JC.pdf" class="link-light">pdf</a>,
+        <a href="https://github.com/duochanatharvard/SST-LME-compact" class="link-light">code</a>`,
+
+      chan2016aas: `<B style="font-weight: 550;">Chan, D.</B>, <u>Wu, Q.</u>, Jiang, G., & Dai, X. (2016).
+        Projected shifts in Köppen climate zones over China and their temporal evolution in CMIP5 multi-model simulations.
+        <b style="font-weight: 550;"><i>Advances in Atmospheric Sciences</i></b>, 3(33), 283–293.
+        <a href="https://link.springer.com/article/10.1007/s00376-015-5077-8" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2016_AAS.pdf" class="link-light">pdf</a>`,
+
+      hu2016jclim: `<u>Hu, C.</u>, Wu, Q., Yang, S., Yao, Y., <B style="font-weight: 550;">Chan, D.</B>, Li, Z., & Deng, K. (2016).
+        A linkage observed between austral autumn Antarctic Oscillation and preceding Southern Ocean SST anomalies.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 29(6), 2109–2122.
+        <a href="https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-15-0403.1" class="link-light">link</a>`,
+
+      wu2016grl: `<u>Wu, Q.</u>, Cheng, L., <B style="font-weight: 550;">Chan, D.</B>, Yao, Y., Hu, H., & Yao, Y. (2016).
+        Suppressed mid-latitude summer atmospheric warming by Arctic sea ice loss during 1979 to 2012.
+        <b style="font-weight: 550;"><i>Geophysical Research Letters</i></b>, 43(6), 2792–2800.
+        <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2016GL068059" class="link-light">link</a>`,
+
+      chan2015srep: `<B style="font-weight: 550;">Chan, D.</B>, & <u>Wu, Q.</u> (2015).
+        Significant anthropogenic-induced changes of climate classes since 1950.
+        <b style="font-weight: 550;"><i>Scientific Reports</i></b>, 5, 13487. Doi: 10.1038/srep13487.
+        <a href="https://www.nature.com/articles/srep13487" class="link-light">link</a>,
+        <a href="papers/Chan_and_Wu_2015_SR.pdf" class="link-light">pdf</a>,
+        <a href="http://www.yaleclimateconnections.org/2016/01/2015s-key-climate-science-research-advances/" class="link-light">news</a>`,
+
+      chan2015jclim: `<B style="font-weight: 550;">Chan, D.</B>, & <u>Wu, Q.</u> (2015).
+        Attributing Observed SST Trends and Sub-continental Land Warming to Anthropogenic Forcing during 1979 to 2005.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 28, 3152–3170.
+        <a href="https://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-14-00253.1" class="link-light">link</a>,
+        <a href="papers/Chan_and_Wu_2015_JC.pdf" class="link-light">pdf</a>`
+    };
+
+    // Insert reference HTML into all elements with data-ref="key"
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-ref]").forEach(el => {
+        const key = el.getAttribute("data-ref");
+        if (refs[key]) el.innerHTML = refs[key];
+      });
+    });
+
+    function smoothScrollTo(sel){
+      var el=document.querySelector(sel); if(!el) return;
+      var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView({behavior: reduce? 'auto':'smooth', block:'start'});
+    }
+
+    var btn=document.querySelector('.menu-toggle');
+    btn.addEventListener('click',function(){
+      document.body.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', document.body.classList.contains('nav-open'));
+    });
+
+    var links=document.querySelectorAll('.sidenav ul a');
+    for (var i=0; i<links.length; i++){
+      links[i].addEventListener('click', function(e){
+        e.preventDefault();
+        var target = this.getAttribute('href');
+        smoothScrollTo(target);
+        // highlight now
+        var id = target && target.charAt(0)==='#' ? target.slice(1) : null;
+        if (id) setActive(id);
+        if (window.innerWidth<=640){ document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); }
+      });
+    }
+
+    var sections=document.querySelectorAll('section.panel');
+
+    // Maps: section id -> link, and data-section -> link
+    var byId={}, bySection={};
+    for(var i=0;i<links.length;i++){
+      var l=links[i];
+      var href=l.getAttribute('href');
+      if(href && href.charAt(0)==='#'){ byId[href.slice(1)]=l; }
+      if(l.dataset.section){ bySection[l.dataset.section]=l; }
+    }
+
+    var currentId = null;
+
+    function setActive(id){
+      if(id===currentId) return;
+      currentId = id;
+      // clear
+      for (var m=0; m<links.length; m++) links[m].removeAttribute('aria-current');
+      // set current
+      var link = byId[id];
+      if (!link) return;
+      link.setAttribute('aria-current','true');
+      var parentKey = link.dataset.parent;
+      if (parentKey && bySection[parentKey]) bySection[parentKey].setAttribute('aria-current','true');
+    }
+
+    function updateActive(){
+      // Pick the section whose top has scrolled past a small offset,
+      // and whose bottom has not yet passed that offset.
+      var offset = 120; // px from top; tweak if needed
+      var bestId = null;
+
+      for (var s=0; s<sections.length; s++){
+        var r = sections[s].getBoundingClientRect();
+        if (r.top <= offset && r.bottom > offset){ bestId = sections[s].id; break; }
+      }
+      // If we're above the first section, default to it
+      if (!bestId) bestId = sections[0].id;
+
+      setActive(bestId);
+    }
+
+    var ticking=false;
+    function onScroll(){ if(!ticking){ requestAnimationFrame(function(){ updateActive(); ticking=false; }); ticking=true; } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', updateActive);
+    updateActive();
+
+    function openParentDetails(el){
+      for (var p=el && el.parentElement; p; p=p.parentElement){
+        if (p.tagName === 'DETAILS') p.open = true;
+      }
+    }
+    window.addEventListener('hashchange', function(){
+      if (!location.hash) return;
+      var el = document.getElementById(location.hash.slice(1));
+      if (el){ openParentDetails(el); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+
+    // Reusable toggler: swaps summary <p> with .detail block and updates button text + aria-expanded
+    function setupToggle(section, labels){
+      const btn = section.querySelector('.toggle-btn');
+      const summary = section.querySelector('.summary');
+      const detail = section.querySelector('.detail');
+      if(!btn || !summary || !detail) return;
+
+      // Ensure aria-controls points at the detail id
+      if(!detail.id){ detail.id = section.id + '-detail'; }
+      btn.setAttribute('aria-controls', detail.id);
+
+      function setExpanded(expanded){
+        btn.setAttribute('aria-expanded', expanded);
+        summary.hidden = expanded;
+        detail.hidden = !expanded;
+        btn.textContent = expanded ? labels.collapse : labels.expand;
+      }
+
+      // Initial state: collapsed (summary visible)
+      setExpanded(false);
+
+      btn.addEventListener('click', function(){
+        const next = btn.getAttribute('aria-expanded') !== 'true';
+        setExpanded(next);
+      });
+    }
+
+    // Attach to demos
+    setupToggle(document.getElementById('publications'),  {expand:'Full Publication List',    collapse:'Highlighted Publications'});
+    setupToggle(document.getElementById('dcentstory'),  {expand:'Read The Full Story',    collapse:'Read Less'});
+    setupToggle(document.getElementById('past'),  {expand:'Read More',    collapse:'Read Less'});
+
+
+  </script>
+  <!--**********************************************************************************************************************--->
+
+</body>
+<!--************************************************************************************************************************--->
 </html>
