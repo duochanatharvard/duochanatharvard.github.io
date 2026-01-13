@@ -1,0 +1,188 @@
+:root{--b900:#193e87;--b800:#395695;--b700:#5474b8;--b600:#97b1ea;--b400:#bfd1f8;--b100:#e8efff;--navw:220px;--content-max:1200px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#fff;color:var(--b700);line-height:1.6;display:flex;justify-content:center}
+/* --- H1 设置 (主要标题，如 News, Data Access) --- */
+h1 {
+    color: var(--b900);     /* 颜色：目前是深蓝 (#375695) */
+    font-size: 1.8rem;      /* 大小：数字越大字越大 (默认大概是2rem) */
+    font-weight: 800;       /* 粗细：400是正常，700是加粗，900是特粗 */
+    margin: 0 0 1rem;       /* 间距：下方留出更多空白 */
+    line-height: 1.2;       /* 行高：稍微紧凑一点，防止标题太散 */
+}
+
+/* --- H2 设置 (次级标题，如果以后用到) --- */
+h2 {
+    color: var(--b700);     /* 颜色：我换成了稍浅一点的蓝色，区分层次 */
+    font-size: 1.55rem;      /* 大小：比 h1 小 */
+    font-weight: 600;       /* 粗细：半粗 */
+    margin: 0 0 0.75rem;    /* 间距 */
+}
+h3{color:var(--b800);font-size: 1.25rem; margin:0 0 .5rem}
+
+p {
+  text-align: justify;       /* 两端对齐 */
+  -webkit-hyphens: auto;     /* Safari/Chrome 兼容写法 */
+  hyphens: auto;             /* 标准写法：自动连字符断词 */
+}
+
+.layout{display:grid;grid-template-columns:var(--navw) 1fr;min-height:100vh;width:100%;max-width:var(--content-max);background:#fff}
+nav.sidenav{position:sticky;top:0;height:100vh;width:var(--navw);border-right:3px solid var(--b100);background:#fff;overflow:auto;z-index:1000;transition:transform .25s ease}
+main{transition:transform .25s ease}
+
+a {color: #4f6daf; font-weight: bold;}
+a:hover {color: #171d5c;}
+
+body {font-family: 'Calibri', sans-serif; font-weight: 300; }
+b, strong {font-family: 'Calibri', sans-serif; font-weight: 600;  color: #5573b3;}
+.link-light {font-family: Calibri, sans-serif;  font-weight: 300; color: #99999b;}
+.link-light1 {font-family: Calibri, sans-serif;  font-weight: 300; color: #5573b3;}
+.link-light2 {font-family: Calibri, sans-serif;  font-weight: 600; color: #d23f3f;}
+
+
+/* .panel{min-height:100vh;padding:6rem 1rem;border-bottom:1px solid var(--b100);display:block} */
+.panel{min-height:auto;padding:2rem 0.2rem; border-bottom:3px solid var(--b100);display:block}
+#home.panel{display:flex;align-items:flex-start;justify-content:center;min-height:auto;padding-top:2rem;padding-bottom:2rem}
+.container{width:100%;max-width:calc(var(--content-max) - var(--navw));padding:0 1rem;margin-inline:0}
+
+.sidenav .title{font-size:1.25rem;font-weight:600;color:var(--b900);padding:1rem 1rem .25rem}
+.sidenav ul{list-style:none;margin:0;padding:0 .5rem 1rem;display:grid;gap:8px}
+.sidenav ul a{display:grid;grid-template-columns:24px 1fr;align-items:center;gap:10px;padding:.5rem;border-radius:10px;text-decoration:none;color:var(--b700);outline:none;font-weight:400}
+.sidenav a:focus{box-shadow:0 0 0 2px var(--b400) inset}
+.sidenav a:hover{background:var(--b100)}
+
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid #8db0ff;background:transparent;transition:transform .2s,background-color .2s,border-color .2s;justify-self:center}
+.sidenav a:hover .dot{transform:scale(1.05);border-color:#697a9f}
+.sidenav a[aria-current="true"]{background:rgba(26,86,219,.08)}
+.sidenav a[aria-current="true"] .dot{background:var(--b600);border-color:var(--b600)}
+
+.label{font-size:.95rem;line-height:1.4;word-break:break-word;white-space:normal}
+
+.group .sub{list-style:none;margin:.25rem 0 0 0;padding:0 0 0 28px;display:grid;gap:6px}
+.group .sub .dot{width:10px;height:10px}
+
+.menu-toggle{display:none;position:fixed;top:10px;left:10px;background:#fff;color:var(--b700);border:3px solid var(--b100);padding:8px 10px;font-size:1.2rem;z-index:1100;border-radius:6px;cursor:pointer}
+
+@media (max-width: 640px){
+.layout{grid-template-columns:1fr}
+nav.sidenav{position:fixed;left:0;top:0;transform:translateX(-100%);padding-top:3rem}
+body.nav-open nav.sidenav{transform:translateX(0)}
+main{margin-left:0;transform:none;padding-top:3rem}
+body.nav-open main{transform:translateX(var(--navw))}
+.menu-toggle{display:block}
+.container{max-width:100%}
+}
+
+/* Bio photo: right-aligned, scales with column, capped size */
+#bio .bio-photo {float: right; width: min(60%, 300px);  margin: 0 0 1rem 1rem; border-radius: 8px;}
+#bio .bio-photo img { display: block;  width: min(100%, 300px);  height: auto; border-radius: 8px;}
+@media (max-width:800px){#bio .bio-photo{float:none;display:block;width:min(100%,300px);margin:0 auto 1rem}}
+
+.float-img{display:block;margin:0 auto 1rem}
+.float-img.w45{max-width:45%}
+.float-img.w50{max-width:50%}
+.float-img.w65{max-width:65%}
+.float-img.w80{max-width:80%}
+.float-img img{display:block;width:100%;height:auto}
+.float-img video{display:block;width:100%;height:auto}
+@media(max-width:800px){.float-img{max-width:100%!important}}
+
+.figure-caption{line-height:20px;color:rgb(160,160,160)!important;text-align:center;font-style:italic}
+.figure-caption b{font-weight:550;color:rgb(150,150,150)!important}
+
+
+/* Grid: max 4 per row; drops to 3/2/1 as space shrinks */
+.members{
+--gap:16px; --card-min:180px;  /* set your X here */
+display:grid; gap:var(--gap);
+grid-template-columns:repeat(4, minmax(var(--card-min), 1fr));
+list-style:none; padding:0; margin:0;
+}
+@media (max-width:1100px){ .members{grid-template-columns:repeat(3, minmax(var(--card-min),1fr));} }
+@media (max-width:800px){  .members{grid-template-columns:repeat(2, minmax(var(--card-min),1fr));} }
+@media (max-width:520px){  .members{grid-template-columns:1fr;} }
+
+/* Card */
+.member-card{display:block}
+.member-card img{
+width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:8px;
+}
+.member-card .name{font-weight:500; margin-top:.5rem}
+.member-card .role{font-size:.9rem}
+.member-card .interests{font-size:.9rem}
+.member-card .name a{text-decoration:none}
+
+@media (max-width:520px){.member-card img{width:60%;margin:0}}
+@media (max-width:520px){.members .member-card img{ display:none;}}
+
+/* Grid: max 3 per row; drops to 2/1 as space shrinks */
+.lectures{
+--gap:16px; --card-min:180px;  /* set your X here */
+display:grid; gap:var(--gap);
+grid-template-columns:repeat(3, minmax(var(--card-min), 1fr));
+list-style:none; padding:0; margin:0;
+}
+@media (max-width:1100px){ .lectures{grid-template-columns:repeat(2, minmax(var(--card-min),1fr));} }
+@media (max-width:520px){  .lectures{grid-template-columns:1fr;} }
+
+/* Card */
+.lecture-card{display:block}
+.lecture-card img{
+width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:8px; border: 1px solid #afc2e5;
+}
+.lecture-card .name{font-weight:500; margin-top:.5rem}
+.lecture-card .role{font-size:.9rem}
+.lecture-card .interests{font-size:.9rem}
+.lecture-card .name a{text-decoration:none}
+
+@media (max-width:520px){.lecture-card img{width:70%;margin:0}}
+
+hr { border: none; border-top: 1px solid rgb(218, 231, 245); margin: 1rem 0;}
+
+/* Parent link active: dot on, no background */
+.sidenav .group > a[aria-current="true"]{
+background: transparent;
+}
+/* Keep hover behavior if you want */
+.sidenav .group > a[aria-current="true"]:hover{
+background: var(--b100);
+}
+
+/* summary styling */
+#dcent-story summary{
+cursor:pointer; padding:.6rem .8rem; border:1px solid var(--b100);
+border-radius:8px; background:#d23f3f; user-select:none; display:inline-flex; gap:.5rem; align-items:center;
+font-weight:600; color:#fff;            /* ← make text white */
+}
+#dcent-story summary:focus{ outline: none; box-shadow:0 0 0 2px var(--b400) inset }
+#dcent-story summary::after{ content:"▾"; transition:transform .2s }
+#dcent-story[open] summary::after{ transform:rotate(180deg) }
+
+#dcent-story summary .when-open{ display:none }
+#dcent-story[open] summary .when-open{ display:inline }
+#dcent-story[open] summary .when-closed{ display:none }
+
+/* optional: remove default marker */
+#dcent-story summary::-webkit-details-marker{ display:none }
+
+.toggle-section{border: 0; border-bottom: 3px solid var(--b100); }
+.toggle-sectionl2{border: 0; border-bottom: 0px solid var(--b100); }
+.toggle-actions{margin-top:8px}
+.toggle-btn{appearance:none;border:1px solid var(--b700);color:#fff;background:#ec2150;border-radius:8px;padding:.5rem .8rem;font-weight:600;cursor:pointer}
+.toggle-btn:focus{outline:none;box-shadow:0 0 0 2px var(--b100) inset}
+
+/* honor [hidden] and keep layout clean */
+.summary[hidden], .detail[hidden]{display:none}
+
+#publications :where(.summary,.detail):not([hidden]) :where(ul,ol){display:grid;gap:8px}
+
+table {border-collapse: collapse; width: 100%;}
+tr:nth-child(even) {background-color: #d0e5f1;}
+tr:nth-child(odd) {background-color: #f0f9fd;}
+
+:root{ --top-offset: 96px; }              /* tweak as needed */
+html{ scroll-behavior:smooth; scroll-padding-top: var(--top-offset); }
+.panel{ scroll-margin-top: var(--top-offset); }
+
+.sidenav a.no-hover:hover {
+background: transparent !important;
+}
