@@ -18,6 +18,29 @@
     nav.sidenav{position:sticky;top:0;height:100vh;width:var(--navw);border-right:3px solid var(--b100);background:#fff;overflow:auto;z-index:1000;transition:transform .25s ease}
     main{transition:transform .25s ease}
 
+    p{
+      text-align: justify;       /* 两端对齐 */
+      -webkit-hyphens: auto;     /* Safari/Chrome 兼容写法 */
+      hyphens: auto;             /* 标准写法：自动连字符断词 */
+    }
+
+    h1 {
+      color: var(--b900);     /* 颜色：目前是深蓝 (#375695) */
+      font-size: 1.8rem;      /* 大小：数字越大字越大 (默认大概是2rem) */
+      font-weight: 800;       /* 粗细：400是正常，700是加粗，900是特粗 */
+      margin: 0 0 1rem;       /* 间距：下方留出更多空白 */
+      line-height: 1.2;       /* 行高：稍微紧凑一点，防止标题太散 */
+    }
+
+    /* --- H2 设置 (次级标题，如果以后用到) --- */
+    h2 {
+        color: var(--b700);     /* 颜色：我换成了稍浅一点的蓝色，区分层次 */
+        font-size: 1.55rem;      /* 大小：比 h1 小 */
+        font-weight: 600;       /* 粗细：半粗 */
+        margin: 0 0 0.75rem;    /* 间距 */
+    }
+    h3{color:var(--b800);font-size: 1.25rem; margin:0 0 .5rem}
+
     a {color: #6483c6; font-weight: bold;}
     a:hover {color: #171d5c;}
 
@@ -205,7 +228,7 @@
       <section id="bio" class="panel">
         <div class="container">
 
-          <h2>Bio <span style="font-weight: normal; font-size: 0.9rem;">(<a href="CV_Duo_Chan.pdf" style="font-weight: normal; font-size: 0.9rem;">CV</a>)</span></h2>
+          <h1>Bio <span style="font-weight: normal; font-size: 0.9rem;">(<a href="CV_Duo_Chan.pdf" style="font-weight: normal; font-size: 0.9rem;">CV</a>)</span></h1>
          
           <a href="#" class="image fit bio-photo"><img src="images/photo.jpg" alt=""></a>
           <p>
@@ -250,18 +273,25 @@
       <!--**********************************************************************************************************************--->
       <section id="news" class="panel">
         <div class="container">
-          <h2>News</h2>
+          <h1>News</h1>
+
+          <!-- 
+          <ul>
+            <li><b style="color:#d23f3f"> Our new DCENT-I data paper is out! </b></li>
+            <span data-ref="chan2025dcenti"></span>
+          </ul>
+        -->
 
           <ul>
             <li><b style="color:#d23f3f"> I have been awarded a UKRI Future Leaders Fellowship (Round 9)! </b>
             </li>
-            <!-- <span data-ref="chan2025dcenti"></span> --> 
           </ul>
           
-
+          <!-- 
           <ul>
             <li><b style="color:#d23f3f"> Our new paper on climate change and added-sugar intake is out in <i> Nature Climate Change</i>! </b></li>
             <span data-ref="he2025ncc_short"></span> 
+            
             <p>The paper has Altmetric score of <b>2325</b> one week after publication, ranking <b>#1</b> among articles of a similar age in <i>NCC</i> and <b>#17</b> across all disciplines.  
               It has been covered by more than <b>300</b> news outlets, including major international media such as  
               <a href="https://apnews.com/article/heat-hot-climate-sugar-soda-diabetes-dee1cb27322afb3e556fd2c6f8ecf1ae" class="link-light">Associated Press</a>,
@@ -276,15 +306,16 @@
             <li><b style="color:#d23f3f"> The infilled version of DCENT (DCENT-I) is available! </b>
             <a href="https://doi.org/10.7910/DVN/ZY0WM8" class="link-light">Data Access</a>
             </li>
-            <!-- <span data-ref="chan2025dcenti"></span> --> 
+            
           </ul>
+
           
           <ul>
             <li><b style="color:#d23f3f"> Our new paper on evaluating SST dataset is out in <i>GRL</i>! </b></li>
             <span data-ref="chan2025grl"></span>
           </ul>
                         
-          <!-- 
+          
           <ul>
             <li> <B style="color:#d23f3f">DCENT 2024 Data is <a href="https://doi.org/10.7910/DVN/NU4UGW" class="link-light2">Available</a>!</B> 
               The 2024 warming level is <b style="font-weight: 550;">1.65°C</b> above the 1850--1900 baseline. </li>
@@ -297,7 +328,7 @@
       <!--**********************************************************************************************************************--->
       <section id="opportunities" class="panel">
         <div class="container">
-          <h2>Group & Opportunities</h2>
+          <h1>Group & Opportunities</h1>
 
             <p><b>Current Members</b>:</p>
             <ul class="members" aria-label="Current group members">
@@ -312,6 +343,12 @@
                 <div class="name"><a href="https://example.com/alex" style="font-weight: 550;"><u>Ewan Strathdee</u></a></div>
                 <div class="role">PhD Student</div>
                 <div class="interests">Climate impact on food & nutrition; Network science</div>
+              </li>
+              <li class="member-card">
+                <img src="images/group_member/Christian.jpeg" alt="Christian Kenwright">
+                <div class="name"><a href="https://example.com/alex" style="font-weight: 550;"><u>Christian Kenwright</u></a></div>
+                <div class="role">PhD Student</div>
+                <div class="interests">Sea Level Data Rescue & Reconstruction</div>
               </li>
               <li class="member-card">
                 <img src="images/group_member/Yifei_Fan.jpg" alt="Yifei Fan">
@@ -344,17 +381,19 @@
             </p>
 
             <ul>
-              <li> Strong interest in climate change. </li>
-              <li> Solid background in mathematics and physics. </li>
-              <li> A Master’s or Bachelor’s degree in math, physics, computer science, atmospheric, or oceanic sciences is preferred. </li>
+              <li> Strong interest in climate and climate change. </li>
+              <li> Solid background in mathematics and physics, and fluent in coding. </li>
+              <li> A Master’s or Bachelor’s degree in math, physics, computer science, atmospheric, or oceanic sciences. </li>
             </ul>
         
+            <!-- 
             <p>
               <B>Postdoc Recruitment</B>: 
               <B style="font-weight: 600; color: #d23f3f"><u>Funding is also available for two 3.5-year postdoctoral positions</u></B>: 
               one on climate modeling and simple model development, and one on AI for climate. 
               Advertisements will be released in September or October, 2025.  Please stay tuned!
             </p>
+            -->
 
         </div>
       </section>
@@ -363,7 +402,7 @@
       <section id="publications" class="panel toggle-section">
         <div class="container">
 
-          <h2>Publications</h2>
+          <h1>Publications</h1>
           <p>† student or mentee;  * co-first author;  &nbsp <u>&nbsp &nbsp </u> corresponding</p>
 
           <div class="summary">
@@ -446,16 +485,23 @@
       <section id="DCENT" class="panel">
         <div class="container">
 
-          <img src="images/DCENT_logo.png" alt="DCENT_logo" style="max-width: 500px; width: 60%;">
+          <img src="images/DCENT_logo.png" alt="DCENT_logo" style="max-width: 400px; width: 100%;">
 
-          <p class="intro">
-            Dynamically Consistent Ensemble of Temperature (DCENT) is
+          <p>
+            Dynamically Consistent Ensemble of Temperature (<b>DCENT</b>) is
             a 200-member ensemble of 5°x5° monthly Earth surface temperature estimates since 1850.  
-            Its infilled version, DCENT-I, extends coverage to the global domain using 
+            Its infilled version, <b>DCENT-I</b>, extends coverage to the global domain using 
             Gaussian process regression with anisotropic kernels to enhance spatial pattern fidelity. 
             Together, they support quantification of historical climate change at 
             global and regional scales and analysis of associated variability and dynamics.
           </p>
+
+          <p>
+            For more information, please visit the <b>DCENT project page</b>: 
+            <a href="http://dcent-i.github.io" style="font-weight: 600; color: #d23f3f">dcent-i.github.io</a>.
+          </p>
+
+          <!--
 
           <p style="padding-left: 4ch; text-indent: -4ch;">
             <B style="font-weight: 600;">DCENT Reference</B>: <span data-ref="chan2024sdata"></span>
@@ -523,7 +569,6 @@
           
           <hr>
 
-          <!----------------------------------------------------------------->
           <section class="toggle-sectionl2" id="dcentstory">
             <h3>DCENT Development</h3>
             <div class="container">
@@ -591,7 +636,7 @@
                 <div class="float-img w65"><img src="images/DCENT_3.png" alt=""></div>
                 <p class="figure-caption"><b>Fig. 4.</b> Schematic of data development for most existing datasets.</p>
               
-                <!----------------------------------------------------------------->
+                
                 <hr> 
                 <p><h3>Our Vision and Approach</h3></p>
 
@@ -655,7 +700,7 @@
                 <div class="float-img w65"><img src="images/DCENT_4.png" alt=""></div>
                 <p class="figure-caption"><b>Fig. 5.</b> Land temperature-inferred versus observational SSTs along global coasts.</p>
               
-                <!----------------------------------------------------------------->
+                
                 <hr/>
 
                 <p><h3>Our Key Achievements</h3></p>
@@ -719,14 +764,15 @@
 
         </div>
 
-        <!--<iframe src="Dataset_selector.html" style="width:100%; height:900px; border:0; display:block;"> </iframe>-->
+        -->
 
+        </div>
       </section>
 
       <!--**********************************************************************************************************************--->
       <section id="AMOC" class="panel">
         <div class="container">
-          <h2>AMOC and Cold Blob</h2>
+          <h1>AMOC and Cold Blob</h1>
 
           <p>
             The subpolar North Atlantic “cold blob” shapes European weather, storm tracks, and projections. 
@@ -762,7 +808,7 @@
       <!--**********************************************************************************************************************--->
       <section class="panel toggle-section" id="past">
         <div class="container">
-          <h2>Past Work</h2>
+          <h1>Past Work</h1>
 
           <div class="summary">
             <p>Our past work spans data quality, variability, and dynamics across the climate system, including:</p>
@@ -848,7 +894,7 @@
       <!--------------------------------------------------------------------------------------------------------------------------->
       <section id="teaching" class="panel">
         <div class="container">
-          <h2>Teaching</h2>
+          <h1>Teaching</h1>
 
           <div>
             <li><b style="font-size:large">SOES <a href="https://www.southampton.ac.uk/courses/modules/soes3042">3042</a>/<a href="https://www.southampton.ac.uk/courses/modules/soes6025">6025</a></b>: 
@@ -922,7 +968,7 @@
       <!--------------------------------------------------------------------------------------------------------------------------->
       <section id="outreach" class="panel">
         <div class="container">
-          <h2>Outreach</h2>
+          <h1>Outreach</h1>
           
             <p><B>Selected Media Coverage</B></p>
             <table>
@@ -1045,7 +1091,7 @@
       </section>
 
       <footer style="text-align: center; padding: 10px; font-size: 0.9em; color: #666; margin-top: 20px;">
-        © 2025 Duo Chan. All rights reserved.
+        © 2026 Duo Chan. All rights reserved.
       </footer>
 
     </main>
@@ -1068,7 +1114,7 @@
             <a href="https://doi.org/10.1175/BAMS-D-25-0074.1"  class="link-light">link</a>`,
 
       chan2025dcenti: `<u><B style="font-weight: 550;">Chan D.</B></u>, Chan, S. C., Siddons, J. T., Cable, A., 
-            Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2025). 
+            Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2026). 
             DCENT-I: A Globally Infilled Extension of the Dynamically Consistent ENsemble of Temperature Dataset.
             <b style="font-weight: 550;"><i> Geoscience Data Journal</i></b>.
             <!-- <a href="https://doi.org/10.1038/s41597-024-03742-x" class="link-light">link</a>,
@@ -1380,6 +1426,8 @@
 
     // Reusable toggler: swaps summary <p> with .detail block and updates button text + aria-expanded
     function setupToggle(section, labels){
+      if (!section) return;  // <--- 【添加这一行】如果找不到板块，直接跳过，不要报错
+
       const btn = section.querySelector('.toggle-btn');
       const summary = section.querySelector('.summary');
       const detail = section.querySelector('.detail');
