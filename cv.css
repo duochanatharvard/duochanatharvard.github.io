@@ -1,0 +1,225 @@
+/* ============================================================
+   Duo Chan — CV Stylesheet
+   A4 paper layout with LaTeX-like typography
+   ============================================================ */
+
+:root {
+  --blue:       #4a78cf;   /* babyblue  rgb(0.29,0.47,0.81) */
+  --blue-light: #7daae8;   /* infantblue rgb(0.49,0.67,0.91) */
+  --dark:       #606060;   /* darkgray  rgb(0.25,0.25,0.25) */
+  --black:      #111111;
+  --gray:       #8c8c8c;
+  --gray-light: #a6a6a6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---- Body ---- */
+body {
+  background: #c0c0c0;
+  font-family: Calibri, Nunito, 'Segoe UI', system-ui, sans-serif;
+  font-size: 14.667px; /* 11pt = 14.667px at 96dpi */
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ---- Top bar (screen only) ---- */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #2a2a2a;
+  color: #ddd;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10.5pt;
+}
+.top-bar a { color: #9dc4f0; text-decoration: none; }
+.top-bar a:hover { text-decoration: underline; }
+.top-bar button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 5px 14px;
+  border-radius: 3px;
+  font-size: 10pt;
+  cursor: pointer;
+}
+.top-bar button:hover { background: #3a68bf; }
+
+/* ---- Page wrapper ---- */
+.page-wrapper {
+  padding: 20px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- A4 paper ---- */
+.a4-page {
+  width: 794px;
+  background: white;
+  padding: 45px 67px 67px;   /* top ~12mm, sides/bottom ~17.8mm */
+  box-shadow: 0 3px 20px rgba(0,0,0,0.5);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.cv-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  margin-bottom: 6pt;
+  line-height: 1.5;
+}
+
+.cv-name { font-weight: 800; color: var(--blue); white-space: nowrap; line-height: 1; align-self: end; }
+.cv-name .n-big { font-size: 26pt; }
+.cv-name .n-mid { font-size: 20pt; }
+
+.cv-header-addr,
+.cv-header-contact {
+  text-align: right;
+  font-size: 10pt;
+  white-space: nowrap;
+}
+
+.cv-header-addr    { align-self: end; }
+.cv-header-contact { align-self: end; }
+
+.cv-header-addr a,
+.cv-header-contact a,
+.cv-links a { color: var(--blue); text-decoration: none; }
+.cv-header-addr a:hover,
+.cv-header-contact a:hover,
+.cv-links a:hover { text-decoration: underline; }
+
+.cv-links { font-size: 10pt; align-self: end; }
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.cv-section { margin-top: 0.55em; }
+
+.cv-section h2 {
+  font-weight: bold;
+  font-size: 1.18em;
+  color: var(--blue);
+  border-bottom: 1.5px solid var(--blue);
+  padding-bottom: 1px;
+  margin-bottom: 2pt;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.section-note {
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: var(--blue-light);
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   TABLES (Education, Appointments, Sea-Going)
+   ============================================================ */
+.cv-table { width: 100%; border-collapse: collapse; }
+.cv-table td { padding: 1pt 0; vertical-align: top; }
+.cv-table td:first-child {
+  white-space: nowrap;
+  padding-right: 8pt;
+  min-width: 1.8cm;
+}
+
+/* ============================================================
+   HANGING PARAGRAPHS  (--hi sets the indent amount)
+   ============================================================ */
+.hang {
+  padding-left: var(--hi, 2em);
+  text-indent: calc(-1 * var(--hi, 2em));
+  margin-bottom: 0.15cm;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   TEXT STYLES
+   ============================================================ */
+
+/* \tb — bold black (700) */
+.tb { font-weight: 700; color: var(--black); }
+
+/* \tu — regular weight (400), between body (300) and bold (700) */
+.tu { font-weight: 400; color: var(--black); }
+
+/* subsection label (Invited Talks, etc.) */
+.cv-sublabel { margin-top: 0.35em; margin-bottom: 0.1em; }
+
+/* Labeled hanging paragraphs — grid aligns content column perfectly */
+.hang-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.5em;
+  margin-bottom: 0.15cm;
+  line-height: 1.35;
+}
+.hang-grid .hang-content { min-width: 0; }
+.hang-grid .hang-content .tu { font-size: 1em; }
+.cv-yr { font-size: 0.88em; }
+
+/* ============================================================
+   PUBLICATIONS
+   ============================================================ */
+.cv-pubs { font-size: 1em; }
+.cv-section:last-of-type .hang em.cv { font-weight: 400; color: #707070; }
+.cv-section:last-of-type .hang .cv-yr { font-size: 0.9em; font-weight: 300; color: var(--dark); }
+.cv-pubs .hang { margin-bottom: 0.15cm; line-height: 1.22; }
+
+/* Author name (uppercase B tag) — tu level (400), black */
+.cv-pubs B {
+  font-weight: 400 !important;
+  color: var(--black) !important;
+}
+
+/* Journal name — default 400; Nature uses inline 600 + red color which takes precedence */
+.cv-pubs b { color: var(--dark); }
+.cv-pubs b i[style*="color"] { color: #d23f3f !important; font-weight: 600; }
+
+/* Corresponding author underline */
+.cv-pubs u { text-decoration: underline; }
+
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+.cv-list { padding-left: 1.5em; }
+.cv-list li { margin-bottom: 2pt; }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  .hang-grid { break-inside: avoid; }
+  .cv-section h2 { break-before: avoid; break-after: avoid; }
+
+  body { background: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .top-bar { display: none; }
+  .page-wrapper { padding: 0; background: none; }
+
+  .a4-page { box-shadow: none; }
+  .page-wrapper { padding: 0; }
+
+  /* Publication links already hidden globally */
+
+  /* Force all text black in print */
+  .cv-pubs b, .cv-pubs B { color: black !important; }
+
+}
