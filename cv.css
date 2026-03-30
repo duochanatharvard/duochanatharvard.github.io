@@ -14,6 +14,12 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
 /* ---- Body ---- */
 body {
   background: #c0c0c0;
@@ -207,24 +213,109 @@ body {
    MOBILE
    ============================================================ */
 @media (max-width: 840px) {
-  .a4-page {
-    width: 100%;
-    padding: 24px 18px 40px;
-    box-shadow: none;
+  body {
+    background: white;
+    text-align: left;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.45;
   }
   .page-wrapper {
-    padding: 10px 0 20px;
+    padding: 0;
+    display: block;
+    width: 100%;
+  }
+  .top-bar {
+    position: static;
+    display: block;
+    padding: 8px 10px 0;
+    background: white;
+    color: var(--blue);
+    font-size: 10pt;
+  }
+  .top-bar button { display: none; }
+  .top-bar a { color: var(--blue); }
+  .a4-page {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px 12px 20px;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+  }
+  .cv-table td:first-child {
+    min-width: 3.5em;
+    padding-right: 6pt;
+  }
+  .cv-table,
+  .cv-table tbody {
+    display: block;
+    width: 100%;
+  }
+  .cv-table tr {
+    display: grid;
+    grid-template-columns: 4.6em minmax(0, 1fr);
+    column-gap: 8px;
+    width: 100%;
+  }
+  .cv-table td {
+    display: block;
+    min-width: 0;
   }
   .cv-header {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
+  }
+  .cv-name {
+    white-space: normal;
   }
   .cv-header-addr,
   .cv-header-contact,
   .cv-links {
     text-align: left;
     white-space: normal;
+    overflow-wrap: anywhere;
   }
+  .cv-section h2 {
+    font-size: 1.05em;
+  }
+  .cv-table td,
+  .hang,
+  .hang-grid,
+  .hang-grid > .hang-content,
+  .cv-list li {
+    overflow-wrap: anywhere;
+  }
+  .hang-grid {
+    display: block;
+  }
+  .hang-grid > strong.tb {
+    display: block;
+    margin-bottom: 2px;
+  }
+  .hang-grid > .hang-content {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .top-bar {
+    padding: 8px 8px 0;
+  }
+  .a4-page {
+    padding: 10px 8px 18px;
+  }
+  .cv-table tr {
+    grid-template-columns: 4.2em minmax(0, 1fr);
+    column-gap: 6px;
+  }
+  .cv-name .n-big { font-size: 20pt; }
+  .cv-name .n-mid { font-size: 16pt; }
+  .cv-header-addr,
+  .cv-header-contact,
+  .cv-links { font-size: 9.25pt; }
 }
 
 /* ============================================================

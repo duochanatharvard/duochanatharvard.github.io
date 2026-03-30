@@ -7,7 +7,141 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cv.css">
+  <link rel="stylesheet" href="cv.css?v=20260330-2">
+  <style>
+    @media (max-width: 840px) {
+      body {
+        background: white !important;
+        font-size: 13.5px !important;
+        line-height: 1.35 !important;
+        text-align: left !important;
+        overflow-x: hidden !important;
+        letter-spacing: normal !important;
+        hyphens: none !important;
+      }
+
+      .top-bar {
+        display: block !important;
+        position: static !important;
+        padding: 8px 10px 0 !important;
+        background: white !important;
+        color: var(--blue) !important;
+        font-size: 10pt !important;
+      }
+
+      .top-bar button {
+        display: none !important;
+      }
+
+      .top-bar a {
+        color: var(--blue) !important;
+      }
+
+      .page-wrapper {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+      }
+
+      .a4-page {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 10px 10px 20px !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+      }
+
+      .cv-header {
+        display: block !important;
+        margin-bottom: 12px !important;
+      }
+
+      .cv-name,
+      .cv-header-addr,
+      .cv-header-contact,
+      .cv-links {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        margin-bottom: 6px !important;
+      }
+
+      .cv-name {
+        margin-bottom: 10px !important;
+      }
+
+      .cv-section {
+        margin-top: 14px !important;
+      }
+
+      .cv-section h2 {
+        font-size: 1.02em !important;
+        margin-bottom: 8px !important;
+      }
+
+      .section-note {
+        display: block !important;
+        margin-top: 4px !important;
+      }
+
+      .cv-table,
+      .cv-table tbody,
+      .cv-table tr,
+      .cv-table td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      .cv-table tr {
+        margin-bottom: 10px !important;
+      }
+
+      .cv-table td:first-child {
+        min-width: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 2px !important;
+        color: var(--gray) !important;
+        font-weight: 700 !important;
+      }
+
+      .cv-name,
+      .hang,
+      .hang-grid,
+      .hang-content,
+      .cv-list li {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+      }
+
+      .cv-list {
+        padding-left: 1.1em !important;
+      }
+
+      .hang-grid {
+        display: block !important;
+        margin-bottom: 10px !important;
+      }
+
+      .hang-grid > strong.tb {
+        display: block !important;
+        margin-bottom: 2px !important;
+      }
+
+      .hang {
+        padding-left: 1.2em !important;
+        text-indent: -1.2em !important;
+        margin-bottom: 10px !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -308,11 +442,18 @@
     container.appendChild(p);
   });
 
-  // Screen: scale A4 to fit window. Print: always native 794px.
+  // Desktop: scale A4 to fit window. Mobile: use natural responsive flow.
   const page = document.querySelector('.a4-page');
   const wrapper = document.querySelector('.page-wrapper');
 
   function scaleA4() {
+    if (window.innerWidth <= 840) {
+      page.style.transform = 'none';
+      page.style.transformOrigin = '';
+      wrapper.style.height = '';
+      return;
+    }
+
     const scale = Math.min((window.innerWidth - 40) / 794, 1.5);
     page.style.transform = `scale(${scale})`;
     page.style.transformOrigin = 'top center';
