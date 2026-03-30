@@ -1,11 +1,17 @@
 const refs = {
 
-    chan2025dcenti: `<u><B style="font-weight: 550;">Chan D.</B></u>, Chan, S. C., Siddons, J. T., Cable, A., 
-        Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2026). 
-        DCENT-I: A Globally Infilled Extension of the Dynamically Consistent ENsemble of Temperature Dataset.
-        <b style="font-weight: 550;"><i> Geoscience Data Journal</i></b>.
-        <!-- <a href="https://doi.org/10.1038/s41597-024-03742-x" class="link-light">link</a>,
-        <a href="papers/Chan_et_al_2024_SD.pdf">pdf</a>. -->`,
+    chan2026dcenti: `<u><B style="font-weight: 550;">Chan D.</B></u>, Chan, S. C., Siddons, J. T., Cable, A., Faulkner, A., Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2026).
+        DCENT‐I: A Globally Infilled Extension of the Dynamically Consistent ENsemble of Temperature Dataset.
+        <b style="font-weight: 550;"><i>Geoscience Data Journal</i></b>, 13(2), e70054.
+        <a href="https://doi.org/10.1002/gdj3.70054" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2026_DCENT-I.pdf" class="link-light">pdf</a>,
+        <a href="https://doi.org/10.7910/DVN/ROG38Q" class="link-light">data</a>,
+        <a href="https://github.com/dcent-i/DCENT-infilling" class="link-light">code</a>.`,
+
+    cornes2026gdj: `<u>Cornes, R. C.</u>, Chan, S. C., Cable, A., <B style="font-weight: 550;">Chan, D.</B>, Faulkner, A., Kent, E. C., & Siddons, J. T. (2026).
+        GloMarGridding: A Python Toolkit for Flexible Spatial Interpolation in Climate Applications.
+        <b style="font-weight: 550;"><i>Geoscience Data Journal</i></b>, 13(2), e70064.
+        <a href="https://doi.org/10.1002/gdj3.70064" class="link-light">link</a>`,
 
     proctor2025climate: `<u>Proctor, J.</u>, Vargas Zeppetello, L., <B style="font-weight: 550;">Chan, D.</B>, & Huybers, P. (2025). 
         Climate change increases the interannual variance of summer crop yields globally through changes in temperature and water supply. 
@@ -14,7 +20,7 @@ const refs = {
 
     yin2025sst: `<u>Yin, X.</u>, Schlegel, R. W., Huang, B., <B style="font-weight: 550;">Chan, D.</B>, Graham, G., Hu, Z.-Z., & Zhang, H.-M. (2025). 
         Sea Surface Temperature. In “State of the Climate in 2024”. 
-        <b style="font-weight: 550;"><i>Bulletin of the American Meteorological Society</i></b>, 106(8), S180–S185. 
+        <b style="font-weight: 550;"><i>BAMS</i></b>, 106(8), S180–S185. 
         <a href="https://doi.org/10.1175/BAMS-D-25-0074.1"  class="link-light">link</a>`,
 
     chan2025grl: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2025).
