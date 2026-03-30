@@ -25,6 +25,8 @@ body {
   letter-spacing: -0.025em;
   text-align: justify;
   hyphens: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* ---- Top bar (screen only) ---- */
@@ -200,6 +202,30 @@ body {
    ============================================================ */
 .cv-list { padding-left: 1.5em; }
 .cv-list li { margin-bottom: 2pt; }
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 840px) {
+  .a4-page {
+    width: 100%;
+    padding: 24px 18px 40px;
+    box-shadow: none;
+  }
+  .page-wrapper {
+    padding: 10px 0 20px;
+  }
+  .cv-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+  .cv-header-addr,
+  .cv-header-contact,
+  .cv-links {
+    text-align: left;
+    white-space: normal;
+  }
+}
 
 /* ============================================================
    PRINT
