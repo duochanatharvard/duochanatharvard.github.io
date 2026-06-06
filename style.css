@@ -136,6 +136,35 @@ width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:8px; 
 
 @media (max-width:520px){.lecture-card img{width:70%;margin:0}}
 
+.teaching-course-card,
+.software-tool-card{
+display:flex;align-items:center;gap:18px;width:100%;padding:10px 0;border:0;
+border-radius:8px;text-decoration:none;background:transparent;color:var(--b700);font-weight:300;
+}
+.teaching-course-card:hover,
+.software-tool-card:hover{background:transparent;color:var(--b700)}
+.software-tool-card + .software-tool-card{margin-top:12px}
+.teaching-course-card img,
+.software-tool-card img{width:92px;height:92px;object-fit:cover;border-radius:6px;flex:0 0 auto}
+.teaching-course-copy,
+.software-tool-copy{display:grid;gap:4px}
+.teaching-course-title,
+.software-tool-title{color:var(--b900);font-weight:600;font-size:1.05rem;line-height:1.25}
+.teaching-course-title span{color:#d23f3f}
+.teaching-course-desc,
+.software-tool-desc{color:var(--b700);font-weight:300;line-height:1.35}
+.teaching-course-meta,
+.software-tool-meta{color:#d23f3f;font-weight:550}
+
+@media (max-width:520px){
+.teaching-course-card,
+.software-tool-card{align-items:flex-start;gap:12px;padding:10px 0}
+.teaching-course-card img,
+.software-tool-card img{width:72px;height:72px}
+.teaching-course-title,
+.software-tool-title{font-size:1rem}
+}
+
 hr { border: none; border-top: 1px solid rgb(218, 231, 245); margin: 1rem 0;}
 
 /* Parent link active: dot on, no background */
@@ -163,6 +192,9 @@ font-weight:600; color:#fff;            /* ← make text white */
 
 /* optional: remove default marker */
 #dcent-story summary::-webkit-details-marker{ display:none }
+
+.dcent-tool-intro{margin-bottom:.25rem}
+.dcent-tool-frame{width:130%;height:960px;border:0;display:block;margin:0 0 .25rem;overflow:hidden}
 
 .toggle-section{border: 0; border-bottom: 3px solid var(--b100); }
 .toggle-sectionl2{border: 0; border-bottom: 0px solid var(--b100); }
