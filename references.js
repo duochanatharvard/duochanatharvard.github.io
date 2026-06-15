@@ -1,9 +1,10 @@
 const refs = {
 
-    song2026commenv: `Song, S.-Y., <u><B style="font-weight: 550;">Chan D.</B></u>, & <u>Yeh, S.-W.</u> (2026).
+    song2026commenv: `<B style="font-weight: 550;">Song, S.-Y.</B><b style="color: #d23f3f;">†</b>, <u><B style="font-weight: 550;">Chan D.</B></u>, & <u>Yeh, S.-W.</u> (2026).
         Observationally constrained global warming hysteresis under CO2 removal.
-        <b style="font-weight: 550;"><i>Communications Earth & Environment</i></b>, 1–9.
-        <a href="https://doi.org/10.1038/s43247-026-03484-1" class="link-light">link</a>`,
+        <b style="font-weight: 550;"><i>Communications Earth & Environment</i></b>, 7, 491.
+        <a href="https://doi.org/10.1038/s43247-026-03484-1" class="link-light">link</a>,
+        <a href="papers/Song_et_al_2026_CEE.pdf" class="link-light">pdf</a>`,
 
     chan2026dcenti: `<u><B style="font-weight: 550;">Chan D.</B></u>, Chan, S. C., Siddons, J. T., Cable, A., Faulkner, A., Cornes, R. C., Kent, E. C., Gebbie, G., & Huybers, P. (2026).
         DCENT‐I: A Globally Infilled Extension of the Dynamically Consistent ENsemble of Temperature Dataset.
@@ -17,6 +18,12 @@ const refs = {
         GloMarGridding: A Python Toolkit for Flexible Spatial Interpolation in Climate Applications.
         <b style="font-weight: 550;"><i>Geoscience Data Journal</i></b>, 13(2), e70064.
         <a href="https://doi.org/10.1002/gdj3.70064" class="link-light">link</a>`,
+
+    thorne2026essd: `Thorne P. W. and co-authors (2026).
+        How well can we quantify when 1.5 °C of global warming has been exceeded?
+        <b style="font-weight: 550;"><i>Earth System Science Data Discussions</i></b> [preprint].
+        <a href="https://doi.org/10.5194/essd-2025-825" class="link-light">link</a>,
+        <a href="papers/Thorne_et_al_2026_ESSD.pdf" class="link-light">pdf</a>`,
 
     proctor2025climate: `<u>Proctor, J.</u>, Vargas Zeppetello, L., <B style="font-weight: 550;">Chan, D.</B>, & Huybers, P. (2025). 
         Climate change increases the interannual variance of summer crop yields globally through changes in temperature and water supply. 
