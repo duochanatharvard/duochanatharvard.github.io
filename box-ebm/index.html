@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>box-ebm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a href="../#software" class="back-link">Back to home</a>
+      <div class="title-row">
+        <h1>Box Energy Balance Model (EBM)</h1>
+        <section class="mode-tabs" aria-label="Model type">
+          <button class="mode-btn is-active" type="button" data-mode="one">One-box model</button>
+          <button class="mode-btn" type="button" data-mode="two">Two-box model</button>
+        </section>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <section class="model-column">
+        <section class="formula-panel" aria-label="Model equations">
+          <div id="oneFormula" class="formula-block">
+            <div class="equation">
+              <math display="block">
+                <mrow>
+                  <mi>&rho;</mi><msub><mi>c</mi><mi>p</mi></msub><mi>D</mi>
+                  <mfrac><mrow><mi>d</mi><msup><mi>T</mi><mo>&prime;</mo></msup></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+                  <mo>=</mo><msup><mi>F</mi><mo>&prime;</mo></msup><mo>-</mo><mi>&lambda;</mi><msup><mi>T</mi><mo>&prime;</mo></msup>
+                </mrow>
+              </math>
+            </div>
+          </div>
+          <div id="twoFormula" class="formula-block" hidden>
+            <div class="equation aligned-equations">
+              <math class="equation-lhs">
+                <mrow>
+                  <mi>&rho;</mi><msub><mi>c</mi><mi>p</mi></msub><msub><mi>D</mi><mi>s</mi></msub>
+                  <mfrac><mrow><mi>d</mi><msup><msub><mi>T</mi><mi>s</mi></msub><mo>&prime;</mo></msup></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+                </mrow>
+              </math>
+              <math class="equation-equals"><mo>=</mo></math>
+              <math class="equation-rhs">
+                <mrow>
+                  <msup><mi>F</mi><mo>&prime;</mo></msup><mo>-</mo><mi>&lambda;</mi><msup><msub><mi>T</mi><mi>s</mi></msub><mo>&prime;</mo></msup>
+                  <mo>-</mo><mi>&kappa;</mi><mo>(</mo><msup><msub><mi>T</mi><mi>s</mi></msub><mo>&prime;</mo></msup><mo>-</mo><msup><msub><mi>T</mi><mi>d</mi></msub><mo>&prime;</mo></msup><mo>)</mo>
+                </mrow>
+              </math>
+              <math class="equation-lhs">
+                <mrow>
+                  <mi>&rho;</mi><msub><mi>c</mi><mi>p</mi></msub><msub><mi>D</mi><mi>d</mi></msub>
+                  <mfrac><mrow><mi>d</mi><msup><msub><mi>T</mi><mi>d</mi></msub><mo>&prime;</mo></msup></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+                </mrow>
+              </math>
+              <math class="equation-equals"><mo>=</mo></math>
+              <math class="equation-rhs">
+                <mrow>
+                  <mi>&kappa;</mi><mo>(</mo><msup><msub><mi>T</mi><mi>s</mi></msub><mo>&prime;</mo></msup><mo>-</mo><msup><msub><mi>T</mi><mi>d</mi></msub><mo>&prime;</mo></msup><mo>)</mo>
+                </mrow>
+              </math>
+            </div>
+          </div>
+        </section>
+
+        <section class="diagram-panel" aria-label="Model schematic">
+          <svg id="diagram" viewBox="0 0 720 520" role="img" aria-labelledby="diagramTitle">
+            <title id="diagramTitle">Energy balance model schematic</title>
+            <defs>
+              <marker id="arrowRed" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#d23f3f"/>
+              </marker>
+              <marker id="arrowBlue" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#5474b8"/>
+              </marker>
+              <marker id="arrowTeal" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#3b9f9a"/>
+              </marker>
+              <marker id="arrowDepth" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="#5474b8"/>
+              </marker>
+            </defs>
+
+            <g id="oneBoxDiagram">
+              <rect id="oneSurfaceBox" class="model-box" x="155" y="230" width="410" height="132" rx="6"/>
+              <text id="oneBoxTitle" x="190" y="284" class="box-title">climate system</text>
+              <path id="oneDepthArrowTop" class="depth-arrow" d="M118 278 L118 230" marker-end="url(#arrowDepth)"/>
+              <text id="oneBoxDepthLabel" x="118" y="300" class="depth-label">D</text>
+              <path id="oneDepthArrowBottom" class="depth-arrow" d="M118 322 L118 362" marker-end="url(#arrowDepth)"/>
+              <text id="oneForcingLabel" x="205" y="128" class="label red">F&prime;</text>
+              <text id="oneFeedbackLabel" x="470" y="128" class="label blue">&lambda;T&prime;</text>
+              <path id="oneForcingArrow" d="M232 146 L232 224" class="arrow red-arrow" marker-end="url(#arrowRed)"/>
+              <path id="oneFeedbackArrow" d="M502 230 L502 146" class="arrow blue-arrow" marker-end="url(#arrowBlue)"/>
+              <text id="oneTempLabel" x="385" y="326" class="surface-temp">T&prime; = 0.00 K</text>
+            </g>
+
+            <g id="twoBoxDiagram" hidden>
+              <rect id="mixedLayerBox" class="model-box mixed-box" x="126" y="156" width="468" height="112" rx="6"/>
+              <rect id="deepOceanBox" class="model-box deep-box" x="126" y="268" width="468" height="156" rx="6"/>
+              <text id="mixedBoxTitle" x="154" y="207" class="box-title">surface mixed layer</text>
+              <path id="mixedDepthArrowTop" class="depth-arrow" d="M94 200 L94 156" marker-end="url(#arrowDepth)"/>
+              <text id="mixedBoxDepthLabel" x="94" y="218" class="depth-label">D<tspan baseline-shift="sub" font-size="18">s</tspan></text>
+              <path id="mixedDepthArrowBottom" class="depth-arrow" d="M94 240 L94 268" marker-end="url(#arrowDepth)"/>
+              <text id="deepBoxTitle" x="154" y="340" class="box-title">deep ocean</text>
+              <path id="deepDepthArrowTop" class="depth-arrow" d="M94 326 L94 268" marker-end="url(#arrowDepth)"/>
+              <text id="deepBoxDepthLabel" x="94" y="346" class="depth-label">D<tspan baseline-shift="sub" font-size="18">d</tspan></text>
+              <path id="deepDepthArrowBottom" class="depth-arrow" d="M94 368 L94 424" marker-end="url(#arrowDepth)"/>
+              <text id="forcingLabel" x="170" y="102" class="label red">F&prime;</text>
+              <text id="feedbackLabel" x="470" y="102" class="label blue">&lambda;T<tspan baseline-shift="sub" font-size="24">s</tspan>&prime;</text>
+              <text id="exchangeLabel" x="438" y="308" class="exchange-label">&kappa;(T<tspan baseline-shift="sub" font-size="18">s</tspan>&prime; - T<tspan baseline-shift="sub" font-size="18">d</tspan>&prime;)</text>
+              <path id="forcingArrow" d="M196 120 L196 151" class="arrow red-arrow" marker-end="url(#arrowRed)"/>
+              <path id="feedbackArrow" d="M504 156 L504 120" class="arrow blue-arrow" marker-end="url(#arrowBlue)"/>
+              <path id="exchangeArrow" d="M620 250 L620 286" class="arrow teal-arrow" marker-start="url(#arrowTeal)" marker-end="url(#arrowTeal)"/>
+              <text id="mixedTempLabel" x="420" y="225" class="surface-temp">T<tspan baseline-shift="sub" font-size="18">s</tspan>&prime; = 0.00 K</text>
+              <text id="deepTempLabel" x="420" y="356" class="surface-temp">T<tspan baseline-shift="sub" font-size="18">d</tspan>&prime; = 0.00 K</text>
+            </g>
+          </svg>
+        </section>
+
+        <form class="control-panel" aria-label="Model parameters">
+          <div class="control forcing-row response-control">
+            <label for="forcing"><span class="parameter-symbol">F&prime;</span> forcing anomaly</label>
+            <button id="forcingSignButton" class="sign-toggle" type="button" aria-pressed="false" aria-label="Toggle negative forcing">+</button>
+            <input id="forcing" type="range" min="0" max="8" value="4" step="0.1">
+            <output id="forcingValue" for="forcing"></output>
+          </div>
+          <div class="control response-control">
+            <label for="feedback"><span class="parameter-symbol">&lambda;</span> feedback strength</label>
+            <input id="feedback" type="range" min="0.4" max="2.5" value="1.2" step="0.05">
+            <output id="feedbackValue" for="feedback"></output>
+          </div>
+          <div class="control response-control">
+            <label for="mixedDepth"><span id="mixedDepthSymbol" class="parameter-symbol">D</span> <span id="mixedDepthLabelText">box depth</span></label>
+            <input id="mixedDepth" type="range" min="5" max="200" value="60" step="1">
+            <output id="mixedDepthValue" for="mixedDepth"></output>
+          </div>
+          <div class="control two-control" hidden>
+            <label for="deepDepth"><span class="parameter-symbol">D<sub>d</sub></span> deep box depth</label>
+            <input id="deepDepth" type="range" min="200" max="4000" value="1000" step="50">
+            <output id="deepDepthValue" for="deepDepth"></output>
+          </div>
+          <div class="control two-control" hidden>
+            <label for="exchange"><span class="parameter-symbol">&kappa;</span> ocean exchange</label>
+            <input id="exchange" type="range" min="0" max="1.5" value="0.7" step="0.05">
+            <output id="exchangeValue" for="exchange"></output>
+          </div>
+        </form>
+      </section>
+
+      <section class="result-panel" aria-label="Simulation result">
+        <div class="result-toolbar">
+          <button id="playButton" type="button" class="play-button">Play</button>
+          <label class="time-control" for="timeSlider">
+            <span>Year <output id="timeValue" for="timeSlider">0</output></span>
+            <input id="timeSlider" type="range" min="0" max="100" value="0" step="1">
+          </label>
+        </div>
+        <div class="chart-row">
+          <canvas id="temperatureChart" class="temperature-chart" width="900" height="300"></canvas>
+          <div id="temperatureLegend" class="chart-legend" aria-label="Temperature legend"></div>
+        </div>
+        <div class="chart-row flux-row">
+          <canvas id="fluxChart" class="flux-chart" width="900" height="260"></canvas>
+          <div id="fluxLegend" class="chart-legend" aria-label="Flux legend"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
