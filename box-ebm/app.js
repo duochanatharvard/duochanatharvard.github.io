@@ -4,10 +4,17 @@ const cp = 3990;
 const secondsPerYear = 365.25 * 24 * 60 * 60;
 const fluxArrowReference = 4;
 const boxColorReference = 7.5;
-const modelYears = {
+// Time-axis handles: defaults, ECS tolerance, search cap, and tick animation speed.
+const baseModelYears = {
   one: 100,
   two: 300,
 };
+const equilibriumTolerance = 0.01;
+const equilibriumSearchMaxYear = 2000;
+const xAxisAnimationMs = 650;
+const yAxisAnimationMs = 520;
+const yTickStep = 2.5;
+const minimumYAxisMagnitude = 7.5;
 const oneElements = document.querySelectorAll("#oneFormula, #oneBoxDiagram");
 const twoElements = document.querySelectorAll(".two-control, #twoFormula, #twoBoxDiagram");
 const playButton = document.getElementById("playButton");
@@ -78,8 +85,45 @@ let mode = "one";
 let points = [];
 let isPlaying = false;
 let animationId = null;
+let xAxisAnimationId = null;
 let lastFrameTime = null;
 let forcingSign = 1;
+let xAxisMaxYear = baseModelYears.one;
+let displayedXAxisMaxYear = xAxisMaxYear;
+let xAxisTickYears = [];
+let xAxisPreviousTickYears = [];
+let xAxisAnimationProgress = 1;
+let xAxisAnimationStart = null;
+let xAxisAnimationFrom = xAxisMaxYear;
+let xAxisAnimationTo = xAxisMaxYear;
+const yAxisStates = {
+  temperature: {
+    targetMin: null,
+    targetMax: null,
+    displayedMin: null,
+    displayedMax: null,
+    startMin: null,
+    startMax: null,
+    tickValues: [],
+    previousTickValues: [],
+    animationId: null,
+    animationStart: null,
+    animationProgress: 1,
+  },
+  flux: {
+    targetMin: null,
+    targetMax: null,
+    displayedMin: null,
+    displayedMax: null,
+    startMin: null,
+    startMax: null,
+    tickValues: [],
+    previousTickValues: [],
+    animationId: null,
+    animationStart: null,
+    animationProgress: 1,
+  },
+};
 
 function value(id) {
   return Number(controls[id].value);
@@ -90,7 +134,184 @@ function forcingValue() {
 }
 
 function currentMaxYear() {
-  return modelYears[mode];
+  return xAxisMaxYear;
+}
+
+function xTickStepForMaxYear(maxYear) {
+  if (maxYear <= 150) return 25;
+  if (maxYear <= 500) return 100;
+  if (maxYear <= 1500) return 250;
+  return 500;
+}
+
+function xAxisConfigForMaxYear(rawMaxYear) {
+  let step = xTickStepForMaxYear(rawMaxYear);
+  let maxYear = Math.ceil(rawMaxYear / step) * step;
+  const adjustedStep = xTickStepForMaxYear(maxYear);
+
+  if (adjustedStep !== step) {
+    step = adjustedStep;
+    maxYear = Math.ceil(rawMaxYear / step) * step;
+  }
+
+  const ticks = [];
+  for (let tick = 0; tick <= maxYear; tick += step) {
+    ticks.push(tick);
+  }
+
+  return { maxYear, ticks };
+}
+
+function makeXAxisTicks(maxYear) {
+  return xAxisConfigForMaxYear(maxYear).ticks;
+}
+
+function formatYearTick(year) {
+  return String(Math.round(year));
+}
+
+function makeYAxisTicks(yMin, yMax) {
+  const ticks = [];
+  const topTick = Math.ceil(yMax / yTickStep) * yTickStep;
+  const bottomTick = Math.floor(yMin / yTickStep) * yTickStep;
+
+  for (let tick = topTick; tick >= bottomTick - yTickStep * 0.01; tick -= yTickStep) {
+    if (tick <= yMax + yTickStep * 0.01 && tick >= yMin - yTickStep * 0.01) {
+      ticks.push(Math.abs(tick) < 1e-9 ? 0 : tick);
+    }
+  }
+
+  return ticks;
+}
+
+function formatYAxisTick(tick) {
+  const cleanTick = Math.abs(tick) < 1e-9 ? 0 : tick;
+  return Number.isInteger(cleanTick) ? String(cleanTick) : cleanTick.toFixed(1);
+}
+
+function steppedYAxisRange(minValue, maxValue) {
+  if (forcingSign < 0) {
+    const magnitude = Math.max(minimumYAxisMagnitude, Math.ceil(Math.abs(minValue) / yTickStep) * yTickStep);
+    return { yMin: -magnitude, yMax: 0 };
+  }
+
+  const magnitude = Math.max(minimumYAxisMagnitude, Math.ceil(maxValue / yTickStep) * yTickStep);
+  return { yMin: 0, yMax: magnitude };
+}
+
+function easeOutCubic(ratio) {
+  return 1 - (1 - ratio) ** 3;
+}
+
+function animateXAxis(timestamp) {
+  if (xAxisAnimationStart === null) xAxisAnimationStart = timestamp;
+  const progress = Math.min(1, (timestamp - xAxisAnimationStart) / xAxisAnimationMs);
+  xAxisAnimationProgress = progress;
+  displayedXAxisMaxYear = xAxisAnimationFrom + (xAxisAnimationTo - xAxisAnimationFrom) * easeOutCubic(progress);
+  render();
+
+  if (progress < 1) {
+    xAxisAnimationId = requestAnimationFrame(animateXAxis);
+    return;
+  }
+
+  displayedXAxisMaxYear = xAxisAnimationTo;
+  xAxisAnimationProgress = 1;
+  xAxisPreviousTickYears = [];
+  xAxisAnimationId = null;
+  xAxisAnimationStart = null;
+  render();
+}
+
+function setXAxisMaxYear(nextMaxYear, animate = true) {
+  const nextAxisConfig = xAxisConfigForMaxYear(Math.max(1, nextMaxYear));
+  const roundedNextMaxYear = nextAxisConfig.maxYear;
+  if (xAxisMaxYear === roundedNextMaxYear && xAxisTickYears.length) return;
+
+  xAxisMaxYear = roundedNextMaxYear;
+  xAxisPreviousTickYears = xAxisTickYears.length ? xAxisTickYears : makeXAxisTicks(displayedXAxisMaxYear);
+  xAxisTickYears = nextAxisConfig.ticks;
+
+  if (xAxisAnimationId) {
+    cancelAnimationFrame(xAxisAnimationId);
+    xAxisAnimationId = null;
+  }
+
+  if (!animate) {
+    displayedXAxisMaxYear = xAxisMaxYear;
+    xAxisPreviousTickYears = [];
+    xAxisAnimationProgress = 1;
+    xAxisAnimationStart = null;
+    return;
+  }
+
+  xAxisAnimationFrom = displayedXAxisMaxYear;
+  xAxisAnimationTo = xAxisMaxYear;
+  xAxisAnimationProgress = 0;
+  xAxisAnimationStart = null;
+  xAxisAnimationId = requestAnimationFrame(animateXAxis);
+}
+
+function animateYAxis(key, timestamp) {
+  const state = yAxisStates[key];
+  if (state.animationStart === null) state.animationStart = timestamp;
+  const progress = Math.min(1, (timestamp - state.animationStart) / yAxisAnimationMs);
+  const eased = easeOutCubic(progress);
+
+  state.animationProgress = progress;
+  state.displayedMin = state.startMin + (state.targetMin - state.startMin) * eased;
+  state.displayedMax = state.startMax + (state.targetMax - state.startMax) * eased;
+  render();
+
+  if (progress < 1) {
+    state.animationId = requestAnimationFrame((nextTimestamp) => animateYAxis(key, nextTimestamp));
+    return;
+  }
+
+  state.displayedMin = state.targetMin;
+  state.displayedMax = state.targetMax;
+  state.previousTickValues = [];
+  state.animationProgress = 1;
+  state.animationId = null;
+  state.animationStart = null;
+  render();
+}
+
+function setYAxisRange(key, nextMin, nextMax, animate = true) {
+  const state = yAxisStates[key];
+  const rangeChanged =
+    state.targetMin === null ||
+    Math.abs(state.targetMin - nextMin) > 0.001 ||
+    Math.abs(state.targetMax - nextMax) > 0.001;
+
+  if (!rangeChanged) return;
+
+  state.targetMin = nextMin;
+  state.targetMax = nextMax;
+  state.previousTickValues = state.tickValues.length
+    ? state.tickValues
+    : makeYAxisTicks(state.displayedMin ?? nextMin, state.displayedMax ?? nextMax);
+  state.tickValues = makeYAxisTicks(nextMin, nextMax);
+
+  if (state.animationId) {
+    cancelAnimationFrame(state.animationId);
+    state.animationId = null;
+  }
+
+  if (state.displayedMin === null || state.displayedMax === null || !animate) {
+    state.displayedMin = nextMin;
+    state.displayedMax = nextMax;
+    state.previousTickValues = [];
+    state.animationProgress = 1;
+    state.animationStart = null;
+    return;
+  }
+
+  state.startMin = state.displayedMin;
+  state.startMax = state.displayedMax;
+  state.animationProgress = 0;
+  state.animationStart = null;
+  state.animationId = requestAnimationFrame((timestamp) => animateYAxis(key, timestamp));
 }
 
 function updateForcingSignButton() {
@@ -110,12 +331,11 @@ function depthToHeatCapacityYears(depth) {
   return (rho * cp * depth) / secondsPerYear;
 }
 
-function oneBoxResponse() {
+function oneBoxResponse(years = baseModelYears.one) {
   const forcing = forcingValue();
   const feedback = value("feedback");
   const heatCapacity = depthToHeatCapacityYears(value("mixedDepth"));
   const dt = 0.25;
-  const years = modelYears.one;
   let surface = 0;
   const response = [{ year: 0, surface }];
 
@@ -129,14 +349,13 @@ function oneBoxResponse() {
   return response;
 }
 
-function twoBoxResponse() {
+function twoBoxResponse(years = baseModelYears.two) {
   const forcing = forcingValue();
   const feedback = value("feedback");
   const mixedCapacity = depthToHeatCapacityYears(value("mixedDepth"));
   const deepCapacity = depthToHeatCapacityYears(value("deepDepth"));
   const exchange = value("exchange");
   const dt = 0.25;
-  const years = modelYears.two;
   let surface = 0;
   let deep = 0;
   const response = [{ year: 0, surface, deep }];
@@ -152,6 +371,27 @@ function twoBoxResponse() {
   }
 
   return response;
+}
+
+function equilibriumTargetYear(response, ecs) {
+  if (!Number.isFinite(ecs)) return null;
+  const targetPoint = response.find((point) => Math.abs(point.surface - ecs) <= equilibriumTolerance);
+  return targetPoint ? targetPoint.year : null;
+}
+
+function computeResponse() {
+  const baseYears = baseModelYears[mode];
+  const searchYears = Math.max(baseYears, equilibriumSearchMaxYear);
+  const response = mode === "two" ? twoBoxResponse(searchYears) : oneBoxResponse(searchYears);
+  const ecs = forcingValue() / value("feedback");
+  const equilibriumYear = equilibriumTargetYear(response, ecs);
+  const rawMaxYear = Math.max(baseYears, equilibriumYear ?? equilibriumSearchMaxYear);
+  const maxYear = xAxisConfigForMaxYear(rawMaxYear).maxYear;
+
+  return {
+    points: response.filter((point) => point.year <= maxYear),
+    maxYear,
+  };
 }
 
 function getPoint(year) {
@@ -330,6 +570,7 @@ function updateDiagram(year) {
 
 function setupChart(canvas, ctx, cssHeight, yMin, yMax, yLabel, year, options = {}) {
   const showXAxis = options.showXAxis !== false;
+  const yAxisState = options.yAxisKey ? yAxisStates[options.yAxisKey] : null;
   const ratio = window.devicePixelRatio || 1;
   const cssWidth = Math.max(360, Math.round(canvas.parentElement.clientWidth || canvas.clientWidth || 560));
   canvas.style.height = `${cssHeight}px`;
@@ -342,9 +583,15 @@ function setupChart(canvas, ctx, cssHeight, yMin, yMax, yLabel, year, options = 
   const pad = { top: 18, right: 8, bottom: showXAxis ? 66 : 24, left: 100 };
   const innerWidth = width - pad.left - pad.right;
   const innerHeight = height - pad.top - pad.bottom;
-  const maxYear = currentMaxYear();
+  const maxYear = Math.max(1, displayedXAxisMaxYear);
+  const displayedYMin = yAxisState?.displayedMin ?? yMin;
+  const displayedYMax = yAxisState?.displayedMax ?? yMax;
+  const yTickValues = yAxisState?.tickValues.length ? yAxisState.tickValues : makeYAxisTicks(yMin, yMax);
+  const previousYTickValues = yAxisState?.previousTickValues ?? [];
+  const yAxisProgress = yAxisState?.animationProgress ?? 1;
   const toX = (xYear) => pad.left + (xYear / maxYear) * innerWidth;
-  const toY = (chartValue) => pad.top + innerHeight - ((chartValue - yMin) / (yMax - yMin)) * innerHeight;
+  const toY = (chartValue) =>
+    pad.top + innerHeight - ((chartValue - displayedYMin) / (displayedYMax - displayedYMin)) * innerHeight;
 
   ctx.clearRect(0, 0, width, height);
   ctx.fillStyle = "#fff";
@@ -354,26 +601,65 @@ function setupChart(canvas, ctx, cssHeight, yMin, yMax, yLabel, year, options = 
   ctx.font = "15px system-ui, sans-serif";
   ctx.fillStyle = "#526b80";
 
-  for (let i = 0; i <= 4; i += 1) {
-    const y = pad.top + innerHeight * (i / 4);
-    const label = yMax - (yMax - yMin) * (i / 4);
-    ctx.beginPath();
-    ctx.moveTo(pad.left, y);
-    ctx.lineTo(width - pad.right, y);
-    ctx.stroke();
-    ctx.textAlign = "right";
-    ctx.textBaseline = "middle";
-    ctx.fillText(label.toFixed(1), pad.left - 12, y + 4);
+  function drawYAxisTickSet(ticks, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = "#d5e2ed";
+    ctx.lineWidth = 1;
+    ctx.fillStyle = "#526b80";
+    ctx.font = "15px system-ui, sans-serif";
+    ticks.forEach((label) => {
+      const y = toY(label);
+      if (y < pad.top - 24 || y > height - pad.bottom + 24) return;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, y);
+      ctx.lineTo(width - pad.right, y);
+      ctx.stroke();
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      ctx.fillText(formatYAxisTick(label), pad.left - 12, y + 4);
+    });
+    ctx.restore();
   }
 
-  if (showXAxis) {
-    for (let i = 0; i <= 4; i += 1) {
-      const x = pad.left + innerWidth * (i / 4);
-      const labelX = i === 4 ? width - 2 : x;
-      ctx.textAlign = i === 4 ? "right" : "center";
+  function drawXTickSet(ticks, alpha, drawLabels) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = "#e3edf5";
+    ctx.lineWidth = 1;
+    ctx.fillStyle = "#526b80";
+    ctx.font = "15px system-ui, sans-serif";
+    ticks.forEach((tickYear, index) => {
+      const x = toX(tickYear);
+      if (x < pad.left - 48 || x > width - pad.right + 48) return;
+      if (tickYear !== 0) {
+        ctx.beginPath();
+        ctx.moveTo(x, pad.top);
+        ctx.lineTo(x, height - pad.bottom);
+        ctx.stroke();
+      }
+      if (!drawLabels) return;
+      const isFinalTick = index === ticks.length - 1;
+      const labelX = isFinalTick ? width - pad.right : x;
+      ctx.textAlign = isFinalTick ? "right" : "center";
       ctx.textBaseline = "top";
-      ctx.fillText(String(maxYear * (i / 4)), labelX, height - pad.bottom + 14);
-    }
+      ctx.fillText(formatYearTick(tickYear), labelX, height - pad.bottom + 14);
+    });
+    ctx.restore();
+  }
+
+  if (previousYTickValues.length) {
+    drawYAxisTickSet(previousYTickValues, 0.65 * (1 - yAxisProgress));
+    drawYAxisTickSet(yTickValues, 0.35 + 0.65 * yAxisProgress);
+  } else {
+    drawYAxisTickSet(yTickValues, 1);
+  }
+
+  if (xAxisPreviousTickYears.length) {
+    drawXTickSet(xAxisPreviousTickYears, 0.65 * (1 - xAxisAnimationProgress), showXAxis);
+    drawXTickSet(xAxisTickYears, 0.35 + 0.65 * xAxisAnimationProgress, showXAxis);
+  } else {
+    drawXTickSet(xAxisTickYears, 1, showXAxis);
   }
 
   const zeroY = toY(0);
@@ -419,10 +705,14 @@ function setupChart(canvas, ctx, cssHeight, yMin, yMax, yLabel, year, options = 
   ctx.textAlign = "left";
   ctx.textBaseline = "alphabetic";
 
-  return { width, height, pad, innerWidth, innerHeight, toX, toY };
+  return { width, height, pad, innerWidth, innerHeight, toX, toY, yMin: displayedYMin, yMax: displayedYMax };
 }
 
 function drawSeries(ctx, chart, data, key, color, width = 4, dash = []) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(chart.pad.left, chart.pad.top, chart.innerWidth, chart.innerHeight);
+  ctx.clip();
   ctx.setLineDash(dash);
   ctx.beginPath();
   data.forEach((point, index) => {
@@ -435,9 +725,11 @@ function drawSeries(ctx, chart, data, key, color, width = 4, dash = []) {
   ctx.lineWidth = width;
   ctx.stroke();
   ctx.setLineDash([]);
+  ctx.restore();
 }
 
 function drawHorizontalLine(ctx, chart, valueToDraw, color, width = 2, dash = []) {
+  if (valueToDraw < chart.yMin || valueToDraw > chart.yMax) return;
   const y = chart.toY(valueToDraw);
   ctx.setLineDash(dash);
   ctx.beginPath();
@@ -472,11 +764,11 @@ function drawTemperatureChart(year) {
   const values = points.flatMap((point) => series.map((key) => point[key]));
   const minValue = Math.min(0, ecs, ...values);
   const maxValue = Math.max(0, ecs, ...values);
-  const span = Math.max(1, maxValue - minValue);
-  const yMin = forcingSign < 0 ? Math.min(-7.5, minValue - span * 0.08) : 0;
-  const yMax = forcingSign < 0 ? 0 : Math.max(7.5, maxValue + span * 0.08);
+  const { yMin, yMax } = steppedYAxisRange(minValue, maxValue);
+  setYAxisRange("temperature", yMin, yMax);
   const chart = setupChart(temperatureCanvas, temperatureCtx, 300, yMin, yMax, "Temperature anomaly (K)", year, {
     showXAxis: false,
+    yAxisKey: "temperature",
   });
 
   if (mode === "two") {
@@ -524,10 +816,11 @@ function drawFluxChart(year) {
   const values = data.flatMap((point) => keys.map((key) => point[key]));
   const minValue = Math.min(0, ...values);
   const maxValue = Math.max(0, ...values);
-  const span = Math.max(1, maxValue - minValue);
-  const yMin = forcingSign < 0 ? Math.min(-8, minValue - span * 0.1) : 0;
-  const yMax = forcingSign < 0 ? 0 : Math.max(8, maxValue + span * 0.1);
-  const chart = setupChart(fluxCanvas, fluxCtx, 340, yMin, yMax, "Flux (W m⁻²)", year);
+  const { yMin, yMax } = steppedYAxisRange(minValue, maxValue);
+  setYAxisRange("flux", yMin, yMax);
+  const chart = setupChart(fluxCanvas, fluxCtx, 340, yMin, yMax, "Flux (W m⁻²)", year, {
+    yAxisKey: "flux",
+  });
   const legend = [
     { key: "forcing", label: "F′", color: "#d23f3f", width: 54 },
     { key: "response", label: mode === "two" ? "λTs′" : "λT′", color: "#5474b8", width: 78 },
@@ -549,7 +842,9 @@ function updateOutputs() {
 function render() {
   try {
     if (!points.length) {
-      points = mode === "two" ? twoBoxResponse() : oneBoxResponse();
+      const response = computeResponse();
+      points = response.points;
+      setXAxisMaxYear(response.maxYear, false);
     }
     const maxYear = currentMaxYear();
     timeSlider.max = String(maxYear);
@@ -566,13 +861,16 @@ function render() {
   }
 }
 
-function recompute(resetTime = false) {
-  points = mode === "two" ? twoBoxResponse() : oneBoxResponse();
+function recompute(resetTime = false, animateAxis = true) {
+  const response = computeResponse();
+  points = response.points;
+  setXAxisMaxYear(response.maxYear, animateAxis);
   if (resetTime) timeSlider.value = "0";
+  else if (Number(timeSlider.value) > response.maxYear) timeSlider.value = String(response.maxYear);
   render();
 }
 
-function setMode(nextMode) {
+function setMode(nextMode, animateAxis = true) {
   mode = nextMode;
   document.body.dataset.model = mode;
   setHidden(oneElements, mode !== "one");
@@ -582,7 +880,7 @@ function setMode(nextMode) {
   modeButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.mode === mode);
   });
-  recompute(true);
+  recompute(true, animateAxis);
 }
 
 function stopPlayback() {
@@ -642,5 +940,5 @@ window.addEventListener("load", render);
 
 const initialMode = location.hash.slice(1) === "two" ? "two" : "one";
 updateForcingSignButton();
-setMode(initialMode);
+setMode(initialMode, false);
 requestAnimationFrame(render);
