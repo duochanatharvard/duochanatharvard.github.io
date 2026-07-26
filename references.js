@@ -5,7 +5,9 @@ const refs = {
         <b style="font-weight: 550;"><i>PNAS</i></b> 123(30), e2614134123.
         <a href="https://doi.org/10.1073/pnas.2614134123" class="link-light">link</a>,
         <a href="papers/Chan_et_al_2026_PNAS.pdf" class="link-light">pdf</a>,
-        <a href="https://doi.org/10.7910/DVN/40JUN6" class="link-light">data & code</a>.`,
+        <a href="https://doi.org/10.7910/DVN/40JUN6" class="link-light">data & code</a> (News coverage:
+        <a href="https://www.theguardian.com/environment/2026/jul/20/slowdown-arctic-sea-ice-melt-largest-winter-decline-record" class="link-light">The Guardian</a>,
+        <a href="https://theconversation.com/arctic-sea-ice-decline-seemed-to-be-slowing-until-two-record-breaking-low-ice-winters-287637" class="link-light">The Conversation</a>).`,
 
     song2026commenv: `<B style="font-weight: 550;">Song S.-Y.</B><b style="color: #d23f3f;">†</b>, <u><B style="font-weight: 550;">Chan D.</B></u>, & <u>Yeh S.-W.</u> (2026).
         Observationally constrained global warming hysteresis under CO2 removal.
@@ -58,11 +60,10 @@ const refs = {
         Climate change aggravates the over-consumption of added sugar in the U.S. especially in disadvantaged groups.
         <b style="font-weight: 550;"><i>Nature Climate Change</i></b> 15, 963–970.
         <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">link</a>,
-        <a href="papers/He_et_al_2025_NCC.pdf" class="link-light">pdf</a>,
+        <a href="papers/He_et_al_2025_NCC.pdf" class="link-light">pdf</a>,(News coverage:
         <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">AP News</a>,
-        <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">NPR News</a>,
-        <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">Eos News</a>,
-        <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">Scientific American Coverage</a>`,
+        <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">NPR</a>,
+        <a href="https://doi.org/10.1038/s41558-025-02398-8" class="link-light">Scientific American</a>).`,
 
     he2025ncc_short: `<u>He P.</u>, Xu Z.*, <u><B style="font-weight: 550;">Chan D.</B></u>, Liu P., & <u>Bai Y.</u> (2025).
         Climate change aggravates the over-consumption of added sugar in the U.S. especially in disadvantaged groups.
