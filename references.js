@@ -1,5 +1,20 @@
 const refs = {
 
+    fan2026natcomm: `<B style="font-weight: 550;">Fan Y.</B><b style="color: #d23f3f;">†</b>, <u><B style="font-weight: 550;">Chan D.</B></u>, Danabasoglu G., Kim W. M., <u>Zhang P.</u>, & <u>Li L.</u> (2026).
+        Regime shifts of AMOC-sea surface temperature relationship.
+        <b style="font-weight: 550;"><i>Nature Communications</i></b>.
+        <a href="https://doi.org/10.1038/s41467-026-76149-4" class="link-light">link</a>`,
+
+    yin2026sst: `<u>Yin X.</u>, Schlegel R. W., Huang B., <B style="font-weight: 550;">Chan D.</B>, Graham G., & Hu Z.-Z. (2026).
+        Sea Surface Temperature. In “State of the Climate in 2025”.
+        <b style="font-weight: 550;"><i>BAMS</i></b>, 107(8).
+        <a href="https://doi.org/10.1175/BAMS-D-26-0100.1" class="link-light">link</a>`,
+
+    chan2026bams: `<u><B style="font-weight: 550;">Chan D.</B></u>, Kent E.C., Lessen N., Deser C., Merchant C., Ishii M., Sandford C., Huang B., Yin X., Kennedy J.J., Cornes, R.C., Huybers P., & Gebbie G.(2026).
+        Choosing the Right Sea Surface Temperature Datasets: Benchmarking and Guidance for Climate Applications,
+        <b style="font-weight: 550;"><i>BAMS</i></b>,
+        <a href="https://doi.org/10.1175/BAMS-D-25-0210.1" class="link-light">link</a>.`,
+
     chan2026pnas: `<u><B style="font-weight: 550;">Chan D.</B></u>, Silvano A. C., & Josey S. (2026).
         Record-low 2025 and 2026 ice extents restore Arctic winter sea-ice decline.
         <b style="font-weight: 550;"><i>PNAS</i></b> 123(30), e2614134123.
