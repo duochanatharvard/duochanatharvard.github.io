@@ -1,5 +1,10 @@
 const refs = {
 
+    liao2026ncc: `Liao W., Zhang X.*, <u>Liu X.</u>, <u>Luo M.</u>, Chen Y., <B style="font-weight: 550;">Chan D.</B>, Zhan W., Chen Y., Chen G., Gong R., & Zhao L. (2026).
+        Globally and intergenerationally unequal exposure to hourly heat extremes.
+        <b style="font-weight: 550;"><i>Nature Climate Change</i></b>.
+        <a href="https://doi.org/10.1038/s41558-026-02724-8" class="link-light">link</a>`,
+
     fan2026natcomm: `<B style="font-weight: 550;">Fan Y.</B><b style="color: #d23f3f;">†</b>, <u><B style="font-weight: 550;">Chan D.</B></u>, Danabasoglu G., Kim W. M., <u>Zhang P.</u>, & <u>Li L.</u> (2026).
         Regime shifts of AMOC-sea surface temperature relationship.
         <b style="font-weight: 550;"><i>Nature Communications</i></b>.
