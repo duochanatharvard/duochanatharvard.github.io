@@ -18,7 +18,8 @@ const refs = {
     chan2026bams: `<u><B style="font-weight: 550;">Chan D.</B></u>, Kent E.C., Lessen N., Deser C., Merchant C., Ishii M., Sandford C., Huang B., Yin X., Kennedy J.J., Cornes, R.C., Huybers P., & Gebbie G.(2026).
         Choosing the Right Sea Surface Temperature Datasets: Benchmarking and Guidance for Climate Applications,
         <b style="font-weight: 550;"><i>BAMS</i></b>,
-        <a href="https://doi.org/10.1175/BAMS-D-25-0210.1" class="link-light">link</a>.`,
+        <a href="https://doi.org/10.1175/BAMS-D-25-0210.1" class="link-light">link</a>, (Live version: 
+        <a href="https://climatedataguide.ucar.edu/climate-data/sst-data-sets-overview-comparison-table" class="link-light">NCAR Climate Data Guide</a>).`,
 
     chan2026pnas: `<u><B style="font-weight: 550;">Chan D.</B></u>, Silvano A. C., & Josey S. (2026).
         Record-low 2025 and 2026 ice extents restore Arctic winter sea-ice decline.
@@ -41,7 +42,8 @@ const refs = {
         <a href="https://doi.org/10.1002/gdj3.70054" class="link-light">link</a>,
         <a href="papers/Chan_et_al_2026_DCENT-I.pdf" class="link-light">pdf</a>,
         <a href="https://doi.org/10.7910/DVN/ROG38Q" class="link-light">data</a>,
-        <a href="https://github.com/dcent-i/DCENT-infilling" class="link-light">code</a>.`,
+        <a href="https://github.com/dcent-i/DCENT-infilling" class="link-light">code</a>,
+        (used in <a href="https://library.wmo.int/viewer/69807/download?file=WMO-1391-2025_en.pdf&amp;type=pdf&amp;navigator=1#page=8" class="link-light">WMO State of the Global Climate</a> since 2025).`,
 
     cornes2026gdj: `<u>Cornes R. C.</u>, Chan S. C., Cable A., <B style="font-weight: 550;">Chan D.</B>, Faulkner A., Kent E. C., & Siddons J. T. (2026).
         GloMarGridding: A Python Toolkit for Flexible Spatial Interpolation in Climate Applications.
