@@ -10,6 +10,10 @@
   --black:      #111111;
   --gray:       #8c8c8c;
   --gray-light: #a6a6a6;
+  /* Width of the left label column in two-column CV entries. */
+  --cv-label-column-width: 9em;
+  /* Vertical space between adjacent two-column CV entries. */
+  --cv-label-entry-gap: 0.25cm;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -169,12 +173,16 @@ body {
 /* subsection label (Invited Talks, etc.) */
 .cv-sublabel { margin-top: 0.35em; margin-bottom: 0.1em; }
 
-/* Labeled hanging paragraphs — grid aligns content column perfectly */
+/*
+   Labeled two-column entries (Awards, Teaching, Professional Services, etc.).
+   Adjust --cv-label-column-width above to move every right-hand content column.
+   Adjust --cv-label-entry-gap above to change the space between entries.
+*/
 .hang-grid {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: var(--cv-label-column-width) minmax(0, 1fr);
   column-gap: 0.5em;
-  margin-bottom: 0.15cm;
+  margin-bottom: var(--cv-label-entry-gap);
   line-height: 1.35;
 }
 .hang-grid .hang-content { min-width: 0; }
