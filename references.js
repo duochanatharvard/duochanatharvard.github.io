@@ -97,7 +97,7 @@ const refs = {
         <b style="font-weight: 550;"><i>Science Advances</i></b>, 11(23), eads1624.
         <a href="https://www.science.org/doi/abs/10.1126/sciadv.ads1624" class="link-light">link</a>`,
 
-    kent2025chapter: `<u>Kent E.C.</u>, <B style="font-weight: 550;">Chan D.</B>, Crones R., Englyst P., et al. (2025).
+    kent2025chapter: `<u>Kent E.C.</u>, <B style="font-weight: 550;">Chan D.</B>, Cornes R., Englyst P., et al. (2025).
         Global surface temperatures. In <b style="font-weight: 550;"><i>Energy and Climate Change</i></b> (pp. 85–120). Academic Press.
         <a href="https://doi.org/10.1016/B978-0-443-21927-6.00022-2" class="link-light">link</a>`,
 
@@ -144,7 +144,7 @@ const refs = {
         <b style="font-weight: 550;"><i>BAMS</i></b>, 105(8), S163–S168.
         <a href="https://ametsoc.net/sotc2023/SoCin2023_Ch2_Global%20Climate.pdf" class="link-light">link</a>`,
 
-    ridgen2024npj: `<u>Ridgen A.</u>, Golden C., <B style="font-weight: 550;">Chan D.</B>, & Huyber P. (2024).
+    ridgen2024npj: `<u>Ridgen A.</u>, Golden C., <B style="font-weight: 550;">Chan D.</B>, & Huybers P. (2024).
         Climate change linked to ongoing drought in Southern Madagascar.
         <b style="font-weight: 550;"><i>npj Climate and Atmospheric Science</i></b>, 7(1), 1–9.
         <a href="https://www.nature.com/articles/s41612-024-00583-8" class="link-light">link</a>`,
@@ -156,7 +156,7 @@ const refs = {
         <a href="papers/Chan_et_al_2023_JC.pdf" class="link-light">pdf</a>,
         <a href="https://doi.org/10.7910/DVN/Y4D8PA" class="link-light">code & data</a>`,
 
-    bao2023gpc: `Bao X., <u>Zhang S.</u>, Jiang G., <B style="font-weight: 550;">Chan D.</B>, Hu Y., Wu H., Li H., Wang X., & Ynag T. (2023).
+    bao2023gpc: `Bao X., <u>Zhang S.</u>, Jiang G., <B style="font-weight: 550;">Chan D.</B>, Hu Y., Wu H., Li H., Wang X., & Yang T. (2023).
         Climate changes in the Cryogenian nonglacial epoch: A global synthesis with new findings from the Datangpo Formation in South China.
         <b style="font-weight: 550;"><i>Global and Planetary Change</i></b>, 229, 104234.
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818123002072" class="link-light">link</a>`,
