@@ -1,13 +1,18 @@
 const refs = {
 
+    kenwright2026gdj: `<u><B style="font-weight: 550;">Kenwright C.</B></u><b style="color: #d23f3f;">†</b>, Haigh I. D., Williams J., Nicholls R. J., & <B style="font-weight: 550;">Chan D.</B> (2026).
+        Unlocking Historical Sea Level Records through Digitisation—A Review and Inventory.
+        <b style="font-weight: 550;"><i>Geoscience Data Journal</i></b>, in press.
+        <a href="https://doi.org/10.31223/x5sz3b" class="link-light">preprint</a>`,
+
     liao2026ncc: `Liao W., Zhang X.*, <u>Liu X.</u>, <u>Luo M.</u>, Chen Y., <B style="font-weight: 550;">Chan D.</B>, Zhan W., Chen Y., Chen G., Gong R., & Zhao L. (2026).
         Globally and intergenerationally unequal exposure to hourly heat extremes.
-        <b style="font-weight: 550;"><i>Nature Climate Change</i></b>.
+        <b style="font-weight: 550;"><i>Nature Climate Change</i></b>, 16, 1045–1052.
         <a href="https://doi.org/10.1038/s41558-026-02724-8" class="link-light">link</a>`,
 
     fan2026natcomm: `<B style="font-weight: 550;">Fan Y.</B><b style="color: #d23f3f;">†</b>, <u><B style="font-weight: 550;">Chan D.</B></u>, Danabasoglu G., Kim W. M., <u>Zhang P.</u>, & <u>Li L.</u> (2026).
         Regime shifts of AMOC-sea surface temperature relationship.
-        <b style="font-weight: 550;"><i>Nature Communications</i></b>.
+        <b style="font-weight: 550;"><i>Nature Communications</i></b>, 17, 9416.
         <a href="https://doi.org/10.1038/s41467-026-76149-4" class="link-light">link</a>`,
 
     yin2026sst: `<u>Yin X.</u>, Schlegel R. W., Huang B., <B style="font-weight: 550;">Chan D.</B>, Graham G., & Hu Z.-Z. (2026).
@@ -15,10 +20,11 @@ const refs = {
         <b style="font-weight: 550;"><i>BAMS</i></b>, 107(8).
         <a href="https://doi.org/10.1175/BAMS-D-26-0100.1" class="link-light">link</a>`,
 
-    chan2026bams: `<u><B style="font-weight: 550;">Chan D.</B></u>, Kent E.C., Lessen N., Deser C., Merchant C., Ishii M., Sandford C., Huang B., Yin X., Kennedy J.J., Cornes, R.C., Huybers P., & Gebbie G.(2026).
-        Choosing the Right Sea Surface Temperature Datasets: Benchmarking and Guidance for Climate Applications,
-        <b style="font-weight: 550;"><i>BAMS</i></b>,
-        <a href="https://doi.org/10.1175/BAMS-D-25-0210.1" class="link-light">link</a>, (Live version: 
+    chan2026bams: `<u><B style="font-weight: 550;">Chan D.</B></u>, Kent E.C., Lenssen N., Deser C., Merchant C., Ishii M., Sandford C., Huang B., Yin X., Kennedy J.J., Cornes R.C., Huybers P., & Gebbie G. (2026).
+        Choosing the Right Sea Surface Temperature Datasets: Benchmarking and Guidance for Climate Applications.
+        <b style="font-weight: 550;"><i>BAMS</i></b>, 107(10), E2544–E2566.
+        <a href="https://doi.org/10.1175/BAMS-D-25-0210.1" class="link-light">link</a>,
+        <a href="papers/Chan_et_al_2026_BAMS.pdf" class="link-light">pdf</a>, (Live version:
         <a href="https://climatedataguide.ucar.edu/climate-data/sst-data-sets-overview-comparison-table" class="link-light">NCAR Climate Data Guide</a>).`,
 
     chan2026pnas: `<u><B style="font-weight: 550;">Chan D.</B></u>, Silvano A. C., & Josey S. (2026).
@@ -68,7 +74,7 @@ const refs = {
 
     chan2025grl: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2025).
         Re-evaluating Historical Sea Surface Temperature Datasets: Insights from the Diurnal Cycle, Coral Proxy Data, and Radiative Forcing.
-        <b style="font-weight: 550;"><i>Geophysical Research Letter</i></b>, 52(13), e2025GL116615.
+        <b style="font-weight: 550;"><i>Geophysical Research Letters</i></b>, 52(13), e2025GL116615.
         <a href="https://doi.org/10.1029/2025GL116615" class="link-light">link</a>,
         <a href="https://doi.org/10.7910/DVN/OHCGPN" class="link-light">code & data</a>`,
 
@@ -144,14 +150,14 @@ const refs = {
         <b style="font-weight: 550;"><i>BAMS</i></b>, 105(8), S163–S168.
         <a href="https://ametsoc.net/sotc2023/SoCin2023_Ch2_Global%20Climate.pdf" class="link-light">link</a>`,
 
-    ridgen2024npj: `<u>Ridgen A.</u>, Golden C., <B style="font-weight: 550;">Chan D.</B>, & Huybers P. (2024).
+    ridgen2024npj: `<u>Rigden A.</u>, Golden C., <B style="font-weight: 550;">Chan D.</B>, & Huybers P. (2024).
         Climate change linked to ongoing drought in Southern Madagascar.
         <b style="font-weight: 550;"><i>npj Climate and Atmospheric Science</i></b>, 7(1), 1–9.
         <a href="https://www.nature.com/articles/s41612-024-00583-8" class="link-light">link</a>`,
 
     chan2023jclim: `<u><B style="font-weight: 550;">Chan D.</B></u>, Gebbie G., & Huybers P. (2023).
         Global and Regional Discrepancies between Early 20th Century Coastal Air and Sea-Surface Temperature Detected by a Coupled Energy-Balance Analysis.
-        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 34(9), 2205–20.
+        <b style="font-weight: 550;"><i>Journal of Climate</i></b>, 36(7), 2205–20.
         <a href="https://journals.ametsoc.org/view/journals/clim/aop/JCLI-D-22-0569.1/JCLI-D-22-0569.1.xml" class="link-light">link</a>,
         <a href="papers/Chan_et_al_2023_JC.pdf" class="link-light">pdf</a>,
         <a href="https://doi.org/10.7910/DVN/Y4D8PA" class="link-light">code & data</a>`,
@@ -174,7 +180,7 @@ const refs = {
 
     proctor2022nfood: `<u>Proctor J.</u>, Rigden A., <B style="font-weight: 550;">Chan D.</B>, & Huybers P. (2022).
         Soil moisture measurements improve prediction of crop yields and reduce projected climate change damages.
-        <b style="font-weight: 550;"><i>Nature Food</i></b>,
+        <b style="font-weight: 550;"><i>Nature Food</i></b>, 3, 753–763.
         <a href="https://www.nature.com/articles/s43016-022-00592-x" class="link-light">link</a>`,
 
     chan2021sciadv: `<u><B style="font-weight: 550;">Chan D.</B></u>, Vecchi G., Yang W., & Huybers P. (2021).
@@ -201,7 +207,7 @@ const refs = {
 
     dai2021aoas: `<u>Dai, C.</u>, <B style="font-weight: 550;">Chan D.*</B>, Huybers, P., & Pillai, N. (2021).
         Late 19th-Century Navigational Uncertainties and Their Influence on Sea Surface Temperature Estimates.
-        <b style="font-weight: 550;"><i>Annuals of Applied Statistics</i></b>, 15(1), 22–40.
+        <b style="font-weight: 550;"><i>Annals of Applied Statistics</i></b>, 15(1), 22–40.
         <a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-15/issue-1/Late-19th-century-navigational-uncertainties-and-their-influence-on-sea/10.1214/20-AOAS1367.short" class="link-light">link</a>,
         <a href="papers/Dai_et_al_2021_AAS.pdf" class="link-light">pdf</a>`,
 
@@ -214,7 +220,7 @@ const refs = {
 
     chan2020grl: `<u><B style="font-weight: 550;">Chan D.</B></u>, Cobb A., Vargas L., Battisti D., & Huybers P. (2020).
         Summertime temperature variability increases with local warming in mid-latitude regions.
-        <b style="font-weight: 550;"><i>Geophysical Research Letter</i></b>, e2020GL087624.
+        <b style="font-weight: 550;"><i>Geophysical Research Letters</i></b>, e2020GL087624.
         <a href="https://doi.org/10.1029/2020GL087624" class="link-light">link</a>,
         <a href="papers/Chan_et_al_2020_GRL.pdf" class="link-light">pdf</a>,
         <a href="https://github.com/duochanatharvard/Compounding_warming_and_variability_increase" class="link-light">code & data</a>`,
@@ -243,7 +249,7 @@ const refs = {
 
     chan2016aas: `<B style="font-weight: 550;">Chan, D.</B>, <u>Wu, Q.</u>, Jiang, G., & Dai, X. (2016).
         Projected shifts in Köppen climate zones over China and their temporal evolution in CMIP5 multi-model simulations.
-        <b style="font-weight: 550;"><i>Advances in Atmospheric Sciences</i></b>, 3(33), 283–293.
+        <b style="font-weight: 550;"><i>Advances in Atmospheric Sciences</i></b>, 33(3), 283–293.
         <a href="https://link.springer.com/article/10.1007/s00376-015-5077-8" class="link-light">link</a>,
         <a href="papers/Chan_et_al_2016_AAS.pdf" class="link-light">pdf</a>`,
 
